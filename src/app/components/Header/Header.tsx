@@ -6,18 +6,27 @@ const Header: FC = () => {
     <header className={styles.header}>
       <div className={styles.top}>
         <div className={styles.left}>
-          {/* Left content, e.g. logo or site name */}
-          <h1>MySite</h1>
+          {/* Client image will go here */}
+          <div className={styles.imagePlaceholder}>Client Image</div>
         </div>
 
-        <div>{/* Right content, e.g. navigation or buttons */}</div>
+        <div className={styles.right}>
+          {/* Client introduction */}
+          <div className={styles.intro}>
+            <h2>Hello, I'm Supriya</h2>
+            <p>
+              I'm passionate about sharing movie updates, trailers, and
+              articles. Stay tuned for exciting content!
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className={styles.bottom}>
-        {/* Bottom content, e.g. tagline or search bar */}
-        <p className={styles.tagline}>
-          Welcome to the ultimate movie experience!
-        </p>
+        {/* Future image gallery or elements */}
+        <div className={styles.placeholder}>
+          {/* Leave space for future additions */}
+        </div>
       </div>
     </header>
   );
