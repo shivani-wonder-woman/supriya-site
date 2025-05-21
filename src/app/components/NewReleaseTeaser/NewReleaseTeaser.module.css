@@ -1,0 +1,29 @@
+.section {
+  background-color: #f5f5dc; /* beige */
+  padding: 20px;
+  position: relative;
+  border-radius: 8px;
+  text-align: center;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: hotpink;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  color: hsl(330, 83%, 41%);
+}
