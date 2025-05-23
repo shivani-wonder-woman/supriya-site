@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styles from "./Header.module.css";
+import Responsive from "../CardCarousel/CardCarousel";
 
 const Header: FC = () => {
   return (
@@ -23,10 +24,8 @@ const Header: FC = () => {
       </div>
 
       <div className={styles.bottom}>
-        {/* Future image gallery or elements */}
-        <div className={styles.placeholder}>
-          {/* Leave space for future additions */}
-        </div>
+        <h2>Achievements</h2>
+        <Responsive />
       </div>
     </header>
   );

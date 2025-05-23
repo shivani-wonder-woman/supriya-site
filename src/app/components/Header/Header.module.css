@@ -52,12 +52,9 @@
 }
 
 .bottom {
-  margin-top: 30px;
-  height: 120px;
-  background-color: #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: hsl(0, 0%, 88%); /* a light gray for top */
+  padding: 15px;
+  border-radius: 6px;
 }
 
 .placeholder {
