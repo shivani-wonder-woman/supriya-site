@@ -8,7 +8,7 @@ const NewReleaseTeaser: FC = () => {
       <div className={styles.logo}>
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
       </div>
-      <h2 className={styles.title}>New Release Trailer</h2>
+      <h2 className={styles.title}>New Release Teaser</h2>
       <p className={styles.subtitle}>Video will be added here soon...</p>
     </section>
   );

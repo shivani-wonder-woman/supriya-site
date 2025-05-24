@@ -1,8 +1,8 @@
 .header {
-  width: 100%;
-  padding: 20px;
-  background-color: #f5f5f5;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100vw; /* full viewport width */
+  padding: 0; /* remove padding to prevent shrink */
+  margin: 0; /* remove any margin */
+  box-sizing: border-box;
 }
 
 .top {
@@ -23,7 +23,7 @@
 .imagePlaceholder {
   width: 150px;
   height: 150px;
-  background-color: #ddd;
+  background-color: hsl(0, 0%, 67%);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@
 }
 
 .bottom {
-  background-color: hsl(0, 0%, 88%); /* a light gray for top */
+  background-color: hsl(0, 0%, 67%);
   padding: 15px;
   border-radius: 6px;
 }

@@ -1,32 +1,99 @@
 .carouselWrapper {
-  padding: 30px;
-}
-
-.card {
-  background-color: hsl(0, 23%, 95%);
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.thumbnail {
+  position: relative;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
+  padding: 20px;
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slide {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.videoPlaceholder {
+  background-color: #ddd;
+  border-radius: 8px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.playIcon {
+  font-size: 32px;
+  color: #555;
+}
+
+.comingSoon {
+  font-size: 14px;
+  color: #777;
+}
+
+.info {
+  text-align: left;
+}
+
+.label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
 }
 
 .title {
-  margin-top: 10px;
-  font-size: 0.95rem;
+  font-size: 16px;
   font-weight: 600;
-  color: #333333;
-  line-height: 1.3;
+  margin: 6px 0;
+  color: #333;
+}
+
+.meta {
+  font-size: 12px;
+  color: #666;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left {
+  left: -10px;
+}
+
+.right {
+  right: -10px;
+}
+
+.topRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.viewAllLink {
+  font-size: 14px;
+  color: #0070f3;
+  text-decoration: underline;
+  cursor: pointer;
 }

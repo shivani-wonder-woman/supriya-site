@@ -1,12 +1,11 @@
 .section {
-  background-color: #f5f5dc; /* beige */
+  background-color: rgb(255, 224, 189); /* beige */
   padding: 20px;
-  position: relative;
   border-radius: 8px;
   text-align: center;
   color: #333;
   font-family: Arial, sans-serif;
-  margin: 20px 0;
+  margin: 20px 20px;
 }
 
 .logo {
