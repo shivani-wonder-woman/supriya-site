@@ -1,3 +1,15 @@
+# Supriya-Site
+
+Supriya-Site is a dynamic web application built with Next.js, TypeScript, and the App Router.  
+It features modular components including Navbar, Header, New Release Teaser, Main Content, and Footer.  
+The site delivers a rich collection of videos, articles, and podcasts for engaging and diverse content consumption.
+
+## Features
+
+- Modular, reusable React components
+- Responsive design with Next.js App Router
+- Multimedia content: videos, articles, podcasts
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
