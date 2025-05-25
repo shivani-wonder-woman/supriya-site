@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import styles from "./CardCarousel.module.css";
 import Link from "next/link";
+import React, { useState } from "react";
 
 interface CarouselItem {
   id: number;
@@ -20,11 +20,16 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
+  const [isReady, setIsReady] = useState(false);
+
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: {
       perView: 4,
       spacing: 15,
+    },
+    created() {
+      setIsReady(true); // called when slider is initialized
     },
   });
 
@@ -58,6 +63,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
         onClick={() => instanceRef.current?.prev()}
         className={`${styles.navButton} ${styles.left}`}
         aria-label="Previous"
+        disabled={!isReady}
       >
         ‹
       </button>
@@ -65,6 +71,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
         onClick={() => instanceRef.current?.next()}
         className={`${styles.navButton} ${styles.right}`}
         aria-label="Next"
+        disabled={!isReady}
       >
         ›
       </button>

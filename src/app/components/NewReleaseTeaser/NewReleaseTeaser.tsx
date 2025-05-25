@@ -1,17 +1,32 @@
-import React, { FC } from "react";
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./NewReleaseTeaser.module.css";
 
-const NewReleaseTeaser: FC = () => {
+const NewReleaseTease = () => {
+  const router = useRouter();
+
+  const handleWatchNow = () => {
+    router.push("/TeaserVideo");
+  };
+
   return (
-    <section className={styles.section}>
-      <div className={styles.logo}>
-        <Image src="/logo.png" alt="Logo" width={40} height={40} />
+    <div className={styles.teaseContainer}>
+      <Image
+        src="/teaser-poster.jpg"
+        alt="Teaser"
+        layout="fill"
+        className={styles.teaseImage}
+      />
+
+      <div className={styles.overlayContent}>
+        <h1 className={styles.title}>New Release Teaser</h1>
+        <button onClick={handleWatchNow} className={styles.watchButton}>
+          Watch Now
+        </button>
       </div>
-      <h2 className={styles.title}>New Release Teaser</h2>
-      <p className={styles.subtitle}>Video will be added here soon...</p>
-    </section>
+    </div>
   );
 };
 
-export default NewReleaseTeaser;
+export default NewReleaseTease;

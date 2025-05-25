@@ -1,28 +1,42 @@
-.section {
-  background-color: rgb(255, 224, 189); /* beige */
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  color: #333;
-  font-family: Arial, sans-serif;
-  margin: 20px 20px;
+.teaseContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: black;
+  color: rgb(221, 75, 75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.logo {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+.teaseImage {
+  opacity: 0.5;
+  object-fit: cover;
+}
+
+.overlayContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
 }
 
 .title {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: hotpink;
+  margin-bottom: 1rem;
 }
 
-.subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  color: hsl(330, 83%, 41%);
+.watchButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb; /* Tailwind's blue-600 */
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.watchButton:hover {
+  background-color: #1d4ed8; /* Tailwind's blue-700 */
 }

@@ -12,10 +12,10 @@ export default function Navbar() {
           <Link href="/">Home</Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/video">Video</Link>
+          <Link href="/Videos">Video</Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/articles">Articles</Link>
+          <Link href="/Articles">Articles</Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/contact">Contact</Link>
