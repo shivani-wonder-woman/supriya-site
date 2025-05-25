@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import styles from "./Header.module.css";
-import Responsive from "../CardCarousel/CardCarousel";
 import Image from "next/image";
 
 const Header: FC = () => {
@@ -9,9 +8,9 @@ const Header: FC = () => {
       <div className={styles.top}>
         <div className={styles.textBlock}>
           <p>
-            ""I'm launching a brand-new podcast focused on film, creativity, and
-            powerful conversations. Join me as I bring stories to life, one
-            episode at a time.""
+            &quot;I&apos;m launching a brand-new podcast focused on film,
+            creativity, and powerful conversations. Join me as I bring stories
+            to life, one episode at a time.&quot;
           </p>
         </div>
         <div className={styles.right}>
