@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./TeaserVideo.module.css";
-import NewReleaseTease from "../components/NewReleaseTeaser/NewReleaseTeaser";
-export default function () {
+export default function TeaserPage() {
   return (
-    <main>
+    <main className={styles.container}>
       <h1>Teaser will be coming soon </h1>{" "}
     </main>
   );
