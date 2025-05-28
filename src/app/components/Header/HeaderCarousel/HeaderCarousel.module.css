@@ -1,0 +1,56 @@
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0rem;
+}
+
+.slider {
+  width: 90%;
+  overflow: hidden;
+}
+
+.card {
+  background: linear-gradient(
+    to right,
+    rgba(255, 192, 203, 0.7),
+    /* Pink */ rgba(255, 240, 245, 0.1) /* LavenderBlush */
+  );
+
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1rem;
+}
+
+.arrowLeft,
+.arrowRight {
+  background: linear-gradient(
+    to right,
+    rgba(255, 192, 203, 0.7),
+    /* Pink */ rgba(255, 240, 245, 0.1) /* LavenderBlush */
+  );
+
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  backdrop-filter: blur(4px); /* optional: adds a frosted-glass effect */
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  background: rgba(71, 70, 70, 0.6); /* darken slightly on hover */
+}
