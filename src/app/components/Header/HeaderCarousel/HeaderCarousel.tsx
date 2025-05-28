@@ -1,15 +1,18 @@
 "use client";
 
 import { useKeenSlider } from "keen-slider/react";
-import type { KeenSliderOptions } from "keen-slider";
+import type {
+  KeenSliderOptions,
+  KeenSliderInstance,
+  KeenSliderHooks,
+} from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import styles from "./HeaderCarousel.module.css";
-import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 // Autoplay plugin
 function autoplayPlugin(delay: number = 3000) {
-  return (slider: any) => {
+  return (slider: KeenSliderInstance<object, object, KeenSliderHooks>) => {
     let timeout: ReturnType<typeof setTimeout>;
     let mouseOver = false;
 
