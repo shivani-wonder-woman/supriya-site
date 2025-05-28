@@ -1,11 +1,7 @@
 "use client";
 
 import { useKeenSlider } from "keen-slider/react";
-import type {
-  KeenSliderOptions,
-  KeenSliderInstance,
-  KeenSliderHooks,
-} from "keen-slider";
+import type { KeenSliderOptions } from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import styles from "./HeaderCarousel.module.css";
 import { useRef, useEffect } from "react";
@@ -13,7 +9,7 @@ import Image from "next/image";
 
 // Autoplay plugin
 function autoplayPlugin(delay: number = 3000) {
-  return (slider: KeenSliderInstance<{}, {}, KeenSliderHooks>) => {
+  return (slider: any) => {
     let timeout: ReturnType<typeof setTimeout>;
     let mouseOver = false;
 
@@ -59,17 +55,17 @@ const teamMembers: TeamMember[] = [
   {
     name: "Aaron Loeb",
     role: "Founder",
-    image: "/images/team/placeholder-profile.png",
+    image: "https://via.placeholder.com/150", // <-- Placeholder image
   },
   {
     name: "Adeline Palmerston",
     role: "Manager",
-    image: "/images/team/placeholder-profile.png",
+    image: "https://via.placeholder.com/150", // <-- Placeholder image
   },
   {
     name: "Daniel Gallego",
     role: "Co-Manager",
-    image: "/images/team/placeholder-profile.png",
+    image: "https://via.placeholder.com/150", // <-- Placeholder image
   },
 ];
 
