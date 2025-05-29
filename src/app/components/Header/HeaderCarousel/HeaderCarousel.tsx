@@ -77,26 +77,18 @@ export default function HeaderCarousel() {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
-      renderMode: "custom",
-      drag: true,
+      mode: "snap",
       slides: {
-        perView: 1,
+        perView: 6,
         spacing: 15,
       },
-      breakpoints: {
-        "(min-width: 768px)": {
-          slides: { perView: 2, spacing: 15 },
-        },
-        "(min-width: 1024px)": {
-          slides: { perView: 3, spacing: 15 },
-        },
+      defaultAnimation: {
+        duration: 1000,
       },
-      animation: {
-        duration: 1500,
-        easing: (t: number) => t * (2 - t),
-      },
-    } as KeenSliderOptions,
-    [autoplayPlugin(3000)]
+      dragSpeed: 1.5,
+      renderMode: "performance",
+    },
+    [autoplayPlugin(500)]
   );
 
   const prev = () => instanceRef.current?.prev();

@@ -66,3 +66,14 @@
 .arrowRight:hover {
   background: rgba(71, 70, 70, 0.6); /* darken slightly on hover */
 }
+
+.cardContainer {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
