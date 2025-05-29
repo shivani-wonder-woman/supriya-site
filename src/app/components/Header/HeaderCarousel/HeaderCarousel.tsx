@@ -1,11 +1,7 @@
 "use client";
 
 import { useKeenSlider } from "keen-slider/react";
-import type {
-  KeenSliderOptions,
-  KeenSliderInstance,
-  KeenSliderHooks,
-} from "keen-slider";
+import type { KeenSliderInstance, KeenSliderHooks } from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import styles from "./HeaderCarousel.module.css";
 import Image from "next/image";
