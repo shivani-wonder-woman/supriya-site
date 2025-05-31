@@ -1,24 +1,64 @@
 .navbar {
   background-color: #333;
-  padding: 1.5rem;
+  padding: 1rem;
+  /* Makes navbar stick to top when scrolling */
+  position: sticky;
+  top: 0;
+  /* Makes sure navbar stays above other content */
+  z-index: 1000;
+  width: 100%;
 }
 
 .navList {
   list-style: none;
   display: flex;
-  gap: 5rem;
-  margin: 0;
+  gap: 2rem;  
+  margin: 0 auto; /* Center the list */
   padding: 0;
-  justify-content: center; /* center nav links */
+  justify-content: center;
+  max-width: var(--max-width); /* Use the global max width */
+  flex-wrap: wrap; /* Allow wrapping if needed */
 }
 
 .navItem a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.75rem;  /* Makes links easier to click */
   transition: color 0.3s ease;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .navItem a:hover {
-  color: #ffd700; /* gold on hover */
+  color: #ffd700;
+}
+
+/* Changes for mobile phones */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .navList {
+    gap: 1rem; /* Reduce gap on mobile */
+    justify-content: space-around; /* Space links evenly */
+    padding: 0 0.5rem;
+  }
+
+  .navItem a {
+    padding: 0.5rem;
+    font-size: 0.9rem; /* Slightly smaller font on mobile */
+  }
+}
+
+/* Changes for very small screens */
+@media (max-width: 480px) {
+  .navList {
+    gap: 0.5rem; /* Even smaller gap for very small screens */
+  }
+
+  .navItem a {
+    padding: 0.4rem;
+    font-size: 0.85rem;
+  }
 }

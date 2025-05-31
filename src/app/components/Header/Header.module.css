@@ -8,13 +8,18 @@
   );
   width: 100%;
   display: flex;
-  align-items: stretch; /* ✅ Let children like .textBlock grow */
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
 }
 .textBlock {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 2rem;
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .clientImageWrapper {
@@ -48,4 +53,55 @@
   font-size: 1.1rem; /* slightly larger readable text */
   line-height: 1.6; /* comfortable line spacing */
   padding: 1.5rem 2rem; /* enough padding around text */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .clientImageWrapper {
+    width: 400px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .textBlock {
+    padding: 1.5rem;
+  }
+
+  .clientImageWrapper {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .introduction {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .headerCarousel h2 {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .textBlock {
+    padding: 1rem;
+  }
+
+  .clientImageWrapper {
+    height: 250px;
+  }
+
+  .introduction {
+    padding: 0.5rem;
+  }
+
+  .headerCarousel h2 {
+    margin-left: 1rem;
+  }
 }
