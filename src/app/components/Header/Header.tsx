@@ -26,9 +26,9 @@ const Header: FC = () => {
             exciting episodes coming your way. &quot;I&apos;m launching a
             brand-new podcast focused on film, creativity, and powerful
             conversations. Join me as I bring stories to life, one episode at a
-            time.&quot;Because every story deserves to be heard — I'm launching
+            time.&quot;Because every story deserves to be heard — I&apos;m launching
             a captivating podcast that celebrates film, creativity, and powerful
-            voices. Tune in, be inspired, and own your narrative. Because you're
+            voices. Tune in, be inspired, and own your narrative. Because you&apos;re
             worth the conversation.
           </p>
           <button className={styles.readMoreBtn} onClick={toggleText}>
