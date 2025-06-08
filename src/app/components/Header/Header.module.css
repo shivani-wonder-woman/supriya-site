@@ -48,8 +48,8 @@
 }
 
 .headerCarousel {
-  margin-top: auto; /* pushes it to the bottom */
-  margin-bottom: 10px; /* minor bottom margin */
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 .headerCarousel h2 {
   margin-left: 4rem;
@@ -57,10 +57,30 @@
 
 .introduction {
   margin-top: 1.5rem;
-  font-family: "Georgia", serif; /* classy serif font */
-  font-size: 1.1rem; /* slightly larger readable text */
-  line-height: 1.6; /* comfortable line spacing */
-  padding: 1.5rem 2rem; /* enough padding around text */
+  font-family: "Georgia", serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 1.5rem 2rem;
+}
+
+.introduction p {
+  margin: 0;
+}
+
+.readMoreBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.readMoreBtn:hover {
+  opacity: 0.8;
 }
 
 /* Responsive styles */
@@ -77,7 +97,13 @@
   }
 
   .textBlock {
-    padding: 1.5rem;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .right {
+    order: -1;
+    padding: 1rem;
   }
 
   .clientImageWrapper {
@@ -89,6 +115,30 @@
   .introduction {
     padding: 1rem;
     font-size: 1rem;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  .introduction p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .introduction.expanded p {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+
+  .readMoreBtn {
+    display: block;
+  }
+
+  .headerCarousel {
+    padding: 1rem;
+    margin-top: 1rem;
   }
 
   .headerCarousel h2 {
