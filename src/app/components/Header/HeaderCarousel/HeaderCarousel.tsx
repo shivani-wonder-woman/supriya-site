@@ -75,8 +75,18 @@ export default function HeaderCarousel() {
       loop: true,
       mode: "snap",
       slides: {
-        perView: 6,
+        perView: 5,
         spacing: 15,
+      },
+      breakpoints: {
+        "(max-width: 768px)": {
+          slides: { perView: 3.7, spacing: 10 },
+          mode: "free-snap", // Enable free scrolling with snapping on mobile/tablet
+        },
+        "(max-width: 425px)": {
+          slides: { perView: 1.7, spacing: 10 },
+          mode: "free-snap", // Enable free scrolling with snapping on mobile
+        },
       },
       defaultAnimation: {
         duration: 1000,

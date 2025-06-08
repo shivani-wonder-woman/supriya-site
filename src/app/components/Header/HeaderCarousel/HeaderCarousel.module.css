@@ -77,3 +77,15 @@
   -ms-overflow-style: none;
   scroll-behavior: smooth;
 }
+
+@media (max-width: 768px) {
+  .arrowLeft,
+  .arrowRight {
+    display: none;  /* Hide arrows on mobile and tablet */
+  }
+
+  .slider {
+    touch-action: pan-x;  /* Enable horizontal touch scrolling */
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+  }
+}
