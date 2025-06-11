@@ -28,6 +28,21 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
       perView: 4,
       spacing: 15,
     },
+    breakpoints: {
+      "(max-width: 1024px)": {
+        slides: {
+          perView: 2,
+          spacing: 10,
+        },
+      },
+      "(max-width: 425px)": {
+        slides: {
+          perView: 1,
+          spacing: 10,
+        },
+      },
+    },
+
     created() {
       setIsReady(true); // called when slider is initialized
     },
