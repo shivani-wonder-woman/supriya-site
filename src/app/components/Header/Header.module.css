@@ -1,0 +1,165 @@
+.top {
+  color: rgb(255, 255, 255);
+  justify-content: space-between;
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 85, 0.7),
+    rgba(255, 0, 85, 0.1)
+  );
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+}
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 0 2rem 2rem;
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.right {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem 2rem 0;
+}
+
+.clientImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.clientImage {
+  object-fit: cover;
+}
+
+.left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.headerCarousel {
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+.headerCarousel h2 {
+  margin-left: 4rem;
+}
+
+.introduction {
+  margin-top: 1.5rem;
+  font-family: "Georgia", serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 1.5rem 2rem;
+}
+
+.introduction p {
+  margin: 0;
+}
+
+.readMoreBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.readMoreBtn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .clientImageWrapper {
+    width: 400px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .textBlock {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .right {
+    order: -1;
+    padding: 1rem;
+  }
+
+  .clientImageWrapper {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .introduction {
+    padding: 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  .introduction p {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .introduction.expanded p {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+
+  .readMoreBtn {
+    display: block;
+  }
+
+  .headerCarousel {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .headerCarousel h2 {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .textBlock {
+    padding: 1rem;
+  }
+
+  .clientImageWrapper {
+    height: 250px;
+  }
+
+  .introduction {
+    padding: 0.5rem;
+  }
+
+  .headerCarousel h2 {
+    margin-left: 1rem;
+  }
+}
