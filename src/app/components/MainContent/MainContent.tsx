@@ -8,7 +8,11 @@ const MainContent: FC = () => {
   return (
     <section className={styles.mainSection}>
       <div className={styles.topSection}>
-        <h2>Videos</h2>
+        <h2>Video Podcasts</h2>
+        <Carousel data={videoData} viewAllLink="/Videos" />
+      </div>
+      <div className={styles.topSection}>
+        <h2>Video Snippets</h2>
         <Carousel data={videoData} viewAllLink="/Videos" />
       </div>
       <div className={styles.bottomSection}>

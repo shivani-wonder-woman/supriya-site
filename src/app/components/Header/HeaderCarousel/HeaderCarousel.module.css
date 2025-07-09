@@ -89,3 +89,18 @@
     -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
   }
 }
+
+/* --- Responsive styles for laptops (1024px and below) --- */
+@media (max-width: 1024px) {
+  .slider {
+    width: 98%;
+  }
+  .cardContainer {
+    gap: 8px;
+    padding: 8px;
+  }
+  .card {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
