@@ -23,7 +23,8 @@ export const metadata: Metadata = {
 
 // ✅ import client components after metadata
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
+import FooterWrapper from "./FooterWrapper";
 
 export default function RootLayout({
   children,
@@ -36,7 +37,7 @@ export default function RootLayout({
         <div className="layout-wrapper">
           <Navbar />
           <main className="main-content">{children}</main>
-          <Footer />
+          <FooterWrapper />
         </div>
       </body>
     </html>

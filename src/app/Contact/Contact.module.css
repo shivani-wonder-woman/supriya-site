@@ -1,8 +1,69 @@
 .container {
-  height: 70vh; /* full viewport height */
+  width: 100%;
+  height: 90vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center; /* center vertically */
-  background-color: #eee1c6; /* optional */
-  margin: 0;
+  overflow: hidden;
+  padding: 5rem;
+}
+
+.leftSection {
+  flex: 1;
+  background: #181818;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.underline-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #666; /* dark gray line */
+  padding: 8px 4px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.underline-input::placeholder {
+  color: #aaa; /* light placeholder text */
+}
+
+.underline-input:focus {
+  border-bottom: 1px solid #ff69b4; /* pink underline on focus */
+}
+
+.rightSection {
+  flex: 1;
+  background: linear-gradient(135deg, #ff0080 0%, #ff8cdd 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .splitContainer {
+    flex-direction: column;
+    height: auto;
+  }
+  .leftSection,
+  .rightSection {
+    min-height: 200px;
+    padding: 1rem;
+  }
+}
+.splitContainer {
+  height: 70vh;
+  display: flex;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
 }
