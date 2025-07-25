@@ -4,7 +4,7 @@ import styles from "./MainContent.module.css";
 import Carousel from "../CardCarousel/CardCarousel";
 import { videoData } from "../Data/Data";
 import { client } from "../../../../prismicio";
-import * as prismicH from "@prismicio/helpers";
+import { asText } from "@prismicio/helpers";
 
 interface ArticleItem {
   id: string;
@@ -31,8 +31,8 @@ const MainContent: FC = () => {
               url: doc.data.image?.url || "",
               alt: doc.data.image?.alt || "",
             },
-            heading: prismicH.asText(doc.data.heading),
-            description: prismicH.asText(doc.data.description),
+            heading: asText(doc.data.heading) || "",
+            description: asText(doc.data.description) || "",
             link: { url: doc.data.link?.url || "#" },
             author: doc.data.author || "Unknown Author",
             date: doc.data.date,
