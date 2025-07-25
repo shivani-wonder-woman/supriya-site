@@ -6,13 +6,15 @@ import styles from "./CardCarousel.module.css";
 import Link from "next/link";
 import React, { useState } from "react";
 
-interface ArticleItem {
+// Unified type for both videos and articles
+interface CarouselItem {
   id: string;
+  label?: string;
+  title?: string;
+  time?: string;
   image?: { url: string; alt?: string };
   video?: { url: string };
   heading?: string;
-  title?: string;
-  label?: string;
   description?: string;
   link?: { url: string };
   author?: string;
@@ -21,7 +23,7 @@ interface ArticleItem {
 }
 
 interface CarouselProps {
-  data: ArticleItem[];
+  data: CarouselItem[];
   viewAllLink: string;
 }
 
@@ -61,7 +63,6 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
           View All
         </Link>
       </div>
-
       <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
         {data.map((item) => (
           <div key={item.id} className={`keen-slider__slide ${styles.slide}`}>
@@ -80,7 +81,6 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                   <p className={styles.comingSoon}>Media Coming Soon</p>
                 </div>
               )}
-
               <div className={styles.info}>
                 <span className={styles.category}>
                   {item.category || item.label || ""}
@@ -92,13 +92,13 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                 <p className={styles.meta}>
                   {item.date}
                   {item.author ? ` | ${item.author}` : ""}
+                  {item.time ? ` | ${item.time}` : ""}
                 </p>
               </div>
             </Link>
           </div>
         ))}
       </div>
-
       <button
         onClick={() => instanceRef.current?.prev()}
         className={`${styles.navButton} ${styles.left}`}
