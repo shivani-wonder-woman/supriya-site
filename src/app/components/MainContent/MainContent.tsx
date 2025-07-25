@@ -5,14 +5,12 @@ import Carousel from "../CardCarousel/CardCarousel";
 import { videoData } from "../Data/Data";
 import { client } from "../../../../prismicio";
 import * as prismicH from "@prismicio/helpers";
-import { asText } from "@prismicio/helpers";
 
 interface ArticleItem {
   id: string;
   image: { url: string; alt?: string };
-  heading: prismicH.RichTextField;
-  description: prismicH.RichTextField;
-
+  heading: string;
+  description: string;
   link: { url: string };
   author: string;
   date: string;

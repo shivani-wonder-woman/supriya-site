@@ -6,7 +6,6 @@ import styles from "./CardCarousel.module.css";
 import Link from "next/link";
 import React, { useState } from "react";
 
-// Unified type for both videos and articles
 interface CarouselItem {
   id: string;
   label?: string;
