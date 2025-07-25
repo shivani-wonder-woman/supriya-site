@@ -2,11 +2,12 @@
 import React, { FC, useEffect, useState } from "react";
 import styles from "./MainContent.module.css";
 import Carousel from "../CardCarousel/CardCarousel";
-import { videoData, articleData } from "../Data/Data";
+import { videoData } from "../Data/Data";
 import { client } from "../../../../prismicio";
 import * as prismicH from "@prismicio/helpers";
 
 interface ArticleItem {
+  id: string;
   image: { url: string; alt?: string };
   heading: any;
   description: any;
@@ -21,19 +22,21 @@ const MainContent: FC = () => {
     const fetchArticles = async () => {
       try {
         const response = await client.getAllByType("blogpost");
+        console.log("Raw Prismic response:", response);
 
         const mappedData = response.map(
           (doc): ArticleItem => ({
+            id: doc.id,
             image: {
               url: doc.data.image?.url || "",
               alt: doc.data.image?.alt || "",
             },
-            heading: doc.data.heading,
-            description: doc.data.description,
+            heading: prismicH.asText(doc.data.heading),
+            description: prismicH.asText(doc.data.description),
             link: { url: doc.data.link?.url || "#" },
-            author: doc.data.author,
+            author: doc.data.author || "Unknown Author",
             date: doc.data.date,
-            category: doc.data.category,
+            category: doc.data.category || "General",
           })
         );
 

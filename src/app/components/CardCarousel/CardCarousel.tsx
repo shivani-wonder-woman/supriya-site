@@ -6,16 +6,22 @@ import styles from "./CardCarousel.module.css";
 import Link from "next/link";
 import React, { useState } from "react";
 
-interface CarouselItem {
-  id: number;
-  label: string;
-  title: string;
+interface ArticleItem {
+  id: string;
+  image?: { url: string; alt?: string };
+  video?: { url: string };
+  heading?: string;
+  title?: string;
+  label?: string;
+  description?: string;
+  link?: { url: string };
+  author?: string;
   date: string;
-  time: string;
+  category?: string;
 }
 
 interface CarouselProps {
-  data: CarouselItem[];
+  data: ArticleItem[];
   viewAllLink: string;
 }
 
@@ -42,9 +48,8 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
         },
       },
     },
-
     created() {
-      setIsReady(true); // called when slider is initialized
+      setIsReady(true);
     },
   });
 
@@ -56,20 +61,40 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
           View All
         </Link>
       </div>
+
       <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
-        {data?.map((item) => (
+        {data.map((item) => (
           <div key={item.id} className={`keen-slider__slide ${styles.slide}`}>
-            <div className={styles.videoPlaceholder}>
-              <span className={styles.playIcon}>▶</span>
-              <p className={styles.comingSoon}>Video Coming Soon</p>
-            </div>
-            <div className={styles.info}>
-              <span className={styles.label}>{item.label}</span>
-              <h3 className={styles.title}>{item.title}</h3>
-              <p className={styles.meta}>
-                {item.date} | {item.time}
-              </p>
-            </div>
+            <Link href={item.link?.url || "#"} className={styles.cardLink}>
+              {item.video?.url ? (
+                <video src={item.video.url} controls className={styles.media} />
+              ) : item.image?.url ? (
+                <img
+                  src={item.image.url}
+                  alt={item.image.alt || "Article Image"}
+                  className={styles.media}
+                />
+              ) : (
+                <div className={styles.videoPlaceholder}>
+                  <span className={styles.playIcon}>▶</span>
+                  <p className={styles.comingSoon}>Media Coming Soon</p>
+                </div>
+              )}
+
+              <div className={styles.info}>
+                <span className={styles.category}>
+                  {item.category || item.label || ""}
+                </span>
+                <h3 className={styles.title}>
+                  {item.heading || item.title || ""}
+                </h3>
+                <p className={styles.description}>{item.description || ""}</p>
+                <p className={styles.meta}>
+                  {item.date}
+                  {item.author ? ` | ${item.author}` : ""}
+                </p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

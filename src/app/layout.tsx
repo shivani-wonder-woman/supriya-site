@@ -15,16 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Supriya Site",
   description: "Personal website",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
 };
 
-// ✅ import client components after metadata
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 import Navbar from "./components/Navbar/Navbar";
-// import Footer from "./components/Footer/Footer";
-import FooterWrapper from "./FooterWrapper";
+import Footer from "./components/Footer/Footer";
 
 export default function RootLayout({
   children,
@@ -37,7 +36,7 @@ export default function RootLayout({
         <div className="layout-wrapper">
           <Navbar />
           <main className="main-content">{children}</main>
-          <FooterWrapper />
+          <Footer />
         </div>
       </body>
     </html>
