@@ -90,10 +90,8 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                 <h3 className={styles.title}>
                   {item.heading || item.title || ""}
                 </h3>
-                <p className={styles.description}>{item.description || ""}</p>
                 <p className={styles.meta}>
                   {item.date}
-                  {item.author ? ` | ${item.author}` : ""}
                   {item.time ? ` | ${item.time}` : ""}
                 </p>
               </div>
