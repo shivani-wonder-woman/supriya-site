@@ -77,9 +77,12 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
               ) : (
                 <div className={styles.videoPlaceholder}>
                   <span className={styles.playIcon}>▶</span>
-                  <p className={styles.comingSoon}>Media Coming Soon</p>
+                  <p className={styles.comingSoon}>
+                    {item.video ? "Media Coming Soon" : "Image Not Available"}
+                  </p>
                 </div>
               )}
+
               <div className={styles.info}>
                 <span className={styles.category}>
                   {item.category || item.label || ""}

@@ -66,7 +66,7 @@ const VideoPage: FC = () => {
               </label>
               <textarea
                 className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-                rows="3"
+                rows={3}
               />
             </div>
 
@@ -76,7 +76,7 @@ const VideoPage: FC = () => {
               </label>
               <textarea
                 className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-                rows="3"
+                rows={3}
               />
             </div>
 

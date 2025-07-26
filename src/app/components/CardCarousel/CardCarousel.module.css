@@ -29,6 +29,12 @@
   justify-content: center;
   margin-bottom: 12px;
 }
+.videoPlaceholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 .playIcon {
   font-size: 32px;

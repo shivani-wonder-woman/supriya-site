@@ -9,6 +9,7 @@ import { asText } from "@prismicio/helpers";
 interface ArticleItem {
   id: string;
   image: { url: string; alt?: string };
+
   heading: string;
   description: string;
   link: { url: string };
@@ -24,8 +25,8 @@ const MainContent: FC = () => {
         const response = await client.getAllByType("blogpost");
         console.log("Raw Prismic response:", response);
 
-        const mappedData = response.map(
-          (doc): ArticleItem => ({
+        const mappedData = response.map((doc): ArticleItem => {
+          return {
             id: doc.id,
             image: {
               url: doc.data.image?.url || "",
@@ -34,11 +35,12 @@ const MainContent: FC = () => {
             heading: asText(doc.data.heading) || "",
             description: asText(doc.data.description) || "",
             link: { url: doc.data.link?.url || "#" },
-            author: doc.data.author || "Unknown Author",
+            author: asText(doc.data.author) || "Unknown Author",
             date: doc.data.date,
-            category: doc.data.category || "General",
-          })
-        );
+            category: asText(doc.data.category) || "General",
+          };
+        });
+        console.log("mappedData:", mappedData);
 
         setArticles(mappedData);
       } catch (error) {
