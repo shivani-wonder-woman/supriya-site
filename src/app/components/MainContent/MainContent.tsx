@@ -61,9 +61,14 @@ const MainContent: FC = () => {
         <h2>Video Snippets</h2>
         <Carousel data={videoData} viewAllLink="/Videos" />
       </div>
+
       <div className={styles.bottomSection}>
         <h2>Articles</h2>
-        <Carousel data={articles} viewAllLink="/Articles" />
+        {articles.length > 0 ? (
+          <Carousel data={articles} viewAllLink="/Articles" />
+        ) : (
+          <p>Loading articles...</p>
+        )}
       </div>
     </section>
   );

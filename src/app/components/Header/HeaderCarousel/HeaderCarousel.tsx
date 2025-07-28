@@ -75,7 +75,7 @@ export default function HeaderCarousel() {
       loop: true,
       mode: "snap",
       slides: {
-        perView: 5,
+        perView: 5.5,
         spacing: 15,
       },
       breakpoints: {

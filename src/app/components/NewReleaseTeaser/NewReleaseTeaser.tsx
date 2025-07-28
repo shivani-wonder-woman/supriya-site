@@ -15,7 +15,7 @@ const NewReleaseTease = () => {
       <Image
         src="/teaser-poster.jpg"
         alt="Teaser"
-        layout="fill"
+        fill
         className={styles.teaseImage}
       />
 
