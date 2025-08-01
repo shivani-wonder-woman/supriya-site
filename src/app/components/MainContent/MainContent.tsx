@@ -2,7 +2,6 @@
 import React, { FC, useEffect, useState } from "react";
 import styles from "./MainContent.module.css";
 import Carousel from "../CardCarousel/CardCarousel";
-import { videoData } from "../Data/Data";
 import { client } from "../../../../prismicio";
 import { asText } from "@prismicio/helpers";
 
