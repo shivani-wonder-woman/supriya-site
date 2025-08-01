@@ -17,7 +17,7 @@ interface CarouselItem {
   description?: string;
   link?: { url: string };
   author?: string;
-  date: string;
+  date?: string;
   category?: string;
 }
 
@@ -28,6 +28,16 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
   const [isReady, setIsReady] = useState(false);
+  const [expandedDescriptions, setExpandedDescriptions] = useState<
+    Record<string, boolean>
+  >({});
+
+  const toggleDescription = (id: string) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
@@ -63,42 +73,79 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
         </Link>
       </div>
       <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
-        {data.map((item) => (
-          <div key={item.id} className={`keen-slider__slide ${styles.slide}`}>
-            <Link href={item.link?.url || "#"} className={styles.cardLink}>
-              {item.video?.url ? (
-                <video src={item.video.url} controls className={styles.media} />
-              ) : item.image?.url ? (
-                <img
-                  src={item.image.url}
-                  alt={item.image.alt || "Article Image"}
-                  className={styles.media}
-                />
-              ) : (
-                <div className={styles.videoPlaceholder}>
-                  <span className={styles.playIcon}>▶</span>
-                  <p className={styles.comingSoon}>
-                    {item.video ? "Media Coming Soon" : "Image Not Available"}
-                  </p>
-                </div>
-              )}
+        {data.map((item) => {
+          const isExpanded = expandedDescriptions[item.id];
 
-              <div className={styles.info}>
-                <span className={styles.category}>
-                  {item.category || item.label || ""}
-                </span>
-                <h3 className={styles.title}>
-                  {item.heading || item.title || ""}
-                </h3>
-                <p className={styles.meta}>
-                  {item.date}
-                  {item.time ? ` | ${item.time}` : ""}
-                </p>
-              </div>
-            </Link>
-          </div>
-        ))}
+          return (
+            <div key={item.id} className={`keen-slider__slide ${styles.slide}`}>
+              <a
+                href={item.link?.url || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cardLink}
+              >
+                {item.video?.url ? (
+                  <video
+                    src={item.video.url}
+                    controls
+                    className={styles.media}
+                  />
+                ) : item.image?.url ? (
+                  <img
+                    src={item.image.url}
+                    alt={item.image.alt || "Article Image"}
+                    className={styles.media}
+                  />
+                ) : (
+                  <div className={styles.videoPlaceholder}>
+                    <span className={styles.playIcon}>▶</span>
+                    <p className={styles.comingSoon}>
+                      {item.video ? "Media Coming Soon" : "Image Not Available"}
+                    </p>
+                  </div>
+                )}
+
+                <div className={styles.info}>
+                  <span className={styles.category}>
+                    {item.category || item.label || ""}
+                  </span>
+                  <h3 className={styles.title}>
+                    {item.heading || item.title || ""}
+                  </h3>
+                  <p className={styles.meta}>
+                    {item.date}
+                    {item.time ? ` | ${item.time}` : ""}
+                  </p>
+
+                  {item.description && (
+                    <div className={styles.descriptionWrapper}>
+                      <p
+                        className={`${styles.description} ${
+                          isExpanded ? styles.full : styles.truncated
+                        }`}
+                      >
+                        {item.description}
+                      </p>
+                      {item.description.length > 100 && (
+                        <button
+                          className={styles.readMoreBtn}
+                          onClick={(e) => {
+                            e.preventDefault(); // Prevent Link navigation
+                            toggleDescription(item.id);
+                          }}
+                        >
+                          {isExpanded ? "Read less" : "Read more"}
+                        </button>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </a>
+            </div>
+          );
+        })}
       </div>
+
       <button
         onClick={() => instanceRef.current?.prev()}
         className={`${styles.navButton} ${styles.left}`}

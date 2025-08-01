@@ -10,7 +10,6 @@ interface ArticleItem {
   id: string;
   image: { url: string; alt?: string };
   heading: string;
-  description: string;
   link: { url: string };
   author: string;
   date: string;
@@ -25,10 +24,19 @@ interface PodcastVideo {
   podcastLink: { url: string };
   podcastReleaseDate: string;
 }
+interface ShortVideo {
+  id: string;
+  shortVideoImage: { url: string; alt?: string };
+  shortVideoTitle: string;
+  shortVideoDescription: string;
+  shortVideoLink: { url: string };
+  shortVideoReleaseDate: string;
+}
 
 const MainContent: FC = () => {
   const [articles, setArticles] = useState<ArticleItem[]>([]);
   const [podcastVideo, setPodcastVideo] = useState<PodcastVideo[]>([]);
+  const [shortVideo, setShortVideo] = useState<ShortVideo[]>([]);
 
   // Fetch blogpost data
   useEffect(() => {
@@ -45,7 +53,6 @@ const MainContent: FC = () => {
               alt: doc.data.image?.alt || "",
             },
             heading: asText(doc.data.heading) || "",
-            description: asText(doc.data.description) || "",
             link: { url: doc.data.link?.url || "#" },
             author: asText(doc.data.author) || "Unknown Author",
             date: doc.data.date,
@@ -80,7 +87,7 @@ const MainContent: FC = () => {
             podcastCategory: asText(doc.data.podcastcategory) || "",
             videoDescription: asText(doc.data.videodescription) || "",
             podcastLink: { url: doc.data.podcastlink?.url || "#" },
-            podcastReleaseDate: doc.data.podcastreleaseDate,
+            podcastReleaseDate: doc.data.podcastreleasedate,
           })
         );
         console.log("mappedVIdeoData", mappedVideoData);
@@ -93,21 +100,103 @@ const MainContent: FC = () => {
 
     fetchPodcastVideo();
   }, []);
+  useEffect(() => {
+    const fetchPodcastVideo = async () => {
+      try {
+        const response = await client.getAllByType("videopodcast");
+        console.log("Raw Prismic response for videopodcast:", response);
+
+        const mappedVideoData = response.map(
+          (doc): PodcastVideo => ({
+            id: doc.id,
+            podcastImage: {
+              url: doc.data.podcastimage?.url || "",
+              alt: doc.data.podcastimage?.alt || "",
+            },
+            podcastCategory: asText(doc.data.podcastcategory) || "",
+            videoDescription: asText(doc.data.videodescription) || "",
+            podcastLink: { url: doc.data.podcastlink?.url || "#" },
+            podcastReleaseDate: doc.data.podcastreleasedate,
+          })
+        );
+        console.log("mappedVIdeoData", mappedVideoData);
+
+        setPodcastVideo(mappedVideoData);
+      } catch (error) {
+        console.error("Error fetching podcastVideo from Prismic:", error);
+      }
+    };
+
+    fetchPodcastVideo();
+  }, []);
+  useEffect(() => {
+    const fetchShortVideo = async () => {
+      try {
+        const response = await client.getAllByType("shortvideo");
+        console.log("Raw Prismic response for shortvideo:", response);
+
+        const mappedShortVideo = response.map(
+          (doc): ShortVideo => ({
+            id: doc.id,
+            shortVideoImage: {
+              url: doc.data.shortvideoimage?.url || "",
+              alt: doc.data.shortvideoimage?.alt || "",
+            },
+            shortVideoTitle: asText(doc.data.shortvideotitle) || "",
+            shortVideoDescription: asText(doc.data.shortvideodescription) || "",
+            shortVideoLink: { url: doc.data.shortvideolink?.url || "#" },
+            shortVideoReleaseDate: doc.data.shortvideoreleasedate,
+          })
+        );
+        console.log("mappedShortVideo", mappedShortVideo);
+
+        setShortVideo(mappedShortVideo);
+      } catch (error) {
+        console.error("Error fetching podcastVideo from Prismic:", error);
+      }
+    };
+
+    fetchShortVideo();
+  }, []);
 
   return (
     <section className={styles.mainSection}>
       <div className={styles.topSection}>
         <h2>Video Podcasts</h2>
         {podcastVideo.length > 0 ? (
-          <Carousel data={podcastVideo} viewAllLink="/Videos" />
+          <Carousel
+            data={podcastVideo.map((video) => ({
+              id: video.id,
+              image: video.podcastImage,
+              category: video.podcastCategory,
+              title: video.videoDescription,
+              link: video.podcastLink,
+              date: video.podcastReleaseDate,
+            }))}
+            viewAllLink="/Videos"
+          />
         ) : (
           <p>Loading videos...</p>
         )}
       </div>
 
-      <div className={styles.topSection}>
+      <div className={styles.middleSection}>
         <h2>Video Snippets</h2>
-        <Carousel data={videoData} viewAllLink="/Videos" />
+        {shortVideo.length > 0 ? (
+          <Carousel
+            data={shortVideo.map((video) => ({
+              id: video.id,
+              image: video.shortVideoImage,
+              category: video.shortVideoTitle,
+              title: video.shortVideoDescription,
+              link: video.shortVideoLink,
+              date: video.shortVideoReleaseDate,
+            }))}
+            viewAllLink="/Videos"
+          />
+        ) : (
+          <p>Loading Shortvideos...</p>
+        )}
       </div>
 
       <div className={styles.bottomSection}>

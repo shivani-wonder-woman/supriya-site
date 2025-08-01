@@ -30,6 +30,7 @@
   width: 100%;
   height: 140px;
   object-fit: cover;
+  aspect-ratio: 16 / 9; /* Maintain image ratio */
 }
 
 .videoPlaceholder {
@@ -41,12 +42,15 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9; /* Same ratio as image */
 }
 .videoPlaceholder img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  object-position: center top;
 }
 
 .playIcon {
