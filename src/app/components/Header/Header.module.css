@@ -62,14 +62,31 @@
   font-size: 1.1rem;
   line-height: 1.6;
   padding: 1.5rem 2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* or 3 or whatever you prefer */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .introduction p {
   margin: 0;
 }
+.introduction p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.introduction.expanded p {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
 
 .readMoreBtn {
-  display: none;
+  display: block;
   background: transparent;
   border: none;
   color: #fff;
@@ -120,23 +137,6 @@
     font-size: 1rem;
     margin-top: 1rem;
     position: relative;
-  }
-
-  .introduction p {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .introduction.expanded p {
-    -webkit-line-clamp: unset;
-    overflow: visible;
-  }
-
-  .readMoreBtn {
-    display: block;
   }
 
   .headerCarousel {

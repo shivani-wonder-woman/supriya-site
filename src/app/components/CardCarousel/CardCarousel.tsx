@@ -5,6 +5,7 @@ import "keen-slider/keen-slider.min.css";
 import styles from "./CardCarousel.module.css";
 import Link from "next/link";
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface CarouselItem {
   id: string;
@@ -91,9 +92,11 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                     className={styles.media}
                   />
                 ) : item.image?.url ? (
-                  <img
+                  <Image
                     src={item.image.url}
                     alt={item.image.alt || "Article Image"}
+                    width={500}
+                    height={300}
                     className={styles.media}
                   />
                 ) : (
