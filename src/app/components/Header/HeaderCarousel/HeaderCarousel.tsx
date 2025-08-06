@@ -6,19 +6,14 @@ import "keen-slider/keen-slider.min.css";
 import styles from "./HeaderCarousel.module.css";
 import Image from "next/image";
 
-interface ArticleItem {
+interface IntroPicItems {
   id: string;
   image: { url: string; alt?: string };
   heading: string;
-  link: { url: string };
-  author: string;
-  date: string;
-  category: string;
 }
 
 interface HeaderCarouselProps {
-  data: ArticleItem[];
-  viewAllLink: string;
+  data: IntroPicItems[];
 }
 
 function autoplayPlugin(delay: number = 3000) {
@@ -56,10 +51,7 @@ function autoplayPlugin(delay: number = 3000) {
   };
 }
 
-export default function HeaderCarousel({
-  data,
-  viewAllLink,
-}: HeaderCarouselProps) {
+export default function HeaderCarousel({ data }: HeaderCarouselProps) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
@@ -121,9 +113,6 @@ export default function HeaderCarousel({
               priority={i < 3}
             />
             <h3>{item.heading}</h3>
-            <p>By {item.author}</p>
-            <p>{item.date}</p>
-            <p>{item.category}</p>
           </div>
         ))}
       </div>

@@ -11,7 +11,6 @@ interface IntroPicItems {
   id: string;
   image: { url: string; alt?: string };
   heading: string;
-  link: { url: string };
 }
 
 const Header: FC = () => {
@@ -36,7 +35,6 @@ const Header: FC = () => {
               alt: doc.data.image?.alt || "",
             },
             heading: asText(doc.data.heading) || "",
-            link: { url: doc.data.link?.url || "#" },
           })
         );
 
