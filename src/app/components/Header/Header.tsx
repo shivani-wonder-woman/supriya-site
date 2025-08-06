@@ -1,16 +1,54 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import Image from "next/image";
 import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
+import { asText } from "@prismicio/helpers";
+import { client } from "../../../../prismicio";
+
+interface IntroPicItems {
+  id: string;
+  image: { url: string; alt?: string };
+  heading: string;
+  link: { url: string };
+}
 
 const Header: FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [introPic, setIntroPic] = useState<IntroPicItems[]>([]);
 
   const toggleText = () => {
     setIsExpanded(!isExpanded);
   };
+
+  useEffect(() => {
+    const fetchIntroPics = async () => {
+      try {
+        const response = await client.getAllByType("introcards");
+        console.log("RawwwwwPrismic response for blogpost:", response);
+
+        const mappedData = response.map(
+          (doc): IntroPicItems => ({
+            id: doc.id,
+            image: {
+              url: doc.data.image?.url || "",
+              alt: doc.data.image?.alt || "",
+            },
+            heading: asText(doc.data.heading) || "",
+            link: { url: doc.data.link?.url || "#" },
+          })
+        );
+
+        console.log("mappedDataaaaa....", mappedData);
+        setIntroPic(mappedData);
+      } catch (error) {
+        console.error("Error fetching introPic from Prismic:", error);
+      }
+    };
+
+    fetchIntroPics();
+  }, []);
 
   return (
     <div className={styles.top}>
@@ -44,10 +82,16 @@ const Header: FC = () => {
             {isExpanded ? "Read Less" : "Read More"}
           </button>
         </div>
+
         <div className={styles.headerCarousel}>
-          <HeaderCarousel />
+          {introPic.length > 0 ? (
+            <HeaderCarousel data={introPic} />
+          ) : (
+            <p>Loading introPics...</p>
+          )}
         </div>
       </div>
+
       <div className={styles.right}>
         <div className={styles.clientImageWrapper}>
           <Image

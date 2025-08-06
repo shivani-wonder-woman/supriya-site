@@ -6,7 +6,21 @@ import "keen-slider/keen-slider.min.css";
 import styles from "./HeaderCarousel.module.css";
 import Image from "next/image";
 
-// Autoplay plugin
+interface ArticleItem {
+  id: string;
+  image: { url: string; alt?: string };
+  heading: string;
+  link: { url: string };
+  author: string;
+  date: string;
+  category: string;
+}
+
+interface HeaderCarouselProps {
+  data: ArticleItem[];
+  viewAllLink: string;
+}
+
 function autoplayPlugin(delay: number = 3000) {
   return (slider: KeenSliderInstance<object, object, KeenSliderHooks>) => {
     let timeout: ReturnType<typeof setTimeout>;
@@ -42,50 +56,26 @@ function autoplayPlugin(delay: number = 3000) {
   };
 }
 
-// Team member interface
-interface TeamMember {
-  name: string;
-  role: string;
-  image: string;
-}
-
-// 🔁 UPDATED: Temporary team data with placeholder images
-const teamMembers: TeamMember[] = [
-  {
-    name: "Aaron Loeb",
-    role: "Founder",
-    image: "https://via.placeholder.com/150", // <-- Placeholder image
-  },
-  {
-    name: "Adeline Palmerston",
-    role: "Manager",
-    image: "https://via.placeholder.com/150", // <-- Placeholder image
-  },
-  {
-    name: "Daniel Gallego",
-    role: "Co-Manager",
-    image: "https://via.placeholder.com/150", // <-- Placeholder image
-  },
-];
-
-// Main component
-export default function HeaderCarousel() {
+export default function HeaderCarousel({
+  data,
+  viewAllLink,
+}: HeaderCarouselProps) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
       mode: "snap",
       slides: {
-        perView: 5.5,
-        spacing: 15,
+        perView: 3.2,
+        spacing: 20,
       },
       breakpoints: {
         "(max-width: 768px)": {
           slides: { perView: 3.7, spacing: 10 },
-          mode: "free-snap", // Enable free scrolling with snapping on mobile/tablet
+          mode: "free-snap",
         },
         "(max-width: 425px)": {
           slides: { perView: 1.7, spacing: 10 },
-          mode: "free-snap", // Enable free scrolling with snapping on mobile
+          mode: "free-snap",
         },
       },
       defaultAnimation: {
@@ -104,7 +94,7 @@ export default function HeaderCarousel() {
     <div
       className={styles.carouselWrapper}
       role="region"
-      aria-label="Team members carousel"
+      aria-label="Article carousel"
     >
       <button
         onClick={prev}
@@ -113,27 +103,31 @@ export default function HeaderCarousel() {
       >
         ‹
       </button>
+
       <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
-        {[...teamMembers, ...teamMembers].map((member, i) => (
+        {data.map((item, i) => (
           <div
-            key={i}
+            key={item.id}
             className={`keen-slider__slide ${styles.card}`}
             role="group"
-            aria-label={`Team member ${member.name}`}
+            aria-label={`Article ${item.heading}`}
           >
             <Image
-              src={member.image}
-              alt={member.name}
+              src={item.image.url}
+              alt={item.image.alt || item.heading}
               className={styles.image}
-              width={150}
-              height={150}
+              width={200}
+              height={120}
               priority={i < 3}
             />
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
+            <h3>{item.heading}</h3>
+            <p>By {item.author}</p>
+            <p>{item.date}</p>
+            <p>{item.category}</p>
           </div>
         ))}
       </div>
+
       <button
         onClick={next}
         className={styles.arrowRight}

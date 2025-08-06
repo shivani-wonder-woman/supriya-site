@@ -81,16 +81,15 @@
 @media (max-width: 768px) {
   .arrowLeft,
   .arrowRight {
-    display: none;  /* Hide arrows on mobile and tablet */
+    display: none; /* Hide arrows on mobile and tablet */
   }
 
   .slider {
-    touch-action: pan-x;  /* Enable horizontal touch scrolling */
-    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 }
 
-/* --- Responsive styles for laptops (1024px and below) --- */
 @media (max-width: 1024px) {
   .slider {
     width: 98%;
@@ -103,4 +102,17 @@
     padding: 0.8rem;
     font-size: 0.95rem;
   }
+}
+.readMoreBtn {
+  margin-top: 10rem;
+  background-color: #ff69b4; /* hot pink */
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.readMoreBtn:hover {
+  background-color: #e055a3; /* darker pink */
 }
