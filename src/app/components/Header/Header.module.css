@@ -40,7 +40,7 @@
 }
 
 .clientImage {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .left {

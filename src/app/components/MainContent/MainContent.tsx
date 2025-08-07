@@ -69,7 +69,6 @@ const MainContent: FC = () => {
     fetchArticles();
   }, []);
 
-  // Fetch videopodcast data
   useEffect(() => {
     const fetchPodcastVideo = async () => {
       try {

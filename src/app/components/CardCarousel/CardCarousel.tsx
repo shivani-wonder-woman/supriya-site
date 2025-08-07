@@ -92,13 +92,15 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                     className={styles.media}
                   />
                 ) : item.image?.url ? (
-                  <Image
-                    src={item.image.url}
-                    alt={item.image.alt || "Article Image"}
-                    width={500}
-                    height={300}
-                    className={styles.media}
-                  />
+                  <div className={styles.mediaWrapper}>
+                    <Image
+                      src={item.image.url}
+                      alt={item.image.alt || "Article Image"}
+                      width={500}
+                      height={300}
+                      className={styles.media}
+                    />
+                  </div>
                 ) : (
                   <div className={styles.videoPlaceholder}>
                     <span className={styles.playIcon}>▶</span>
