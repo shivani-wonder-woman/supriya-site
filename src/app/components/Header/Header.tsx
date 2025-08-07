@@ -89,16 +89,14 @@ const Header: FC = () => {
           )}
         </div>
       </div>
-
       <div className={styles.right}>
         <div className={styles.clientImageWrapper}>
           <Image
             src="/clientImage.png"
             alt="Client Image"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="100vw"
             className={styles.clientImage}
-            priority
           />
         </div>
       </div>
