@@ -57,16 +57,24 @@ export default function HeaderCarousel({ data }: HeaderCarouselProps) {
       loop: true,
       mode: "snap",
       slides: {
-        perView: 3.2,
-        spacing: 20,
+        perView: 5.2,
+        spacing: 10,
       },
       breakpoints: {
+        "(max-width: 1024px)": {
+          slides: { perView: 3.4, spacing: 10 },
+          mode: "free-snap",
+        },
         "(max-width: 768px)": {
-          slides: { perView: 3.7, spacing: 10 },
+          slides: { perView: 2.7, spacing: 10 },
           mode: "free-snap",
         },
         "(max-width: 425px)": {
-          slides: { perView: 1.7, spacing: 10 },
+          slides: { perView: 3, spacing: 8 },
+          mode: "free-snap",
+        },
+        "(max-width: 375px)": {
+          slides: { perView: 2.5, spacing: 8 },
           mode: "free-snap",
         },
       },

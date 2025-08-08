@@ -95,6 +95,7 @@ const Header: FC = () => {
             src="/clientImage.png"
             alt="Client Image"
             fill
+            style={{ objectFit: "contain" }}
             sizes="100vw"
             className={styles.clientImage}
           />

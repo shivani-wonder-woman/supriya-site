@@ -12,24 +12,17 @@
 }
 
 .card {
-  background: linear-gradient(
-    to right,
-    rgba(255, 192, 203, 0.7),
-    /* Pink */ rgba(255, 240, 245, 0.1) /* LavenderBlush */
-  );
-
-  border-radius: 12px;
-  padding: 1rem;
+  background-color: rgb(213, 210, 210);
+  border-radius: 4px;
+  padding: 0.1rem;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .image {
   width: 100%;
-  /* width: 250px; */
   height: 200px;
-  border-radius: 8px;
-  /* margin: 0 auto 1rem; */
+  border-radius: 4px;
   object-fit: cover;
 }
 
@@ -60,12 +53,12 @@
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
-  backdrop-filter: blur(4px); /* optional: adds a frosted-glass effect */
+  backdrop-filter: blur(4px);
 }
 
 .arrowLeft:hover,
 .arrowRight:hover {
-  background: rgba(71, 70, 70, 0.6); /* darken slightly on hover */
+  background: rgba(71, 70, 70, 0.6);
 }
 
 .cardContainer {
@@ -82,12 +75,12 @@
 @media (max-width: 768px) {
   .arrowLeft,
   .arrowRight {
-    display: none; /* Hide arrows on mobile and tablet */
+    display: none;
   }
 
   .slider {
     touch-action: pan-x;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -100,13 +93,13 @@
     padding: 8px;
   }
   .card {
-    padding: 0.8rem;
+    padding: 0.1rem;
     font-size: 0.95rem;
   }
 }
 .readMoreBtn {
   margin-top: 10rem;
-  background-color: #ff69b4; /* hot pink */
+  background-color: #ff69b4;
   color: white;
   border: none;
   font-size: 1rem;
@@ -115,5 +108,5 @@
 }
 
 .readMoreBtn:hover {
-  background-color: #e055a3; /* darker pink */
+  background-color: #e055a3;
 }
