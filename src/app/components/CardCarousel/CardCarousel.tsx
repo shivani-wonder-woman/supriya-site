@@ -55,7 +55,13 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
       },
       "(max-width: 425px)": {
         slides: {
-          perView: 1,
+          perView: 1.3,
+          spacing: 10,
+        },
+      },
+      "(max-width: 320px)": {
+        slides: {
+          perView: 1.2,
           spacing: 10,
         },
       },

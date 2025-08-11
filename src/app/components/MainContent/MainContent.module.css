@@ -5,6 +5,8 @@
   padding: 20px;
   background-color: #fafafa;
   border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .topSection {
@@ -22,4 +24,23 @@
   background-color: #d0d0d0;
   padding: 15px;
   border-radius: 6px;
+}
+@media (max-width: 480px) {
+  .mainSection {
+    padding: 0px;
+  }
+  .topSection h2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
+  .topSection {
+    border-radius: 0px;
+  }
+  .bottomSection {
+    border-radius: 0px;
+  }
+  .heading {
+    padding: 0px;
+  }
 }
