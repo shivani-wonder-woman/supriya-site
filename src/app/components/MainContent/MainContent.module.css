@@ -3,18 +3,23 @@
   flex-direction: column;
   gap: 20px; /* space between top and bottom */
   padding: 20px;
-  background-color: #fafafa; /* light background */
+  background-color: #fafafa;
   border-radius: 8px;
 }
 
 .topSection {
-  background-color: #e0e0e0; /* a light gray for top */
+  background-color: #e0e0e0;
+
   padding: 15px;
   border-radius: 6px;
 }
+.middleSection {
+  background-color: #d0d0d0;
+  padding: 15px;
+}
 
 .bottomSection {
-  background-color: #d0d0d0; /* a slightly darker gray for bottom */
+  background-color: #d0d0d0;
   padding: 15px;
   border-radius: 6px;
 }

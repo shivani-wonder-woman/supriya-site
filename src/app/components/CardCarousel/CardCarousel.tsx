@@ -135,7 +135,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                         <button
                           className={styles.readMoreBtn}
                           onClick={(e) => {
-                            e.preventDefault(); // Prevent Link navigation
+                            e.preventDefault();
                             toggleDescription(item.id);
                           }}
                         >
