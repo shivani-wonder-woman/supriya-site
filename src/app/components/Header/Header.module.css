@@ -38,7 +38,7 @@
 .clientImage {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* or 'contain' depending on the desired effect */
+  object-fit: contain;
   display: block;
 }
 
@@ -62,7 +62,7 @@
   line-height: 1.6;
   padding: 1.5rem 2rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* or 3 or whatever you prefer */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -152,10 +152,9 @@
   }
   .clientImageWrapper {
     width: 100%;
-    position: relative; /* required for Next.js Image fill */
+    position: relative;
 
-    /* height: 250px; */
-    height: 50vw; /* scales with viewport width */
+    height: 50vw;
 
     position: relative;
   }

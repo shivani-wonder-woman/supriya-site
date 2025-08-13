@@ -1,7 +1,7 @@
 .mainSection {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* space between top and bottom */
+  gap: 20px;
   padding: 20px;
   background-color: #fafafa;
   border-radius: 8px;
