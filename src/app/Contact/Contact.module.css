@@ -1,9 +1,8 @@
+.containerWrapper{
+  background-color:#D3D3D3; 
 
-:global(body) {
-  background-color: #D3D3D3; /* light grey */
-  margin: 0;
-  font-family: Arial, sans-serif;
 }
+
 
 .container {
   display: flex;

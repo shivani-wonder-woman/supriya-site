@@ -24,6 +24,7 @@ export default function App() {
   };
 
   return (
+    <div className={styles.containerWrapper}>
     <div className={styles.container}>
       <div className={styles.leftSection}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -108,6 +109,7 @@ export default function App() {
       <div className={styles.rightSection }>
         <h2 className={styles.title}>🎙️ Join Our Podcast</h2>
       </div>
+    </div>
     </div>
   );
 }
