@@ -161,9 +161,8 @@ const MainContent: FC = () => {
     <section className={styles.mainSection}>
       <div className={styles.topSection}>
         <div className={styles.heading}>
-          <h2>Video Podcasts</h2>{" "}
+          <h2>Video Podcasts</h2>
         </div>
-
         {podcastVideo.length > 0 ? (
           <Carousel
             data={podcastVideo.map((video) => ({
