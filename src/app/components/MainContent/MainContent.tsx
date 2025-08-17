@@ -160,7 +160,7 @@ const MainContent: FC = () => {
   return (
     <section className={styles.mainSection}>
       <div className={styles.topSection}>
-        <h2>Video Podcasts</h2>
+        <h2>Video Podcast</h2>
         {podcastVideo.length > 0 ? (
           <Carousel
             data={podcastVideo.map((video) => ({
@@ -179,7 +179,7 @@ const MainContent: FC = () => {
       </div>
 
       <div className={styles.middleSection}>
-        <h2>Video Snippets</h2>
+        <h2>Short Videos </h2>
         {shortVideo.length > 0 ? (
           <Carousel
             data={shortVideo.map((video) => ({

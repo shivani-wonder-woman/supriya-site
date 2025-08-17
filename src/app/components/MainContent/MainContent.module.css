@@ -13,13 +13,26 @@
   padding: 15px;
   border-radius: 6px;
 }
+.topSection h2 {
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+}
+
 .middleSection {
   background-color: #d0d0d0;
   padding: 15px;
+}
+.middleSection h2 {
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .bottomSection {
   background-color: #d0d0d0;
   padding: 15px;
   border-radius: 6px;
+}
+.bottomSection h2 {
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
 }

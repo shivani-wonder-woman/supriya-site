@@ -1,126 +1,113 @@
-import React, { FC } from "react";
+"use client";
+import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./Contact.module.css";
-const VideoPage: FC = () => {
+import Image from "next/image"; // ✅ import
+
+type Inputs = {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  socialMedia: string;
+  podcastTopic: string;
+  place: string;
+};
+
+export default function App() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.splitContainer}>
-        <div className={styles.leftSection}>
-          <form className="space-y-4">
-            <div>
-              <label className="block mb-1">Full Name</label>
-              <input
-                type="text"
-                placeholder="Enter your full name"
-                className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-              />
-              <p className="text-sm text-gray-400"></p>
-            </div>
-
-            <div>
-              <label className="block mb-1">Email Address</label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-              />
-              <p className="text-sm text-gray-400"></p>
-            </div>
-
-            <div>
-              <label className="block mb-1">Phone Number (Optional)</label>
-              <input
-                type="text"
-                placeholder="Enter your phone number"
-                className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-              />
-              <p className="text-sm text-gray-400"></p>
-            </div>
-
-            <div>
-              <label className="block mb-1">City & Country</label>
-              <input
-                type="text"
-                placeholder="Enter your location"
-                className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-              />
-              <p className="text-sm text-gray-400">
-                Helps with time zone coordination.
-              </p>
-            </div>
-
-            <div>
-              <label className="block mb-1">
-                Social Media Handles / Website (Optional)
-              </label>
-              <input
-                type="text"
-                placeholder="e.g. Instagram, LinkedIn, or your website"
-                className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-              />
-              <p className="text-sm text-gray-400"></p>
-            </div>
-
-            <div>
-              <label className="block mb-1">
-                Why do you want to be on the podcast?
-              </label>
-              <textarea
-                className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-                rows={3}
-              />
-            </div>
-
-            <div>
-              <label className="block mb-1">
-                What topic(s) would you like to speak about?
-              </label>
-              <textarea
-                className="w-full p-2 rounded bg-gray-800 border border-gray-600"
-                rows={3}
-              />
-            </div>
-
-            <div>
-              <label className="block mb-1">
-                Have you ever been a guest on a podcast or done any public
-                speaking?
-              </label>
-              <div className="flex items-center space-x-4 mt-2">
-                <label className="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="experience"
-                    value="yes"
-                    className="form-radio text-pink-500"
-                  />
-                  <span className="ml-2">Yes</span>
-                </label>
-                <label className="inline-flex items-center">
-                  <input
-                    type="radio"
-                    name="experience"
-                    value="no"
-                    className="form-radio text-pink-500"
-                  />
-                  <span className="ml-2">No</span>
-                </label>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-lg mt-4">
-                Submit
-              </button>
-            </div>
-          </form>
+      <div className={styles.leftSection}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Name</label>
+          <input
+            {...register("name", { required: "Name is required" })}
+            className={styles.input}
+          />
+          {errors.name && <p className={styles.error}>{errors.name.message}</p>}
         </div>
-        <div className={styles.rightSection}>
-          <h1 className="text-3xl font-bold mb-6 text-center text-pink-400">
-            🎙️ Join the Podcast
-          </h1>
+
+        {/* Email */}
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Email Address</label>
+          <input
+            {...register("email", { required: "Email Address is required" })}
+            className={styles.input}
+          />
+          {errors.email && <p className={styles.error}>{errors.email.message}</p>}
         </div>
+
+        {/* Phone */}
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Phone Number</label>
+          <input
+            {...register("phoneNumber", {
+              required: "Phone number is required",
+            })}
+            className={styles.input}
+          />
+          {errors.phoneNumber && (
+            <p className={styles.error}>{errors.phoneNumber.message}</p>
+          )}
+        </div>
+
+        {/* City & Country */}
+        <div className={styles.formGroup}>
+          <label className={styles.label}>City & Country</label>
+          <input
+            {...register("place", { required: "Place is required" })}
+            className={styles.input}
+          />
+          {errors.place && <p className={styles.error}>{errors.place.message}</p>}
+        </div>
+
+        {/* Social Media */}
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Social Media Handles</label>
+          <input
+            {...register("socialMedia", {
+              required: "Social media handle is required",
+            })}
+            className={styles.input}
+          />
+          {errors.socialMedia && (
+            <p className={styles.error}>{errors.socialMedia.message}</p>
+          )}
+        </div>
+
+        {/* Podcast Topic */}
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Podcast Topic</label>
+          <input
+            {...register("podcastTopic", {
+              required: "Podcast topic is required",
+            })}
+            className={styles.input}
+          />
+          {errors.podcastTopic && (
+            <p className={styles.error}>{errors.podcastTopic.message}</p>
+          )}
+        </div>
+
+        {/* Submit */}
+        <button type="submit" className={styles.button}>
+          Submit
+        </button>
+      </form>
+      </div>
+
+      <div className={styles.rightSection }>
+        <h2 className={styles.title}>🎙️ Join Our Podcast</h2>
       </div>
     </div>
   );
-};
-export default VideoPage;
+}
