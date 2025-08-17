@@ -1,7 +1,6 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./Contact.module.css";
-import Image from "next/image"; // ✅ import
 
 type Inputs = {
   name: string;
