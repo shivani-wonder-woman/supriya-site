@@ -31,8 +31,13 @@
 
 .bottomSection {
   background-color: #d0d0d0;
+
   padding: 15px;
   border-radius: 6px;
+}
+.bottomSection h2 {
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
 }
 @media (max-width: 480px) {
   .mainSection {
@@ -51,9 +56,5 @@
   }
   .heading {
     padding: 0px;
-  }
-  .bottomSection h2 {
-    margin-left: 1.5rem;
-    margin-top: 1.5rem;
   }
 }

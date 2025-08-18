@@ -1,58 +1,45 @@
+.containerWrapper {
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .container {
   display: flex;
-  padding:3rem;
-  margin-left: 9rem;;
-  margin-right: 9rem;
-  background-color:#D3D3D3; 
+  padding-left: 15rem;
+  padding-right: 15rem;
 
-  overflow: hidden;
-}
-.splitContainer {
   width: 100%;
-  height: 100%;
-  display: flex;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  background-color: white;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .leftSection {
-  flex: 2; 
+  flex: 1;
   background: #1f1f1f;
   padding: 5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  flex: 7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  flex: 8;
   background: #181818;
   color: #fff;
   border-top-left-radius: 12px;
-border-bottom-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .rightSection {
-  flex: 2; /* smaller space */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fcd5ce;
+  background: linear-gradient(to bottom, #ec407a, #ffe0b2);
+
   padding: 2rem;
   text-align: center;
   border-top-right-radius: 12px;
-border-bottom-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
-.rightSection {
-  flex: 3;
-  background: linear-gradient(135deg, #ff0080 0%, #ff8cdd 100%);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+.rightSection h2 {
+  padding: 50px;
 }
 
 .formGroup {
@@ -79,39 +66,185 @@ border-bottom-right-radius: 12px;
 }
 
 .input:focus {
-  border-bottom-color: #3b82f6; /* blue on focus */
+  border-bottom-color: #3b82f6;
 }
 
 .error {
-  color: #f87171; /* red */
+  color: #f87171;
   font-size: 0.85rem;
   margin-top: 0.3rem;
 }
 
 .button {
-  width: 100%;
+  width: 40%;
   padding: 0.8rem;
   background: #ec407a;
   color: white;
   border: none;
+
   border-radius: 6px;
   font-size: 1rem;
+
   cursor: pointer;
 }
 
 .button:hover {
-  background:  #fcd5ce; 
-  color:#666
+  background: linear-gradient(135deg, #ec407a, #ffc093);
+
+  color: #666;
+}
+@media (max-width: 1440px) {
+  .containerWrapper {
+    position: relative;
+    height: 85vh;
+  }
+  .container {
+    width: 100%;
+    height: 60vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  .leftSection,
+  .rightSection {
+    height: 100%;
+    width: 100%;
+    min-height: 150px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 5rem;
+  }
+  .leftSection {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding: 100px;
+  }
+  .rightSection {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .input {
+    font-size: 2rem;
+  }
+
+  .formGroup {
+    margin-bottom: 4rem;
+  }
+  .form {
+    padding-bottom: 20px;
+  }
+
+  .button {
+    width: 50%;
+    padding: 0.8rem;
+  }
+  .label {
+    margin-bottom: 0rem;
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .splitContainer {
-    flex-direction: column;
-    height: auto;
+  .containerWrapper {
+    position: relative;
+    height: 85vh;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
+  .container {
+    width: 100%;
+    height: 70vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
   .leftSection,
   .rightSection {
-    min-height: 200px;
-    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    min-height: 150px;
+    padding: 2.5rem;
+  }
+  .leftSection {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  .rightSection {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  .rightSection h2 {
+    padding: 30px;
+  }
+  .form {
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .containerWrapper {
+    position: relative;
+    margin-top: 0rem;
+    height: 100vh;
+    padding-top: 10px;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 0 0 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 70vh;
+  }
+
+  .leftSection,
+  .rightSection {
+    width: 100%;
+    min-height: auto;
+    padding: 1.5rem;
+    border-radius: 0;
+  }
+  .leftSection {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .rightSection {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .rightSection h2 {
+    padding: 15px;
+  }
+
+  .input {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .formGroup {
+    margin-bottom: 0.8rem;
+  }
+
+  .rightSection .title {
+    font-size: 1rem;
+  }
+  .button {
+    width: 35%;
+  }
+  .label {
+    margin-bottom: 0rem;
+    font-size: 0.9rem;
   }
 }

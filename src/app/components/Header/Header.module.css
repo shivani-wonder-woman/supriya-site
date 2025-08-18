@@ -1,6 +1,8 @@
 .top {
   color: rgb(255, 255, 255);
   justify-content: space-between;
+  background: linear-gradient(135deg, #ffe0cc, #f48fb1);
+
   background: linear-gradient(
     135deg,
     hsl(31, 10%, 75%) 0%,
