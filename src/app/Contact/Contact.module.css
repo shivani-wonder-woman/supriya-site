@@ -96,71 +96,19 @@
 @media (max-width: 1440px) {
   .containerWrapper {
     position: relative;
-    height: 85vh;
+    height: auto;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 0px;
   }
   .container {
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  .leftSection,
-  .rightSection {
-    height: 100%;
-    width: 100%;
-    min-height: 150px;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-top: 5rem;
-  }
-  .leftSection {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    padding: 100px;
-  }
-  .rightSection {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-
-  .input {
-    font-size: 2rem;
-  }
-
-  .formGroup {
-    margin-bottom: 4rem;
-  }
-  .form {
-    padding-bottom: 20px;
-  }
-
-  .button {
-    width: 50%;
-    padding: 0.8rem;
-  }
-  .label {
-    margin-bottom: 0rem;
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .containerWrapper {
-    position: relative;
-    height: 85vh;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  .container {
-    width: 100%;
-    height: 70vh;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 9rem;
+    padding-right: 9rem;
   }
 
   .leftSection,
@@ -173,10 +121,91 @@
   .leftSection {
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+    padding: 8rem;
   }
   .rightSection {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
+    height: auto;
+  }
+  .rightSection h2 {
+    padding: 8rem;
+  }
+
+  .input {
+    font-size: 1.8rem;
+  }
+
+  .formGroup {
+    margin-bottom: 5rem;
+  }
+  .form {
+    padding-bottom: 40px;
+  }
+
+  .button {
+    width: 50%;
+    padding: 0.8rem;
+  }
+  .label {
+    margin-bottom: 0rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .containerWrapper {
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .leftSection,
+  .rightSection {
+    padding: 2rem;
+  }
+  .input {
+    font-size: 1.4rem;
+  }
+  .label {
+    font-size: 1.3rem;
+  }
+  .formGroup {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerWrapper {
+    position: relative;
+    height: auto;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 0px;
+  }
+  .container {
+    width: 100%;
+    height: auto;
+  }
+
+  .leftSection,
+  .rightSection {
+    height: 100%;
+    width: 100%;
+    min-height: 150px;
+    padding: 2rem;
+  }
+  .leftSection {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding: 3rem;
+  }
+  .rightSection {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: auto;
   }
   .rightSection h2 {
     padding: 30px;
@@ -184,13 +213,26 @@
   .form {
     padding-bottom: 10px;
   }
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  .label {
+    margin-bottom: 0rem;
+    font-size: 1rem;
+  }
+  .input {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 425px) {
   .containerWrapper {
     position: relative;
     margin-top: 0rem;
-    height: 100vh;
+    height: auto;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 0px;
     padding-top: 10px;
   }
 
@@ -198,10 +240,11 @@
     flex-direction: column-reverse;
     width: 100%;
     max-width: 300px;
-    margin: 0 0 0 0;
+    margin: 0 auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    height: 70vh;
+    height: auto;
+    padding-bottom: 1rem;
   }
 
   .leftSection,
@@ -228,7 +271,7 @@
   }
 
   .button {
-    width: 100%;
+    width: 35%;
     padding: 0.6rem;
     font-size: 0.9rem;
   }
@@ -239,9 +282,6 @@
 
   .rightSection .title {
     font-size: 1rem;
-  }
-  .button {
-    width: 35%;
   }
   .label {
     margin-bottom: 0rem;
