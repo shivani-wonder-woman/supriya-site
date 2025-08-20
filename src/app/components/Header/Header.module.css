@@ -72,8 +72,6 @@
 
 .introduction p {
   margin: 0;
-}
-.introduction p {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -156,11 +154,15 @@
   .introduction {
     padding: 0.5rem;
   }
+  .headerCarousel h2 {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 480px) {
   .top {
     flex-direction: column;
+    padding-top: 12px;
   }
   .right {
     order: -1;
@@ -171,15 +173,12 @@
     padding: 1rem;
   }
   .introduction {
-    padding: 0rem;
     margin-top: 0px;
   }
   .clientImageWrapper {
     width: 100%;
     position: relative;
-
     height: 50vw;
-
-    position: relative;
+    margin-top: 8px;
   }
 }
