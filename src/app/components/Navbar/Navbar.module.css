@@ -7,11 +7,16 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding: 0.5rem;
 }
 
 .right {
   display: flex;
   align-items: center;
+}
+
+.right.hidden {
+  display: none;
 }
 
 .navList {
@@ -23,7 +28,7 @@
   justify-content: center;
   max-width: var(--max-width);
   flex-wrap: wrap;
-  margin-left: 0rem;
+  margin-left: 25rem;
 }
 
 .navItem a {
@@ -39,24 +44,24 @@
 }
 .logoWrapper {
   position: relative;
-  width: 100px;
-  height: 50;
-  padding: 1.5rem;
-  margin-bottom: 2.5rem; 
+  width: 80px;
+  height: 40px;
+  padding: 0;
+  margin-bottom: 0;
   margin-left: 2.5rem;
+  display: flex;
+  align-items: center;
 }
 .logoImage {
   border-radius: 50%;
+  padding: 1rem;
 }
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem;
-  }
-
   .navList {
     gap: 1rem;
-    justify-content: space-around;
+    justify-content: center;
     padding: 0 0.5rem;
+    margin: 0 auto;
   }
 
   .navItem a {
@@ -69,14 +74,40 @@
   .navbar {
     flex-wrap: wrap;
     gap: 0.5rem;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .navList {
     gap: 0.5rem;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .navItem a {
     padding: 0.4rem;
     font-size: 0.85rem;
+  }
+  .logoImage {
+    padding: 20px;
+    margin-right: -29px;
+  }
+  .logoWrapper {
+    margin-top: 5px;
+  }
+
+  .right {
+    list-style: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.4); /* lighter white line */
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* centers the list horizontally */
+    width: 100%; /* take full width */
+  }
+  .right a {
+    gap: 0rem;
   }
 }
