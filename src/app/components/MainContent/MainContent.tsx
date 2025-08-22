@@ -37,12 +37,12 @@ const MainContent: FC = () => {
   const [podcastVideo, setPodcastVideo] = useState<PodcastVideo[]>([]);
   const [shortVideo, setShortVideo] = useState<ShortVideo[]>([]);
 
-  // Fetch blogpost data
+  // Fetch articles data
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await client.getAllByType("blogpost");
-        console.log("Raw Prismic response for blogpost:", response);
+        const response = await client.getAllByType("articles");
+        console.log("Raw Prismic response for articlesBloomBerg:", response);
 
         const mappedData = response.map(
           (doc): ArticleItem => ({

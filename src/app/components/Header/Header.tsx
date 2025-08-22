@@ -98,6 +98,7 @@ const Header: FC = () => {
             style={{ objectFit: "contain" }}
             sizes="100vw"
             className={styles.clientImage}
+            priority
           />
         </div>
       </div>
