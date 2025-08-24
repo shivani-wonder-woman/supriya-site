@@ -1,20 +1,32 @@
 .navbar {
   background-color: #333;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0.5rem;
-  position: relative;
+  padding: 0.5rem 2rem;
 }
 
 .right {
   display: flex;
   align-items: center;
-  margin-left: 10rem;
+  flex: 1;
+}
+
+.navListWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .right.hidden {
@@ -26,8 +38,10 @@
   flex-direction: column;
   cursor: pointer;
   padding: 10px;
-  margin-left: auto;
   z-index: 1001;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .hamburgerLine {
@@ -87,7 +101,6 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5rem;
-  transition: color 0.3s ease;
   padding: 1rem 2rem;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -98,16 +111,10 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.navList {
-  list-style: none;
-  display: flex;
-  gap: 4rem;
-  margin: 0 auto;
-  padding: 0;
-  justify-content: center;
-  max-width: var(--max-width);
-  flex-wrap: wrap;
-  margin-left: 25rem;
+.navItem {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
 }
 
 .navItem a {
@@ -127,19 +134,34 @@
   height: 35px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-left: -9rem;
+  justify-content: flex-start;
+  gap: 0rem;
 }
 
 .logoImage {
   border-radius: 50%;
   padding: 1rem;
+  width: 80px;
+  object-fit: contain;
+}
+
+.joinPodcast {
+  margin: 0;
+}
+
+.joinPodcast a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.joinPodcast a:hover {
+  color: #ffd700;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  }
   .hamburger {
     display: flex;
   }
@@ -163,77 +185,29 @@
     padding: 0.5rem;
     font-size: 0.9rem;
   }
-
-  .logoWrapper {
-    margin-left: -10px;
-  }
 }
-
-@media (max-width: 600px) {
+@media (max-width: 425px) {
   .logoWrapper {
-    margin-left: -100px;
+    margin-left: -2rem;
   }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .navList {
-    gap: 0.5rem;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .navItem a {
-    padding: 0.4rem;
-    font-size: 0.85rem;
-  }
-
-  .logoImage {
-    padding: 20px;
-    margin-right: -29px;
-  }
-
-  .logoWrapper {
-    display: flex;
-    margin-left: -135px;
-  }
-  .joinPodcast {
-    margin-left: 1rem;
-  }
-
-  .right {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    display: inline-block;
-  }
-
-  .right a {
-    gap: 0rem;
-  }
-
   .hamburger {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    margin-right: -1.9rem;
+  }
+  .logoImage {
+    margin-left: -0.4rem;
+  }
+  .joinPodcast a {
+    margin-left: -1rem;
   }
 }
+
 @media (max-width: 1024px) {
   .navbar {
-    padding: 0.5rem 1.5rem; /* adjust spacing */
-    flex-wrap: wrap;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* or center */
+    flex-wrap: nowrap; /* prevent wrapping */
   }
   .logoWrapper {
     position: relative;
@@ -241,5 +215,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .navList {
+    margin-right: 2rem;
   }
 }

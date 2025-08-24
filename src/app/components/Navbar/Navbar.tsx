@@ -33,28 +33,35 @@ export default function Navbar() {
           />
 
           <div className={styles.joinPodcast}>
-            <h4 className={styles.navItem}>
-              <Link href="/Contact">Join Our Podcast</Link>
-            </h4>
+            <Link href="/Contact" className={styles.navItem}>
+              Join Our Podcast
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Hamburger Menu Button */}
-      <div className={styles.hamburger} onClick={toggleMenu}>
-        <div
+      <button
+        className={styles.hamburger}
+        onClick={toggleMenu}
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+        type="button"
+      >
+        <span
           className={`${styles.hamburgerLine} ${isMenuOpen ? styles.open : ""}`}
-        ></div>
-        <div
+        ></span>
+        <span
           className={`${styles.hamburgerLine} ${isMenuOpen ? styles.open : ""}`}
-        ></div>
-        <div
+        ></span>
+        <span
           className={`${styles.hamburgerLine} ${isMenuOpen ? styles.open : ""}`}
-        ></div>
-      </div>
+        ></span>
+      </button>
 
-      {/* Mobile Navigation Menu */}
-      <div
+      <span />
+      <nav
+        id="mobile-menu"
         className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""}`}
       >
         <ul className={styles.mobileNavList}>
@@ -79,9 +86,8 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-      </div>
+      </nav>
 
-      {/* Desktop Navigation */}
       <div className={styles.navListWrapper}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>

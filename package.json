@@ -12,6 +12,7 @@
     "@prismicio/client": "^7.18.1",
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^2.0.1",
+    "bootstrap": "^5.3.7",
     "keen-slider": "^6.8.6",
     "next": "^15.4.3",
     "react": "^19.0.0",
