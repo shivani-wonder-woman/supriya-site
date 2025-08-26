@@ -54,7 +54,7 @@
   margin-bottom: 12px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 16 / 9; /* Same ratio as image */
+  aspect-ratio: 16 / 9;
 }
 .videoPlaceholder img {
   width: 100%;
@@ -123,6 +123,7 @@
   color: #0070f3;
   text-decoration: underline;
   cursor: pointer;
+  display: none;
 }
 
 .mediaWrapper {

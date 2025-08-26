@@ -24,7 +24,7 @@ interface CarouselItem {
 
 interface CarouselProps {
   data: CarouselItem[];
-  viewAllLink: string;
+  viewAllLink?: string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {

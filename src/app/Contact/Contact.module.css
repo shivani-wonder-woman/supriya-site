@@ -66,7 +66,8 @@
 }
 
 .input:focus {
-  border-bottom-color: #3b82f6;
+  border-image: linear-gradient(90deg, #ec407a, #3b82f6) 1;
+  outline: none;
 }
 
 .error {
@@ -93,15 +94,50 @@
 
   color: #666;
 }
+.button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
 .podcastWrapper {
   position: relative;
   width: 100px;
-  height: 50;
+  height: 50px;
   margin-bottom: 2.5rem;
 }
 .podcastImage {
   border-radius: 50%;
 }
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 1;
+  animation: fadeInOut 3s ease-in-out forwards;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Success alert */
+.alertSuccess {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Error alert */
+.alertError {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
 @media (max-width: 1440px) {
   .containerWrapper {
     position: relative;
@@ -159,17 +195,6 @@
   .label {
     margin-bottom: 0rem;
     font-size: 1.6rem;
-  }
-  .Wrapper {
-    position: relative;
-    width: 100px;
-    height: 50;
-    padding: 1.5rem;
-    margin-bottom: 2.5rem;
-    margin-left: 2.5rem;
-  }
-  .Image {
-    border-radius: 50%;
   }
 }
 

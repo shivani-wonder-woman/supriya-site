@@ -71,17 +71,17 @@ export default function Navbar() {
             </Link>
           </li>
           <li className={styles.mobileNavItem}>
-            <Link href="/Videos" onClick={closeMenu}>
+            <Link href="/#topSection" onClick={closeMenu}>
               Video
             </Link>
           </li>
           <li className={styles.mobileNavItem}>
-            <Link href="/Videos" onClick={closeMenu}>
+            <Link href="/#middleSection" onClick={closeMenu}>
               Short Video
             </Link>
           </li>
           <li className={styles.mobileNavItem}>
-            <Link href="/Articles" onClick={closeMenu}>
+            <Link href="/#bottomeSection" onClick={closeMenu}>
               Articles
             </Link>
           </li>
@@ -94,13 +94,13 @@ export default function Navbar() {
             <Link href="/">Home</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/Videos">Video</Link>
+            <Link href="/#topSection">Video</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/Videos">Short Video</Link>
+            <Link href="/#middleSection">Short Video</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/Articles">Articles</Link>
+            <Link href="/#bottomeSection">Articles</Link>
           </li>
         </ul>
       </div>

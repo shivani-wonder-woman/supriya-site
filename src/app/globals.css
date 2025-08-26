@@ -155,3 +155,19 @@ p {
     padding: 0.25rem;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#topSection {
+  scroll-margin-top: 80px;
+}
+
+#middleSection {
+  scroll-margin-top: 80px;
+}
+
+#bottomeSection {
+  scroll-margin-top: 80px;
+}
