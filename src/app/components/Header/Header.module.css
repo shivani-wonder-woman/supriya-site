@@ -1,47 +1,28 @@
-.top {
-  color: rgb(255, 255, 255);
-  justify-content: space-between;
-  background: linear-gradient(135deg, #ffe0cc, #f48fb1);
-
-  background: linear-gradient(
+:root {
+  --primary-text: #fff;
+  --gradient-bg: linear-gradient(
     135deg,
     hsl(31, 10%, 75%) 0%,
     hsl(31, 10%, 60%) 50%,
     hsl(31, 10%, 45%) 100%
   );
-  width: 100%;
+}
+
+.top {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
   margin: 0;
   padding: 0;
+  color: var(--primary-text);
+  background: var(--gradient-bg);
 }
 .textBlock {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem 0 2rem 2rem;
   width: 65%;
-
   margin: 0 auto;
-}
-
-.right {
-  display: flex;
-  width: 35%;
-
-  padding: 0;
-}
-
-.clientImageWrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.clientImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
 }
 
 .left {
@@ -49,12 +30,45 @@
   padding-right: 20px;
 }
 
+.right {
+  display: flex;
+  width: 35%;
+  padding: 0;
+}
+.clientImageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  aspect-ratio: 1/1;
+}
+
+.clientImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .headerCarousel {
   margin-top: auto;
-  margin-bottom: 10px;
+  padding-bottom: 3rem;
 }
 .headerCarousel h2 {
-  margin-left: 4rem;
+  margin-left: 0;
+}
+.bioText {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.bioText.expanded {
+  -webkit-line-clamp: unset;
+  overflow: visible;
 }
 
 .introduction {
@@ -67,16 +81,22 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  transition: all 0.3s ease;
+  .introduction {
+    transition:
+      max-height 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  text-align: left;
 }
 
 .introduction p {
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: max-height 0.3s ease;
 }
 
 .introduction.expanded p {
@@ -88,46 +108,16 @@
   display: block;
   background: transparent;
   border: none;
-  color: #fff;
   text-decoration: underline;
   cursor: pointer;
   padding: 0.5rem 0;
   font-size: 1rem;
+  color: var(--primary-text);
+  text-align: left;
 }
 
 .readMoreBtn:hover {
   opacity: 0.8;
-}
-
-/* Responsive styles */
-@media (max-width: 1024px) {
-  .clientImageWrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  .clientImage {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    display: block;
-  }
-
-  .left {
-    flex: 1;
-    padding-right: 20px;
-  }
-  .right {
-    display: flex;
-    width: 35%;
-
-    padding: 0;
-  }
-  .clientImageWrapper {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -138,24 +128,15 @@
   }
   .textBlock {
     width: 65%;
-    padding: 1.5rem 1rem;
+    padding: 0 1rem 1.5rem 1rem;
   }
-  .right {
-    width: 35%;
-    padding: 0;
+  .headerCarousel {
+    margin-top: auto;
+    padding-bottom: 0;
   }
-  .clientImageWrapper {
-    width: 100%;
-    height: auto;
-  }
-  .clientImage {
-    object-fit: contain;
-  }
+
   .introduction {
     padding: 0.5rem;
-  }
-  .headerCarousel h2 {
-    margin-left: 0;
   }
 }
 
@@ -173,12 +154,10 @@
     padding: 1rem;
   }
   .introduction {
-    margin-top: 0px;
+    margin-top: 0;
   }
   .clientImageWrapper {
-    width: 100%;
     position: relative;
-    height: 50vw;
     margin-top: 8px;
   }
 }

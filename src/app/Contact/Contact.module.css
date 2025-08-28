@@ -144,16 +144,16 @@
     height: auto;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 60px;
-    padding-bottom: 0px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   .container {
     width: 100%;
-    height: 80vh;
-    padding-top: 0px;
-    padding-bottom: 5rem;
+    height: 75vh;
+    padding-top: 1rem;
     padding-left: 9rem;
     padding-right: 9rem;
+    padding-bottom: 1rem;
   }
 
   .leftSection,
@@ -184,9 +184,6 @@
   .formGroup {
     margin-bottom: 5rem;
   }
-  .form {
-    padding-bottom: 40px;
-  }
 
   .button {
     width: 50%;
@@ -200,25 +197,59 @@
 
 @media (max-width: 1024px) {
   .containerWrapper {
-    padding-top: 40px;
-    padding-bottom: 0px;
+    position: relative;
+    height: auto;
+    width: 80vh;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    width: 100%;
+    height: 75vh;
+    padding-top: 1rem;
+    padding-left: 2rem;
   }
+
   .leftSection,
   .rightSection {
-    padding: 2rem;
+    height: 100%;
+    width: 100%;
+    min-height: 150px;
+    padding: 2.5rem;
   }
+  .leftSection {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  .rightSection {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: auto;
+  }
+  .rightSection h2 {
+    padding: 8rem;
+  }
+
   .input {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+  }
+
+  .formGroup {
+    margin-bottom: 5rem;
+  }
+  .form {
+    padding: 10px;
+  }
+
+  .button {
+    width: 50%;
+    padding: 0.8rem;
   }
   .label {
-    font-size: 1.3rem;
-  }
-  .formGroup {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0rem;
+    font-size: 1.6rem;
   }
 }
 

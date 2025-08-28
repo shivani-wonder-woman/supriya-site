@@ -9,13 +9,32 @@ import { client } from "../../../../prismicio";
 
 interface IntroPicItems {
   id: string;
-  image: { url: string; alt?: string };
+  image: { url: string; alt?: string } | null;
   heading: string;
 }
+const bioText = `Over a cup of steaming chai, some of the best stories come to life —
+and that’s what I’m chasing with my YouTube podcast, “Chai Time With
+Supriya.” After more than a decade as a journalist in Japan with
+Kyodo News and Bloomberg, I’m now channeling my passion for
+storytelling into meaningful conversations on culture, technology,
+and health — bridging voices across borders and languages. When I’m
+not recording, I lead media and international communications at a
+venture fund investing in major tech startups across Japan and
+India. I also independently support Indian businesses entering the
+Japanese market — often switching between Hindi, English, and
+Japanese in a single day. Born in India and raised in Japan from the
+age of 15, I’ve grown up navigating cultures. I completed high
+school in Japan, studied in India for my bachelor’s, and returned
+for a master’s at Tokyo University of Foreign Studies. My journalism
+career began in 2014 at Kyodo News, where I covered everything from
+social issues to financial markets in both English and Japanese.
+After nearly a decade, I joined Bloomberg to report on transport,
+autos, and airlines — tracking Japan’s evolving mobility landscape.`;
 
 const Header: FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [introPic, setIntroPic] = useState<IntroPicItems[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   const toggleText = () => {
     setIsExpanded(!isExpanded);
@@ -30,6 +49,7 @@ const Header: FC = () => {
         const mappedData = response.map(
           (doc): IntroPicItems => ({
             id: doc.id,
+
             image: {
               url: doc.data.image?.url || "",
               alt: doc.data.image?.alt || "",
@@ -42,6 +62,7 @@ const Header: FC = () => {
         setIntroPic(mappedData);
       } catch (error) {
         console.error("Error fetching introPic from Prismic:", error);
+        setError("Failed to load intro cards. Please try again later.");
       }
     };
 
@@ -56,33 +77,21 @@ const Header: FC = () => {
             isExpanded ? styles.expanded : ""
           }`}
         >
-          <p>
-            Over a cup of steaming chai, some of the best stories come to life —
-            and that’s what I’m chasing with my YouTube podcast, “Chai Time With
-            Supriya.” After more than a decade as a journalist in Japan with
-            Kyodo News and Bloomberg, I’m now channeling my passion for
-            storytelling into meaningful conversations on culture, technology,
-            and health — bridging voices across borders and languages. When I’m
-            not recording, I lead media and international communications at a
-            venture fund investing in major tech startups across Japan and
-            India. I also independently support Indian businesses entering the
-            Japanese market — often switching between Hindi, English, and
-            Japanese in a single day. Born in India and raised in Japan from the
-            age of 15, I’ve grown up navigating cultures. I completed high
-            school in Japan, studied in India for my bachelor’s, and returned
-            for a master’s at Tokyo University of Foreign Studies. My journalism
-            career began in 2014 at Kyodo News, where I covered everything from
-            social issues to financial markets in both English and Japanese.
-            After nearly a decade, I joined Bloomberg to report on transport,
-            autos, and airlines — tracking Japan’s evolving mobility landscape.
-          </p>
-          <button className={styles.readMoreBtn} onClick={toggleText}>
-            {isExpanded ? "Read Less" : "Read More"}
+          <p>{bioText}</p>
+
+          <button
+            className={styles.readMoreBtn}
+            onClick={toggleText}
+            aria-expanded={isExpanded}
+          >
+            {isExpanded ? "Read Less " : "Read More About Supriya Singh"}
           </button>
         </div>
 
         <div className={styles.headerCarousel}>
-          {introPic.length > 0 ? (
+          {error ? (
+            <p className={styles.error}>{error}</p>
+          ) : introPic.length > 0 ? (
             <HeaderCarousel data={introPic} />
           ) : (
             <p>Loading introPics...</p>
@@ -94,9 +103,9 @@ const Header: FC = () => {
           <Image
             src="/clientImage.png"
             alt="Client Image"
-            fill
+            width={300}
+            height={300}
             style={{ objectFit: "contain" }}
-            sizes="100vw"
             className={styles.clientImage}
             priority
           />
