@@ -9,7 +9,7 @@ import { client } from "../../../../prismicio";
 
 interface IntroPicItem {
   id: string;
-  image: { url: string; alt?: string } | null;
+  image: { url: string; alt?: string };
   heading: string;
 }
 const bioText = `Over a cup of steaming chai, some of the best stories come to life —
@@ -87,7 +87,6 @@ const Header: FC = () => {
             {isExpanded ? "Read Less " : "Read More About Supriya Singh"}
           </button>
         </div>
-
         <div className={styles.headerCarousel}>
           {error ? (
             <p className={styles.error}>{error}</p>

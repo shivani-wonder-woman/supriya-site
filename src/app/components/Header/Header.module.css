@@ -3,8 +3,6 @@
   justify-content: space-between;
   width: 100%;
   margin: 0;
-  padding: 0;
-  color: var(--primary-text);
   background: var(--gradient-bg);
 }
 .textBlock {
@@ -13,6 +11,8 @@
   justify-content: space-between;
   width: 65%;
   margin: 0 auto;
+  color: var(--primary-text);
+  background: var(--gradient-bg);
 }
 
 .left {
