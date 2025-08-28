@@ -7,7 +7,7 @@ import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
 import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
 
-interface IntroPicItems {
+interface IntroPicItem {
   id: string;
   image: { url: string; alt?: string } | null;
   heading: string;
@@ -33,7 +33,7 @@ autos, and airlines — tracking Japan’s evolving mobility landscape.`;
 
 const Header: FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [introPic, setIntroPic] = useState<IntroPicItems[]>([]);
+  const [introPic, setIntroPic] = useState<IntroPicItem[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const toggleText = () => {
@@ -47,7 +47,7 @@ const Header: FC = () => {
         console.log("RawwwwwPrismic response for blogpost:", response);
 
         const mappedData = response.map(
-          (doc): IntroPicItems => ({
+          (doc): IntroPicItem => ({
             id: doc.id,
 
             image: {
