@@ -6,10 +6,6 @@ import Image from "next/image";
 import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
 import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
-interface ClientImageItem {
-  id: string;
-  clientimage: { url: string; alt?: string };
-}
 
 interface IntroPicItem {
   id: string;
