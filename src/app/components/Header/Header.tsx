@@ -6,12 +6,17 @@ import Image from "next/image";
 import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
 import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
+interface ClientImageItem {
+  id: string;
+  clientimage: { url: string; alt?: string };
+}
 
 interface IntroPicItem {
   id: string;
   image: { url: string; alt?: string };
   heading: string;
 }
+
 const bioText = `Over a cup of steaming chai, some of the best stories come to life —
 and that’s what I’m chasing with my YouTube podcast, “Chai Time With
 Supriya.” After more than a decade as a journalist in Japan with
@@ -35,6 +40,10 @@ const Header: FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [introPic, setIntroPic] = useState<IntroPicItem[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [clientImage, setClientImage] = useState<{ url: string; alt: string }>({
+    url: "",
+    alt: "",
+  });
 
   const toggleText = () => {
     setIsExpanded(!isExpanded);
@@ -44,7 +53,6 @@ const Header: FC = () => {
     const fetchIntroPics = async () => {
       try {
         const response = await client.getAllByType("introcards");
-        console.log("RawwwwwPrismic response for blogpost:", response);
 
         const mappedData = response.map(
           (doc): IntroPicItem => ({
@@ -58,7 +66,6 @@ const Header: FC = () => {
           })
         );
 
-        console.log("mappedDataaaaa....", mappedData);
         setIntroPic(mappedData);
       } catch (error) {
         console.error("Error fetching introPic from Prismic:", error);
@@ -67,6 +74,27 @@ const Header: FC = () => {
     };
 
     fetchIntroPics();
+  }, []);
+
+  // For client image (new custom type)
+  useEffect(() => {
+    const fetchClientImage = async () => {
+      try {
+        const response = await client.getAllByType("myimage");
+
+        if (response.length > 0 && response[0].data.image?.url) {
+          setClientImage({
+            url: response[0].data.image.url,
+            alt: response[0].data.image.alt || "Client Image",
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching client image from Prismic:", error);
+        setError("Failed to load client image. Please try again later.");
+      }
+    };
+
+    fetchClientImage();
   }, []);
 
   return (
@@ -99,15 +127,17 @@ const Header: FC = () => {
       </div>
       <div className={styles.right}>
         <div className={styles.clientImageWrapper}>
-          <Image
-            src="/clientImage.png"
-            alt="Client Image"
-            width={300}
-            height={300}
-            style={{ objectFit: "contain" }}
-            className={styles.clientImage}
-            priority
-          />
+          {clientImage.url && (
+            <Image
+              src={clientImage.url}
+              alt={clientImage.alt || "Client Image"}
+              width={300}
+              height={300}
+              style={{ objectFit: "contain" }}
+              className={styles.clientImage}
+              priority
+            />
+          )}
         </div>
       </div>
     </div>
