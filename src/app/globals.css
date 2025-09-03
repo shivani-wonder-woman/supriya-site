@@ -12,6 +12,12 @@
     hsl(31, 10%, 60%) 50%,
     hsl(31, 10%, 45%) 100%
   );
+  --gradient-bgg: linear-gradient(
+    -45deg,
+    hsl(31, 10%, 75%) 100%,
+    hsl(31, 10%, 60%) 0%,
+    hsl(31, 10%, 45%) 50%
+  );
 }
 
 @media (prefers-color-scheme: dark) {

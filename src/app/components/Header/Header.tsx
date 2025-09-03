@@ -127,11 +127,10 @@ const Header: FC = () => {
             <Image
               src={clientImage.url}
               alt={clientImage.alt || "Client Image"}
-              width={300}
-              height={300}
-              style={{ objectFit: "contain" }}
+              width={0}
+              height={0}
+              sizes="100vw"
               className={styles.clientImage}
-              priority
             />
           )}
         </div>

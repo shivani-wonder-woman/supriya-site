@@ -1,3 +1,8 @@
+body {
+  padding-top: 70px;
+  background-color: #d3d3d3;
+}
+
 .navbar {
   background-color: #333;
   width: 100%;
@@ -5,7 +10,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  min-height: 70px;
 }
 
 .right {
@@ -55,7 +64,7 @@
 }
 
 .hamburgerLine.open:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(-45deg) translate(-5.5px, 5.5px);
 }
 
 .hamburgerLine.open:nth-child(2) {
@@ -63,7 +72,7 @@
 }
 
 .hamburgerLine.open:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(45deg) translate(-7px, -7px);
 }
 
 .mobileMenu {
@@ -96,7 +105,8 @@
   list-style: none;
   display: flex;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  gap: 1rem;
   margin: 0;
 }
 
@@ -205,14 +215,17 @@
   .joinPodcast a {
     margin-left: -1rem;
   }
+  .mobileNavList {
+    gap: 0rem;
+  }
 }
 
 @media (max-width: 1024px) {
   .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* or center */
-    flex-wrap: nowrap; /* prevent wrapping */
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
   .logoWrapper {
     position: relative;
