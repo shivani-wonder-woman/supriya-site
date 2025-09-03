@@ -41,6 +41,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Space between lines of text */
   line-height: 1.5;
+  padding-top: 70px; /* push content down for fixed navbar */
+  background-color: #d3d3d3;
 }
 
 * {
