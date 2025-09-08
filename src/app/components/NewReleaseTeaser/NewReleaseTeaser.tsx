@@ -1,6 +1,5 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import styles from "./NewReleaseTeaser.module.css";
 
 const NewReleaseTease = () => {

@@ -133,7 +133,7 @@ export default function App() {
               </label>
               <input
                 id="place"
-                autoComplete="place"
+                autoComplete="off"
                 {...register("place", {
                   required: "Place is required",
                   pattern: {
