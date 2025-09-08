@@ -66,8 +66,12 @@ export default function App() {
         <div className={styles.leftSection}>
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
             <div className={styles.formGroup}>
-              <label className={styles.label}>Name</label>
+              <label htmlFor="name" className={styles.label}>
+                Name
+              </label>
               <input
+                id="name"
+                autoComplete="name"
                 {...register("name", {
                   required: "Name is required",
                   pattern: {
@@ -84,8 +88,12 @@ export default function App() {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label}>Email Address</label>
+              <label htmlFor="email" className={styles.label}>
+                Email Address
+              </label>
               <input
+                id="email"
+                autoComplete="email"
                 type="email"
                 {...register("email", {
                   required: "Email Address is required",
@@ -99,8 +107,12 @@ export default function App() {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label}>Phone Number</label>
+              <label htmlFor="phoneNumber" className={styles.label}>
+                Phone Number
+              </label>
               <input
+                id="phoneNumber"
+                autoComplete="tel"
                 {...register("phoneNumber", {
                   required: "Phone number is required",
                   pattern: {
@@ -116,8 +128,12 @@ export default function App() {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label}>City & Country</label>
+              <label htmlFor="place" className={styles.label}>
+                City & Country
+              </label>
               <input
+                id="place"
+                autoComplete="place"
                 {...register("place", {
                   required: "Place is required",
                   pattern: {
@@ -134,8 +150,12 @@ export default function App() {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label}>Social Media Handles</label>
+              <label htmlFor="socialMedia" className={styles.label}>
+                Social Media Handles
+              </label>
               <input
+                id="socialMedia"
+                autoComplete="off"
                 {...register("socialMedia", {
                   required: "Social media handle is required",
                   pattern: {
@@ -152,8 +172,12 @@ export default function App() {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label}>Tell Your Story</label>
+              <label htmlFor="tellYourStory" className={styles.label}>
+                Tell Your Story
+              </label>
               <input
+                id="tellYourStory"
+                autoComplete="off"
                 {...register("tellYourStory", {
                   required: "Tell Your Story is required",
                   pattern: {

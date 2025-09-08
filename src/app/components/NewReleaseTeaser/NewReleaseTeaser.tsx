@@ -12,13 +12,6 @@ const NewReleaseTease = () => {
 
   return (
     <div className={styles.teaseContainer}>
-      <Image
-        src="/teaser-poster.jpg"
-        alt="Teaser"
-        fill
-        className={styles.teaseImage}
-      />
-
       <div className={styles.overlayContent}>
         <h1 className={styles.title}>New Release Teaser</h1>
         <button onClick={handleWatchNow} className={styles.watchButton}>

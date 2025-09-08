@@ -100,6 +100,7 @@
   text-decoration: underline;
   cursor: pointer;
   padding: 0.5rem 0;
+  padding-top: 1rem;
   font-size: 1rem;
   color: var(--primary-text);
   text-align: left;
@@ -130,6 +131,9 @@
   .introduction p {
     -webkit-line-clamp: 4;
   }
+  .readMoreBtn {
+    padding-top: 0.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -149,5 +153,8 @@
   }
   .clientImageWrapper {
     position: relative;
+  }
+  .readMoreBtn {
+    padding-top: 0.5rem;
   }
 }

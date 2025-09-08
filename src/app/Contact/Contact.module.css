@@ -157,7 +157,7 @@
   .leftSection {
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    padding: 3rem;
+    padding: 5rem 3rem 3rem 3rem;
   }
   .rightSection {
     border-top-right-radius: 12px;

@@ -41,7 +41,7 @@ export default function Navbar() {
       </div>
 
       <button
-        className={styles.hamburger}
+        className={`${styles.hamburger} ${isContactPage ? styles.hidden : ""}`}
         onClick={toggleMenu}
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
@@ -62,7 +62,7 @@ export default function Navbar() {
       <span />
       <nav
         id="mobile-menu"
-        className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""}`}
+        className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""} ${isContactPage ? styles.hidden : ""}`}
       >
         <ul className={styles.mobileNavList}>
           <li className={styles.mobileNavItem}>
@@ -87,8 +87,9 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-
-      <div className={styles.navListWrapper}>
+      <div
+        className={`${styles.navListWrapper} ${isContactPage ? styles.hidden : ""}`}
+      >
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
