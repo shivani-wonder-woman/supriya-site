@@ -136,6 +136,7 @@ const Header: FC = () => {
               className={styles.clientImage}
             />
           )}
+          {error && <p className={styles.error}>{error}</p>}
         </div>
       </div>
     </div>
