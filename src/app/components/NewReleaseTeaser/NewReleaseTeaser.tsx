@@ -4,24 +4,31 @@ import React, { FC, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./NewReleaseTeaser.module.css";
 import { client } from "../../../../prismicio";
-import { asText } from "@prismicio/helpers";
 interface TeaserItem {
   image: { url: string; alt?: string };
   link: { url: string };
 }
 
 const NewReleaseTease: FC = () => {
+  const handleWatchNow = () => {
+    if (clientImage.linkUrl) {
+      window.open(clientImage.linkUrl, "_blank", "noopener,noreferrer");
+    }
+  };
+
   const [teaserVideo, setTeaserVideo] = useState<TeaserItem[]>([]);
 
-  const [clientImage, setClientImage] = useState<{ url: string; alt: string }>({
+  const [clientImage, setClientImage] = useState<{
+    url: string;
+    alt: string;
+    linkUrl: string;
+  }>({
     url: "",
     alt: "",
+    linkUrl: "",
   });
   const router = useRouter();
 
-  const handleWatchNow = () => {
-    router.push("/TeaserVideo");
-  };
   useEffect(() => {
     const fetchClientImage = async () => {
       try {
@@ -31,6 +38,7 @@ const NewReleaseTease: FC = () => {
           setClientImage({
             url: response[0].data.image.url,
             alt: response[0].data.image.alt || "Client Image",
+            linkUrl: response[0].data.link?.url || "#",
           });
         }
       } catch (error) {
@@ -45,24 +53,30 @@ const NewReleaseTease: FC = () => {
     <div className={styles.teaseContainer}>
       <div className={styles.imageContainer}>
         {clientImage.url && (
-          <Image
-            src={clientImage.url}
-            alt={clientImage.alt || "Client Image"}
-            width={500}
-            height={300}
-            sizes="100vw"
-            className={styles.clientImage}
-          />
+          <a
+            href={clientImage.linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={clientImage.url}
+              alt={clientImage.alt || "Client Image"}
+              width={500}
+              height={300}
+              sizes="100vw"
+              className={styles.clientImage}
+            />
+          </a>
         )}
       </div>
-
+      s
       <div className={styles.contentContainer}>
         <h1 className={styles.title}>New Release Teaser</h1>
         <div className={styles.description}>
           12-year-old Shun Sasaki, who conducts free tours twice a month and
-          tells foreigners in English what happened 80 years ago. 12-year-old
-          Shun Sasaki, who conducts free tours twice a month and tells
-          foreigners in English what happened 80 years ago.
+          tells foreigners in English what happened 80 years ago. Shun speaks
+          about his great-grandmother, an atomic bomb survivo, and urges the
+          world to stop war.
         </div>
         <button onClick={handleWatchNow} className={styles.watchButton}>
           Watch Now

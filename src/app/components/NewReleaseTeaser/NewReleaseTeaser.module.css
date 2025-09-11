@@ -61,6 +61,11 @@
   color: white;
   font-size: 16px;
   padding-right: 4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .watchButton {
@@ -133,8 +138,8 @@
 }
 @media (max-width: 480px) {
   .teaseContainer {
-    padding-top: 0.5rem;
-    background-color: #d0d0d0;
+    padding-top: 0.8rem;
+    background-color: #c0c0c0b8;
   }
 
   .imageContainer {
