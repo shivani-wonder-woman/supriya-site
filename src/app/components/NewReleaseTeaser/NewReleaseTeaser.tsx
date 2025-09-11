@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
-
 import React, { FC, useState, useEffect } from "react";
-
 import { useRouter } from "next/navigation";
 import styles from "./NewReleaseTeaser.module.css";
-import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
+import { asText } from "@prismicio/helpers";
+interface TeaserItem {
+  image: { url: string; alt?: string };
+  link: { url: string };
+}
 
-const NewReleaseTease = () => {
-  const [error, setError] = useState("");
+const NewReleaseTease: FC = () => {
+  const [teaserVideo, setTeaserVideo] = useState<TeaserItem[]>([]);
+
   const [clientImage, setClientImage] = useState<{ url: string; alt: string }>({
     url: "",
     alt: "",
@@ -32,7 +35,6 @@ const NewReleaseTease = () => {
         }
       } catch (error) {
         console.error("Error fetching client image from Prismic:", error);
-        setError("Failed to load client image. Please try again later.");
       }
     };
 
@@ -58,9 +60,9 @@ const NewReleaseTease = () => {
         <h1 className={styles.title}>New Release Teaser</h1>
         <div className={styles.description}>
           12-year-old Shun Sasaki, who conducts free tours twice a month and
-          tells foreigners in English what happened 80 years ago. Shun speaks
-          about his great-grandmother, an atomic bomb survivor, and urges the
-          world to stop war.
+          tells foreigners in English what happened 80 years ago. 12-year-old
+          Shun Sasaki, who conducts free tours twice a month and tells
+          foreigners in English what happened 80 years ago.
         </div>
         <button onClick={handleWatchNow} className={styles.watchButton}>
           Watch Now

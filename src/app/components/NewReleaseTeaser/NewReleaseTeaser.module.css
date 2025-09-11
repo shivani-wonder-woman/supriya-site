@@ -23,16 +23,15 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  padding-left: 4rem;
+  padding-left: 5rem;
 }
 
 .clientImage {
   object-fit: contain;
-  width: 100%;
   max-width: 500px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(9, 9, 9, 0.5); /* Add shadow */
+  box-shadow: 0 4px 8px rgba(9, 9, 9, 0.5);
   z-index: 1;
   filter: contrast(40%);
 }
@@ -47,23 +46,26 @@
   align-items: flex-start;
   color: white;
   z-index: 1;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: rgb(221, 75, 75);
+  /* color: rgb(221, 75, 75); */
 }
 
 .description {
   color: white;
   font-size: 16px;
+  padding-right: 4rem;
 }
 
 .watchButton {
   padding: 0.75rem 1.5rem;
-  background-color: #2563eb; /* Tailwind's blue-600 */
+  background-color: #ec407a;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -73,5 +75,105 @@
 }
 
 .watchButton:hover {
-  background-color: #1d4ed8; /* Tailwind's blue-700 */
+  background: linear-gradient(135deg, #ec407a, #ffc093);
+}
+@media (max-width: 1024px) {
+  .teaseContainer {
+    width: 100%;
+    height: 300px;
+  }
+  .imageContainer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teaseContainer::before {
+    background-image: none;
+    background-color: #e0e0e0;
+    position: relative;
+  }
+
+  .teaseContainer {
+    flex-direction: column;
+    height: auto;
+    padding-top: 1rem;
+  }
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    padding: 0rem;
+  }
+  .clientImage {
+    width: 100%;
+    max-width: none;
+    filter: contrast(20%);
+    border-radius: 0px;
+  }
+  .clientImage:hover {
+    filter: contrast(50%);
+  }
+
+  .contentContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .teaseContainer {
+    padding-top: 0.5rem;
+    background-color: #d0d0d0;
+  }
+
+  .imageContainer {
+    width: 100%;
+    position: relative;
+  }
+
+  .clientImage {
+    width: 100%;
+    max-width: none;
+    filter: contrast(20%);
+  }
+  .contentContainer {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .title {
+    padding: 0.5rem;
+    white-space: nowrap; /* Prevent wrapping */
+    background-color: rgb(12 11 11 / 50%);
+    font-size: 1.8rem; /* Smaller heading */
+    margin-top: 1rem;
+  }
+
+  .description {
+    display: none;
+    font-size: 14px; /* Smaller text */
+    padding-right: 1rem;
+  }
+
+  .watchButton {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    margin-top: 0rem;
+  }
+  .watchButton:hover {
+    background: linear-gradient(135deg, #ec407a, #ffc093);
+  }
 }
