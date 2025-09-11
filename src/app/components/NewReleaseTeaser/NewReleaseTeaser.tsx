@@ -16,8 +16,6 @@ const NewReleaseTease: FC = () => {
     }
   };
 
-  const [teaserVideo, setTeaserVideo] = useState<TeaserItem[]>([]);
-
   const [clientImage, setClientImage] = useState<{
     url: string;
     alt: string;
@@ -27,7 +25,6 @@ const NewReleaseTease: FC = () => {
     alt: "",
     linkUrl: "",
   });
-  const router = useRouter();
 
   useEffect(() => {
     const fetchClientImage = async () => {
@@ -69,7 +66,7 @@ const NewReleaseTease: FC = () => {
           </a>
         )}
       </div>
-      s
+
       <div className={styles.contentContainer}>
         <h1 className={styles.title}>New Release Teaser</h1>
         <div className={styles.description}>
