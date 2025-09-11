@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
 import React, { FC, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import styles from "./NewReleaseTeaser.module.css";
 import { client } from "../../../../prismicio";
-interface TeaserItem {
-  image: { url: string; alt?: string };
-  link: { url: string };
-}
+// interface TeaserItem {
+//   image: { url: string; alt?: string };
+//   link: { url: string };
+// }
 
 const NewReleaseTease: FC = () => {
   const handleWatchNow = () => {

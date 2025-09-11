@@ -3,16 +3,16 @@
 import React, { FC, useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import Image from "next/image";
-import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
-import { asText } from "@prismicio/helpers";
+// import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
+// import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
 import { useRouter } from "next/navigation";
 
-interface IntroPicItem {
-  id: string;
-  image: { url: string; alt?: string };
-  heading: string;
-}
+// interface IntroPicItem {
+//   id: string;
+//   image: { url: string; alt?: string };
+//   heading: string;
+// }
 
 const bioText = `Over a cup of steaming chai, some of the best stories come to life —
 and that’s what I’m chasing with my YouTube podcast, “Chai Time With
