@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TeaserVideo.module.css";
+import styles from "./Introduction.module.css";
 export default function TeaserPage() {
   return (
     <main className={styles.container}>

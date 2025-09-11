@@ -6,6 +6,7 @@ import Image from "next/image";
 import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
 import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
+import { useRouter } from "next/navigation";
 
 interface IntroPicItem {
   id: string;
@@ -33,46 +34,50 @@ After nearly a decade, I joined Bloomberg to report on transport,
 autos, and airlines — tracking Japan’s evolving mobility landscape.`;
 
 const Header: FC = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [introPic, setIntroPic] = useState<IntroPicItem[]>([]);
+  // const [isExpanded, setIsExpanded] = useState(false);
+  // const [introPic, setIntroPic] = useState<IntroPicItem[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [clientImage, setClientImage] = useState<{ url: string; alt: string }>({
     url: "",
     alt: "",
   });
+  const router = useRouter();
 
-  const toggleText = () => {
-    setIsExpanded(!isExpanded);
+  const handleReadMore = () => {
+    router.push("/Introduction");
   };
 
-  useEffect(() => {
-    const fetchIntroPics = async () => {
-      try {
-        const response = await client.getAllByType("introcards");
+  // const toggleText = () => {
+  //   setIsExpanded(!isExpanded);
+  // };
 
-        const mappedData = response.map(
-          (doc): IntroPicItem => ({
-            id: doc.id,
+  // useEffect(() => {
+  //   const fetchIntroPics = async () => {
+  //     try {
+  //       const response = await client.getAllByType("introcards");
 
-            image: {
-              url: doc.data.image?.url || "",
-              alt: doc.data.image?.alt || "",
-            },
-            heading: asText(doc.data.heading) || "",
-          })
-        );
+  //       const mappedData = response.map(
+  //         (doc): IntroPicItem => ({
+  //           id: doc.id,
 
-        setIntroPic(mappedData);
-      } catch (error) {
-        console.error("Error fetching introPic from Prismic:", error);
-        setError("Failed to load intro cards. Please try again later.");
-      }
-    };
+  //           image: {
+  //             url: doc.data.image?.url || "",
+  //             alt: doc.data.image?.alt || "",
+  //           },
+  //           heading: asText(doc.data.heading) || "",
+  //         })
+  //       );
 
-    fetchIntroPics();
-  }, []);
+  //       setIntroPic(mappedData);
+  //     } catch (error) {
+  //       console.error("Error fetching introPic from Prismic:", error);
+  //       setError("Failed to load intro cards. Please try again later.");
+  //     }
+  //   };
 
-  // For client image (new custom type)
+  //   fetchIntroPics();
+  // }, []);
+
   useEffect(() => {
     const fetchClientImage = async () => {
       try {
@@ -96,22 +101,20 @@ const Header: FC = () => {
   return (
     <div className={styles.top}>
       <div className={styles.textBlock}>
-        <div
+        <div className={styles.introduction}>
+          {/* <div
           className={`${styles.introduction} ${
             isExpanded ? styles.expanded : ""
           }`}
-        >
+        > */}
           <p>{bioText}</p>
 
-          <button
-            className={styles.readMoreBtn}
-            onClick={toggleText}
-            aria-expanded={isExpanded}
-          >
-            {isExpanded ? "Read Less " : "Read More About Supriya Singh"}
+          <button className={styles.readMoreBtn} onClick={handleReadMore}>
+            About Supriya Singh...
+            {/* {isExpanded ? "Read Less " : " About Supriya Singh"} */}
           </button>
         </div>
-        <div className={styles.headerCarousel}>
+        {/* <div className={styles.headerCarousel}>
           {error ? (
             <p className={styles.error}>{error}</p>
           ) : introPic.length > 0 ? (
@@ -119,7 +122,7 @@ const Header: FC = () => {
           ) : (
             <p>Loading introPics...</p>
           )}
-        </div>
+        </div> */}
       </div>
       <div className={styles.right}>
         <div className={styles.clientImageWrapper}>
