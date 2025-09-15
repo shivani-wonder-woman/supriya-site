@@ -57,8 +57,8 @@ const NewReleaseTease: FC = () => {
             <Image
               src={clientImage.url}
               alt={clientImage.alt || "Client Image"}
-              width={500}
-              height={300}
+              width={0}
+              height={0}
               sizes="100vw"
               className={styles.clientImage}
             />

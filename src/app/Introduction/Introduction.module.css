@@ -1,7 +1,33 @@
-.container {
+/* .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #faf0e6;
+} */
+.content {
+  position: absolute; /* position over the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfectly center */
+  text-align: center;
+  color: white; /* optional, for better visibility */
+}
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.flower {
+  width: 100%; /* or use a fixed width like 300px */
+  max-width: 600px; /* prevents it from getting too large */
+  height: auto; /* maintains aspect ratio */
+  display: block;
+  margin: 0 auto; /* centers it if needed */
+}
+
+.bio {
+  background-color: blue;
+}
+.achievements {
+  background-color: red;
 }

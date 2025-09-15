@@ -2,40 +2,10 @@
 
 import React, { FC, useState, useEffect } from "react";
 import styles from "./Header.module.css";
-import Image from "next/image";
-// import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
-// import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
 import { useRouter } from "next/navigation";
 
-// interface IntroPicItem {
-//   id: string;
-//   image: { url: string; alt?: string };
-//   heading: string;
-// }
-
-const bioText = `Over a cup of steaming chai, some of the best stories come to life —
-and that’s what I’m chasing with my YouTube podcast, “Chai Time With
-Supriya.” After more than a decade as a journalist in Japan with
-Kyodo News and Bloomberg, I’m now channeling my passion for
-storytelling into meaningful conversations on culture, technology,
-and health — bridging voices across borders and languages. When I’m
-not recording, I lead media and international communications at a
-venture fund investing in major tech startups across Japan and
-India. I also independently support Indian businesses entering the
-Japanese market — often switching between Hindi, English, and
-Japanese in a single day. Born in India and raised in Japan from the
-age of 15, I’ve grown up navigating cultures. I completed high
-school in Japan, studied in India for my bachelor’s, and returned
-for a master’s at Tokyo University of Foreign Studies. My journalism
-career began in 2014 at Kyodo News, where I covered everything from
-social issues to financial markets in both English and Japanese.
-After nearly a decade, I joined Bloomberg to report on transport,
-autos, and airlines — tracking Japan’s evolving mobility landscape.`;
-
 const Header: FC = () => {
-  // const [isExpanded, setIsExpanded] = useState(false);
-  // const [introPic, setIntroPic] = useState<IntroPicItem[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [clientImage, setClientImage] = useState<{ url: string; alt: string }>({
     url: "",
@@ -46,37 +16,6 @@ const Header: FC = () => {
   const handleReadMore = () => {
     router.push("/Introduction");
   };
-
-  // const toggleText = () => {
-  //   setIsExpanded(!isExpanded);
-  // };
-
-  // useEffect(() => {
-  //   const fetchIntroPics = async () => {
-  //     try {
-  //       const response = await client.getAllByType("introcards");
-
-  //       const mappedData = response.map(
-  //         (doc): IntroPicItem => ({
-  //           id: doc.id,
-
-  //           image: {
-  //             url: doc.data.image?.url || "",
-  //             alt: doc.data.image?.alt || "",
-  //           },
-  //           heading: asText(doc.data.heading) || "",
-  //         })
-  //       );
-
-  //       setIntroPic(mappedData);
-  //     } catch (error) {
-  //       console.error("Error fetching introPic from Prismic:", error);
-  //       setError("Failed to load intro cards. Please try again later.");
-  //     }
-  //   };
-
-  //   fetchIntroPics();
-  // }, []);
 
   useEffect(() => {
     const fetchClientImage = async () => {
@@ -99,47 +38,28 @@ const Header: FC = () => {
   }, []);
 
   return (
-    <div className={styles.top}>
-      <div className={styles.textBlock}>
-        <div className={styles.introduction}>
-          {/* <div
-          className={`${styles.introduction} ${
-            isExpanded ? styles.expanded : ""
-          }`}
-        > */}
-          <p>{bioText}</p>
-
-          <button className={styles.readMoreBtn} onClick={handleReadMore}>
-            About Supriya Singh...
-            {/* {isExpanded ? "Read Less " : " About Supriya Singh"} */}
-          </button>
-        </div>
-        {/* <div className={styles.headerCarousel}>
-          {error ? (
-            <p className={styles.error}>{error}</p>
-          ) : introPic.length > 0 ? (
-            <HeaderCarousel data={introPic} />
-          ) : (
-            <p>Loading introPics...</p>
-          )}
-        </div> */}
-      </div>
-      <div className={styles.right}>
-        <div className={styles.clientImageWrapper}>
-          {clientImage.url && (
-            <Image
-              src={clientImage.url}
-              alt={clientImage.alt || "Client Image"}
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={styles.clientImage}
-            />
-          )}
-          {error && <p className={styles.error}>{error}</p>}
+    <main className={styles.container}>
+      <div className={styles.overlay}>
+        <img
+          src="/backgroundImage.png"
+          alt="flower branch"
+          className={styles.flower}
+        />
+        <img
+          src="/desktopBackground.png"
+          alt=" deskt top flower branch"
+          className={styles.desktopFlower}
+        />
+        <div className={styles.content}>
+          <div className={styles.bio}>
+            <h1>Bio</h1>
+          </div>
+          <div className={styles.achievements}>
+            <h1>Achievements</h1>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -1,181 +1,112 @@
-.top {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0;
-  background: var(--gradient-bg);
-  min-height: 30vh;
-}
-.textBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 65%;
-  margin: 0 auto;
-  color: var(--primary-text);
-  background: var(--gradient-bg);
-}
-
-.left {
-  flex: 1;
-  padding-right: 20px;
-}
-
-.right {
-  display: flex;
-  width: 35%;
-  padding: 0;
-  background: var(--gradient-bg);
-}
-.clientImageWrapper {
-  width: 100%;
-  height: 100%;
+.container {
+  width: 100vw;
+  height: auto;
   position: relative;
 }
 
-.clientImage {
+.overlay {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 85vh;
+}
+.flower {
+  width: 95vh;
+  max-width: 1024px;
+  height: auto;
+  display: none;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.desktopFlower {
+  width: 100vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   object-fit: contain;
 }
 
-.headerCarousel {
-  margin-top: auto;
-  padding-bottom: 3rem;
-  display: none;
-}
-.headerCarousel h2 {
-  margin-left: 0;
-}
-.bioText {
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  transition:
-    max-height 0.3s ease,
-    opacity 0.3s ease;
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
 }
 
-.bioText.expanded {
-  -webkit-line-clamp: unset;
-  overflow: visible;
-}
-
-.introduction {
-  transition:
-    max-height 0.3s ease,
-    opacity 0.3s ease;
-  margin-top: 1.5rem;
-  font-family: "Georgia", serif;
-  font-size: 5rem;
-  line-height: 1.6;
-  padding: 1.5rem 2rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  color: rgb(60, 59, 59);
-  text-align: left;
-}
-
-.introduction p {
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 7;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.introduction.expanded p {
-  -webkit-line-clamp: unset;
-  overflow: visible;
-}
-
-.readMoreBtn {
-  display: block;
-  background: transparent;
-  border: none;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0.5rem 0;
-  padding-top: 1rem;
-  font-size: 1rem;
-  color: var(--primary-text);
-  text-align: left;
-}
-
-.readMoreBtn:hover {
-  opacity: 0.8;
+.bio,
+.achievements {
+  margin: 1rem 0;
 }
 
 @media (max-width: 768px) {
-  .top {
-    flex-direction: row;
-    min-height: 100%;
-    width: 100%;
+  .container {
+    width: 100vw;
+    height: auto;
     position: relative;
   }
-  .right {
-    width: 35%; /* full width in mobile view */
-    height: 300px; /* or whatever you want to ensure it's tall enough */
-  }
-  .clientImageWrapper {
-    height: 100%; /* fill the parent */
-  }
-  .textBlock {
-    width: 65%;
-    padding: 0 1rem 1.5rem 1rem;
-  }
-  .headerCarousel {
-    margin-top: auto;
-    padding-bottom: 0;
+  .overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 
-  .introduction {
-    padding: 0.5rem;
+  .desktopFlower {
+    max-width: 1024px;
+    height: auto;
+    display: none;
+    margin: 0 auto;
+    object-fit: contain;
   }
-  .introduction p {
-    -webkit-line-clamp: 4;
-  }
-  .readMoreBtn {
-    padding-top: 0.5rem;
+
+  .flower {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
 }
-
-@media (max-width: 480px) {
-  .top {
-    flex-direction: column;
-    width: 100%;
+/* @media (max-width: 425px) {
+  .flower {
+    object-fit: fill;
   }
-  .right {
-    order: -1;
-    width: 100%;
-    height: 70vh;
-  }
-  .textBlock {
-    width: 100%;
-    padding: 0.5rem;
-  }
-  .introduction {
-    margin-top: 0;
-  }
-  .clientImageWrapper {
+} */
+/* 
+@media (max-width: 320px) {
+  .container {
+    width: 100vw;
+    height: 67vh;
     position: relative;
   }
-  .readMoreBtn {
-    padding-top: 0.5rem;
+
+  .overlay {
+    position: relative;
+    width: 100%;
+    height: 67vh;
+  }
+  .flower {
+    width: 100%;
+    height: 67vh;
+    object-fit: contain;
+  }
+} */
+/* @media (max-width: 425px) {
+  .flower {
+    width: 100%;
+    height: 85vh;
   }
 }
 @media (max-width: 375px) {
-  .right {
-    height: 60vh;
+  .flower {
+    width: 100%;
+    height: 76vh;
   }
 }
+
 @media (max-width: 320px) {
-  .right {
-    height: 52vh;
+  .flower {
+    width: 100%;
+    height: 68vh;
   }
-}
+} */
