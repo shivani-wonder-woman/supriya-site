@@ -1,10 +1,12 @@
-/* .teaseContainer {
+.teaseContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 400px;
   position: relative;
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .teaseContainer::before {
@@ -23,30 +25,29 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  padding-left: 5rem;
 }
 
 .clientImage {
   object-fit: contain;
-  max-width: 500px;
+  width: 100vw;
+  /* max-width: 500px; */
   height: auto;
   border-radius: 10px;
   z-index: 1;
-  filter: contrast(40%);
+  filter: contrast(80%);
 }
 .clientImage:hover {
-  filter: contrast(90%);
+  filter: contrast(100%);
 }
 
 .contentContainer {
   max-width: 58%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  align-items: flex-start;
   color: white;
   z-index: 1;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 .title {
@@ -58,7 +59,7 @@
 .description {
   color: white;
   font-size: 16px;
-  padding-right: 4rem;
+  padding-right: 0rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -85,10 +86,6 @@
     width: 100%;
     height: 300px;
   }
-  .imageContainer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -101,7 +98,7 @@
   .teaseContainer {
     flex-direction: column;
     height: auto;
-    padding-top: 6rem;
+    padding-top: 0rem;
   }
   .imageContainer {
     position: relative;
@@ -109,9 +106,9 @@
     padding: 0rem;
   }
   .clientImage {
-    width: 100%;
+    width: 100vw;
     max-width: none;
-    filter: contrast(20%);
+    filter: contrast(80%);
     border-radius: 0px;
   }
   .clientImage:hover {
@@ -135,10 +132,6 @@
   }
 }
 @media (max-width: 480px) {
-  .teaseContainer {
-    padding-top: 6.5rem;
-  }
-
   .imageContainer {
     width: 100%;
     position: relative;
@@ -146,7 +139,8 @@
 
   .clientImage {
     width: 100%;
-    max-width: none;
+    width: 100vw;
+    /* max-width: none; */
     filter: contrast(20%);
   }
   .contentContainer {
@@ -177,61 +171,5 @@
   }
   .watchButton:hover {
     background: linear-gradient(135deg, #ec407a, #ffc093);
-  }
-}
-@media (max-width: 480px) {
-  .teaseContainer {
-    margin-top: 0.1rem;
-  }
-}
-@media (max-width: 320px) {
-  .teaseContainer {
-    margin-top: -3.5rem;
-  }
-} */
-.teaseContainer {
-  position: relative;
-  width: 100%;
-  height: 300px; /* adjust as needed */
-}
-
-.imageContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.imageContainer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.contentContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.4); /* optional dark overlay for readability */
-}
-
-.description {
-  margin-top: 1rem;
-}
-
-/* Hide description on small screens */
-@media (max-width: 768px) {
-  .description {
-    display: none;
   }
 }

@@ -47,6 +47,18 @@ const NewReleaseTease: FC = () => {
 
   return (
     <div className={styles.teaseContainer}>
+      <div className={styles.contentContainer}>
+        <h1 className={styles.title}>New Release Teaser</h1>
+        <div className={styles.description}>
+          12-year-old Shun Sasaki, who conducts free tours twice a month and
+          tells foreigners in English what happened 80 years ago. Shun speaks
+          about his great-grandmother, an atomic bomb survivo, and urges the
+          world to stop war.
+        </div>
+        <button onClick={handleWatchNow} className={styles.watchButton}>
+          Watch Now
+        </button>
+      </div>
       <div className={styles.imageContainer}>
         {clientImage.url && (
           <a
@@ -64,19 +76,6 @@ const NewReleaseTease: FC = () => {
             />
           </a>
         )}
-      </div>
-
-      <div className={styles.contentContainer}>
-        <h1 className={styles.title}>New Release Teaser</h1>
-        <div className={styles.description}>
-          12-year-old Shun Sasaki, who conducts free tours twice a month and
-          tells foreigners in English what happened 80 years ago. Shun speaks
-          about his great-grandmother, an atomic bomb survivo, and urges the
-          world to stop war.
-        </div>
-        <button onClick={handleWatchNow} className={styles.watchButton}>
-          Watch Now
-        </button>
       </div>
     </div>
   );

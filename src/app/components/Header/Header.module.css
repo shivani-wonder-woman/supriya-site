@@ -1,112 +1,78 @@
 .container {
-  width: 100vw;
-  height: auto;
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-height: 70vh;
+  align-items: stretch;
 }
 
-.overlay {
-  position: relative;
-  width: 100%;
-  height: 85vh;
-}
-.flower {
-  width: 95vh;
-  max-width: 1024px;
-  height: auto;
-  display: none;
-  margin: 0 auto;
-  object-fit: contain;
-}
-.desktopFlower {
-  width: 100vw;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.intro {
+  width: 70%;
+  padding: 5rem 2rem 5rem 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #fff;
+}
+.podcast {
+  padding-bottom: 1.5rem;
 }
 
-.bio,
-.achievements {
-  margin: 1rem 0;
+.clientImage {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0rem 2rem 2rem;
 }
 
+.clientImage img {
+  /* max-width: 100%;
+  max-height: 100%;
+  height: auto; */
+  object-fit: contain;
+}
+.title {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  color: #333;
+  font-weight: bold;
+  background-color: #ec407a;
+  padding: 0.5rem;
+}
+
+.subtitle {
+  color: black;
+  font-family:
+    "Dancing Script", "Pacifico", "Segoe Script", "Lucida Handwriting", cursive;
+  font-size: 28px;
+  color: black;
+  margin-top: 5px;
+  padding: 0rem;
+}
 @media (max-width: 768px) {
   .container {
-    width: 100vw;
-    height: auto;
-    position: relative;
+    display: flex;
+    flex-direction: column;
   }
-  .overlay {
-    position: relative;
+  .clientImage {
+    padding-left: 0rem;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
-
-  .desktopFlower {
-    max-width: 1024px;
-    height: auto;
-    display: none;
-    margin: 0 auto;
-    object-fit: contain;
-  }
-
-  .flower {
+  .intro {
     width: 100%;
-    max-width: none;
-    height: auto;
-    object-fit: contain;
-    display: block;
+    padding: 0rem 1rem 1rem 1rem;
+  }
+  .podcast {
+    padding-bottom: 1rem;
   }
 }
-/* @media (max-width: 425px) {
-  .flower {
-    object-fit: fill;
-  }
-} */
-/* 
-@media (max-width: 320px) {
-  .container {
-    width: 100vw;
-    height: 67vh;
-    position: relative;
-  }
-
-  .overlay {
-    position: relative;
-    width: 100%;
-    height: 67vh;
-  }
-  .flower {
-    width: 100%;
-    height: 67vh;
-    object-fit: contain;
-  }
-} */
-/* @media (max-width: 425px) {
-  .flower {
-    width: 100%;
-    height: 85vh;
+@media (max-width: 425px) {
+  .clientImage {
+    padding-top: 0rem;
+    padding-bottom: 0.5rem;
   }
 }
-@media (max-width: 375px) {
-  .flower {
-    width: 100%;
-    height: 76vh;
-  }
-}
-
-@media (max-width: 320px) {
-  .flower {
-    width: 100%;
-    height: 68vh;
-  }
-} */
