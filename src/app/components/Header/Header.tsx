@@ -6,11 +6,15 @@ import { client } from "../../../../prismicio";
 import { useRouter } from "next/navigation";
 
 const Header: FC = () => {
-  const [error, setError] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [clientImage, setClientImage] = useState<{ url: string; alt: string }>({
     url: "",
     alt: "",
   });
+
+  const toggleText = () => {
+    setIsExpanded(!isExpanded);
+  };
   const router = useRouter();
 
   const handleReadMore = () => {
@@ -30,7 +34,6 @@ const Header: FC = () => {
         }
       } catch (error) {
         console.error("Error fetching client image from Prismic:", error);
-        setError("Failed to load client image. Please try again later.");
       }
     };
 
@@ -47,27 +50,35 @@ const Header: FC = () => {
           <div className={styles.title}>The podcast</div>
           <div className={styles.subtitle}>CHAI TIME WITH SUPRIYA</div>
         </div>
-        <p>
-          Over a cup of steaming chai, some of the best stories come to life —
-          and that’s what I’m chasing with my YouTube podcast, “Chai Time With
-          Supriya.” After more than a decade as a journalist in Japan with Kyodo
-          News and Bloomberg, I’m now channeling my passion for storytelling
-          into meaningful conversations on culture, technology, and health —
-          bridging voices across borders and languages. When
-          {/* I’m not recording, I lead media and international communications
-              at a venture fund investing in major tech startups across Japan
-              and India. I also independently support Indian businesses entering
-              the Japanese market — often switching between Hindi, English, and
-              Japanese in a single day. Born in India and raised in Japan from
-              the age of 15, I’ve grown up navigating cultures. I completed high
-              school in Japan, studied in India for my bachelor’s, and returned
-              for a master’s at Tokyo University of Foreign Studies. My
-              journalism career began in 2014 at Kyodo News, where I covered
-              everything from social issues to financial markets in both English
-              and Japanese. After nearly a decade, I joined Bloomberg to report
-              on transport, autos, and airlines — tracking Japan’s evolving
-              mobility landscape. */}
-        </p>
+        <div
+          className={`${styles.introduction} ${
+            isExpanded ? styles.expanded : ""
+          }`}
+        >
+          <p>
+            Over a cup of steaming chai, some of the best stories come to life —
+            and that’s what I’m chasing with my YouTube podcast, “Chai Time With
+            Supriya.” After more than a decade as a journalist in Japan with
+            Kyodo News and Bloomberg, I’m now channeling my passion for
+            storytelling into meaningful conversations on culture, technology,
+            and health — bridging voices across borders and languages. When I’m
+            not recording, I lead media and international communications at a
+            venture fund investing in major tech startups across Japan and
+            India. I also independently support Indian businesses entering the
+            Japanese market — often switching between Hindi, English, and
+            Japanese in a single day. Born in India and raised in Japan from the
+            age of 15, I’ve grown up navigating cultures. I completed high
+            school in Japan, studied in India for my bachelor’s, and returned
+            for a master’s at Tokyo University of Foreign Studies. My journalism
+            career began in 2014 at Kyodo News, where I covered everything from
+            social issues to financial markets in both English and Japanese.
+            After nearly a decade, I joined Bloomberg to report on transport,
+            autos, and airlines — tracking Japan’s evolving mobility landscape.
+          </p>
+          <button className={styles.readMoreBtn} onClick={toggleText}>
+            {isExpanded ? "Read Less" : "Read More About Supriya Singh"}
+          </button>
+        </div>
       </div>
     </main>
   );

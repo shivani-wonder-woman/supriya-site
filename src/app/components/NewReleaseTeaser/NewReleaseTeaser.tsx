@@ -61,20 +61,13 @@ const NewReleaseTease: FC = () => {
       </div>
       <div className={styles.imageContainer}>
         {clientImage.url && (
-          <a
-            href={clientImage.linkUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={clientImage.url}
-              alt={clientImage.alt || "Client Image"}
-              width={0}
-              height={0}
-              sizes="100vw"
-              className={styles.clientImage}
-            />
-          </a>
+          <Image
+            src={clientImage.url}
+            alt="teaser image"
+            width={500}
+            height={300}
+            className={styles.clientImage}
+          />
         )}
       </div>
     </div>

@@ -1,12 +1,23 @@
 .teaseContainer {
   display: flex;
   align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   width: 100%;
   height: 400px;
   position: relative;
   padding: 2rem;
   gap: 2rem;
+}
+
+.contentContainer {
+  max-width: 58%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  z-index: 1;
 }
 
 .teaseContainer::before {
@@ -17,6 +28,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+
   z-index: 0;
 }
 
@@ -30,7 +42,6 @@
 .clientImage {
   object-fit: contain;
   width: 100vw;
-  /* max-width: 500px; */
   height: auto;
   border-radius: 10px;
   z-index: 1;
@@ -38,16 +49,6 @@
 }
 .clientImage:hover {
   filter: contrast(100%);
-}
-
-.contentContainer {
-  max-width: 58%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  z-index: 1;
 }
 
 .title {
@@ -81,95 +82,86 @@
 .watchButton:hover {
   background: linear-gradient(135deg, #ec407a, #ffc093);
 }
-@media (max-width: 1028px) {
+@media (max-width: 768px) {
   .teaseContainer {
-    width: 100%;
-    height: 300px;
+    gap: 0;
+    height: 250px;
+    padding: 1rem;
+  }
+  .description {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
-
-@media (max-width: 768px) {
-  .teaseContainer::before {
-    background-image: none;
-    background-color: #e0e0e0;
-    position: relative;
-  }
-
+@media (max-width: 425px) {
   .teaseContainer {
-    flex-direction: column;
-    height: auto;
-    padding-top: 0rem;
-  }
-  .imageContainer {
-    position: relative;
+    height: 200px;
     width: 100%;
-    padding: 0rem;
   }
-  .clientImage {
-    width: 100vw;
-    max-width: none;
-    filter: contrast(80%);
-    border-radius: 0px;
-  }
-  .clientImage:hover {
-    filter: contrast(50%);
-  }
-
   .contentContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    border-radius: 10px;
+    color: white;
+    z-index: 2;
+    height: 200px;
   }
-}
-@media (max-width: 480px) {
-  .imageContainer {
+
+  .imageContainer img {
     width: 100%;
-    position: relative;
+    height: 100%;
+    object-fit: cover;
+  }
+  .contentContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: rgba(0, 0, 0, 0.4); /* black film with transparency */
+  }
+
+  .imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 
   .clientImage {
-    width: 100%;
-    width: 100vw;
-    /* max-width: none; */
-    filter: contrast(20%);
-  }
-  .contentContainer {
-    flex-direction: column;
-    padding: 1rem;
-    height: auto;
-    background-color: transparent;
-  }
-
-  .title {
-    padding: 0.5rem;
-    white-space: nowrap;
-    background-color: rgb(12 11 11 / 50%);
-    font-size: 1.8rem;
-    margin-top: 1rem;
+    filter: contrast(28%);
+    border-radius: 0px;
   }
 
   .description {
     display: none;
-    font-size: 14px;
-    padding-right: 1rem;
+  }
+  .watchButton {
+    padding: 0rem 1rem;
   }
 
-  .watchButton {
-    padding: 0.5rem 1rem;
-    font-size: 14px;
-    margin-top: 0rem;
-  }
-  .watchButton:hover {
-    background: linear-gradient(135deg, #ec407a, #ffc093);
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0;
+    white-space: nowrap;
   }
 }
