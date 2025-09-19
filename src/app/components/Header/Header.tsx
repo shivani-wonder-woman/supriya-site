@@ -17,10 +17,6 @@ const Header: FC = () => {
   };
   const router = useRouter();
 
-  const handleReadMore = () => {
-    router.push("/Introduction");
-  };
-
   useEffect(() => {
     const fetchClientImage = async () => {
       try {
