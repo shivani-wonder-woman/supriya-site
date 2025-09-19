@@ -3,7 +3,6 @@
 import React, { FC, useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import { client } from "../../../../prismicio";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const Header: FC = () => {
