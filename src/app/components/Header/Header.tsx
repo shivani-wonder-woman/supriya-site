@@ -4,6 +4,7 @@ import React, { FC, useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import { client } from "../../../../prismicio";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Header: FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -15,7 +16,6 @@ const Header: FC = () => {
   const toggleText = () => {
     setIsExpanded(!isExpanded);
   };
-  const router = useRouter();
 
   useEffect(() => {
     const fetchClientImage = async () => {
@@ -39,7 +39,14 @@ const Header: FC = () => {
   return (
     <main className={styles.container}>
       <div className={styles.clientImage}>
-        {clientImage.url && <img src={clientImage.url} alt={clientImage.alt} />}
+        {clientImage.url && (
+          <Image
+            src={clientImage.url}
+            alt={clientImage.alt}
+            width={500}
+            height={500}
+          />
+        )}
       </div>
       <div className={styles.intro}>
         <div className={styles.podcast}>
