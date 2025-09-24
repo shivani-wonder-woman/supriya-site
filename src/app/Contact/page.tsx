@@ -218,7 +218,7 @@ export default function App() {
               alt="logo"
               width={100}
               height={100}
-              style={{ objectFit: "contain" }}
+              style={{ width: "100%", height: "auto", objectFit: "contain" }}
               className={styles.podcastImage}
             />
           </div>
