@@ -3,61 +3,56 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  min-height: 90vh;
+  padding: 2rem 12rem 2rem 12rem;
 }
 .container {
   display: flex;
-  padding-left: 15rem;
-  padding-right: 15rem;
-}
-.leftSection,
-.rightSection {
   height: 100%;
   width: 100%;
-  padding: 2.5rem;
-  padding-right: 3rem;
-  padding-left: 3rem;
-  padding-top: 10rem;
 }
 
 .leftSection {
-  flex: 1;
-  background: #1f1f1f;
+  flex: 7;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  flex: 8;
-  background: #181818;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
   color: #fff;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  padding: 3rem;
+  border-radius: 12px 0px 0px 12px;
+  padding: 5rem 3rem 3rem 4rem;
 }
 
 .rightSection {
-  flex: 1;
+  flex: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #ec407a, #ffe0b2);
   height: auto;
-  padding: 4rem;
+  padding: 2rem;
   text-align: center;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 .rightSection h2 {
-  padding: 50px;
+  padding: 2rem 3rem 2rem 3rem;
+}
+.podcastWrapper {
+  position: relative;
+  height: auto;
+  width: 55%;
+}
+.podcastImage {
+  border-radius: 50%;
 }
 
 .formGroup {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .label {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   color: #ddd;
   font-size: 1rem;
 }
@@ -89,7 +84,7 @@
 }
 
 .button {
-  width: 40%;
+  width: 35%;
   padding: 0.8rem;
   background: #ec407a;
   color: white;
@@ -104,148 +99,73 @@
 
   color: #666;
 }
-.podcastWrapper {
-  position: relative;
-  width: 100px;
-  height: 50;
-  margin-bottom: 2.5rem;
-}
-.podcastImage {
-  border-radius: 50%;
-}
 
 @media (max-width: 1024px) {
-  .container {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  .label {
-    font-size: 1rem;
-  }
-  .formGroup {
-    margin-bottom: 2.5rem;
-  }
-  .rightSection {
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 768px) {
   .containerWrapper {
-    position: relative;
-    height: auto;
-    align-items: flex-start;
-    justify-content: center;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
-  }
-  .container {
-    width: 100%;
-    height: 80vh;
-    padding-right: 5rem;
-    padding-left: 5rem;
-  }
-
-  .leftSection,
-  .rightSection {
-    height: 100%;
-    width: 100%;
-    min-height: 150px;
-    padding: 2rem;
-  }
-  .leftSection {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    padding: 5rem 3rem 3rem 3rem;
-  }
-  .rightSection {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    height: auto;
-  }
-  .rightSection h2 {
-    padding: 30px;
-  }
-  .form {
-    padding-bottom: 10px;
-  }
-  .formGroup {
-    margin-bottom: 2rem;
-  }
-  .label {
-    margin-bottom: 0rem;
-    font-size: 1rem;
-  }
-  .input {
-    font-size: 1rem;
-  }
-  .button {
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 425px) {
-  .containerWrapper {
-    position: relative;
-    margin-top: 0rem;
-    height: auto;
-    align-items: flex-start;
-    justify-content: center;
-    padding-bottom: 0px;
-    padding-top: 10px;
+    min-height: 85vh;
+    width: 100vw;
+    padding: 0rem;
   }
 
   .container {
     flex-direction: column-reverse;
+    min-height: 85vh;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 2rem 4rem;
     height: auto;
-    padding-bottom: 1rem;
-    padding-top: 0.5rem;
   }
-
-  .leftSection,
-  .rightSection {
-    width: 100%;
-    min-height: auto;
-    padding: 1.5rem;
-    border-radius: 0;
-  }
-  .leftSection {
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+  .podcastWrapper {
+    width: 30%;
   }
   .rightSection {
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    border-radius: 12px 12px 0px 0px;
   }
   .rightSection h2 {
-    padding: 15px;
+    padding: 1rem 0rem 0rem 0rem;
   }
-
-  .input {
-    font-size: 0.9rem;
+  .leftSection {
+    padding: 4.5rem 1rem 3rem 3.5rem;
+    border-radius: 0px 0px 12px 12px;
   }
-
-  .button {
-    width: 45%;
-    padding: 0.6rem;
-    margin-top: 1rem;
+  .label {
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
   }
-
   .formGroup {
-    margin-bottom: 0.8rem;
+    margin-bottom: 2.5rem;
   }
+}
 
-  .rightSection .title {
-    font-size: 1rem;
+/* .input {
+  font-size: 0.9rem;
+} */
+
+@media (max-width: 540px) {
+  .container {
+    padding: 1rem 1.5rem;
+  }
+  .rightSection {
+    padding: 0.9rem;
+  }
+  .rightSection h2 {
+    padding: 0rem;
+  }
+  .leftSection {
+    padding: 3rem 1rem 2rem 2rem;
   }
   .label {
     margin-bottom: 0rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+  .formGroup {
+    margin-bottom: 1.9rem;
+  }
+}
+@media (max-width: 344px) {
+  .container {
+    padding: 0.8rem 0.8rem;
+  }
+  .leftSection {
+    padding: 3rem 1rem 2rem 2rem;
   }
 }
