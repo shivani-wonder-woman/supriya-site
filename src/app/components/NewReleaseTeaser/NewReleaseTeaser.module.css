@@ -4,7 +4,7 @@
   align-items: stretch;
   justify-content: space-between;
   width: 100%;
-  height: 400px;
+  height: 350px;
   position: relative;
   padding: 2rem;
   gap: 2rem;
@@ -34,6 +34,7 @@
 
 .imageContainer {
   display: flex;
+  max-width: 48%;
   align-items: center;
   justify-content: center;
   z-index: 1;
@@ -93,54 +94,40 @@
     padding-right: 0.5rem;
   }
 }
+
 @media (max-width: 540px) {
   .teaseContainer {
-    height: 200px;
+    position: relative;
+    /* height: 150px; */
     width: 100%;
-  }
-  .contentContainer {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    z-index: 2;
-    height: 200px;
+    margin-bottom: 1.8rem;
+    overflow: hidden;
+    padding: 0rem;
+    background-color: rgb(44, 13, 13);
   }
 
-  .imageContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   .contentContainer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100%;
     height: 100%;
+    z-index: 2;
   }
   .imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     position: absolute;
-    top: 0;
-    left: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* height: 150px; */
     width: 100%;
-    height: 200px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    background: rgba(0, 0, 0, 0.4); /* black film with transparency */
+    max-width: 100%;
   }
 
   .imageContainer img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
   }
 
   .clientImage {
@@ -163,5 +150,17 @@
     font-size: 1.8rem;
     margin: 0;
     white-space: nowrap;
+  }
+}
+@media (max-width: 480px) {
+  .teaseContainer {
+    height: 150px;
+  }
+  .description {
+    display: none;
+  }
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
   }
 }
