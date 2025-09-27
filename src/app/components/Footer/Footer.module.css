@@ -1,11 +1,14 @@
-/* Footer.module.css */
-
 .footer {
-  background-color: #222; /* Dark background */
-  color: #eee; /* Light text */
-  padding: 2rem 1rem;
+  background-color: #222;
+  color: #eee;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1rem;
+  /* max-width: var(--max-width); */
+  gap: 2rem;
 }
 
 .footerContent {
@@ -19,9 +22,10 @@
 }
 
 .section {
-  flex: 1 1 300px; /* Flexible width, min 300px */
+  flex: 1 1 300px;
   margin: 1rem;
-  min-width: 250px; /* Ensure sections don't get too narrow */
+  min-width: 250px;
+  padding: 2rem;
 }
 
 .heading {
@@ -38,25 +42,24 @@
 }
 
 .link {
-  color: #1da1f2; /* Twitter blue, looks good for all icons */
+  color: #1da1f2;
   text-decoration: none;
   margin: 0 0.25rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem; /* space between icon and text */
+  gap: 0.3rem;
   transition: color 0.3s ease;
   padding: 0.5rem 0;
 }
 
 .link:hover,
 .link:focus {
-  color: #0d8ddb; /* Darker blue on hover/focus */
+  color: #0d8ddb;
   text-decoration: underline;
   outline: none;
 }
 
-/* Tablet adjustments */
 @media (max-width: 768px) {
   .footer {
     padding: 1.5rem 1rem;
@@ -72,23 +75,26 @@
   }
 }
 
-/* Mobile adjustments */
-@media (max-width: 500px) {
+@media (max-width: 540px) {
   .footer {
-    padding: 1rem 0.5rem;
-  }
-
-  .footerContent {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    /* padding: 0;
+    gap: 0; */
   }
+
+  /* .footerContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  } */
 
   .section {
     flex: 1 1 100%;
-    margin: 0.5rem 0;
     width: 100%;
     max-width: 400px;
+    padding: 0rem;
   }
 
   .text {
