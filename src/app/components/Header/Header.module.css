@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: row;
-  min-height: 70vh;
+  min-height: 25vh;
   align-items: stretch;
 }
 
@@ -72,7 +72,6 @@
   color: whitesmoke;
   font-weight: bold;
   background-color: #ec407a;
-  padding: 0.5rem;
 }
 
 .subtitle {
@@ -84,6 +83,19 @@
   margin-top: 5px;
   padding: 0rem;
 }
+@media (min-width: 1920px) {
+  .podcast {
+    margin-bottom: 1rem;
+  }
+  .introduction {
+    font-size: 5rem;
+    line-height: 2;
+  }
+  .subtitle {
+    margin-top: 1rem;
+  }
+}
+
 @media (max-width: 853px) {
   .container {
     display: flex;

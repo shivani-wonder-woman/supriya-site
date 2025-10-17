@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   height: 350px;
   position: relative;
@@ -42,7 +42,8 @@
 
 .clientImage {
   object-fit: contain;
-  width: 100vw;
+  width: 100%;
+  max-width: 600px;
   height: auto;
   border-radius: 10px;
   z-index: 1;
@@ -83,6 +84,12 @@
 .watchButton:hover {
   background: linear-gradient(135deg, #ec407a, #ffc093);
 }
+@media (min-width: 1920px) {
+  .teaseContainer {
+    gap: 15rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .teaseContainer {
     gap: 0;
@@ -119,7 +126,6 @@
     position: absolute;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    /* height: 150px; */
     width: 100%;
     max-width: 100%;
   }

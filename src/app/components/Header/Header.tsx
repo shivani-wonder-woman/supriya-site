@@ -3,6 +3,7 @@
 import React, { FC, useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import { client } from "../../../../prismicio";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const Header: FC = () => {
@@ -49,7 +50,7 @@ const Header: FC = () => {
       </div>
       <div className={styles.intro}>
         <div className={styles.podcast}>
-          <div className={styles.title}>The podcast</div>
+          <div className={styles.title}>The Podcast</div>
           <div className={styles.subtitle}>CHAI TIME WITH SUPRIYA</div>
         </div>
         <div

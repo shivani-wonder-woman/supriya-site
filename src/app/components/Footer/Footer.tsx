@@ -8,7 +8,7 @@ const Footer: FC = function Footer() {
       <section className={styles.section}>
         <h3 className={styles.heading}>Contacts</h3>
         <p className={styles.text}>Phone: +81 80-4003-1989</p>
-        <p className={styles.text}>Email: contact@yoursite.com</p>
+        <p className={styles.text}>Email: supriya.shin9@gmail</p>
         <p className={styles.text}>Address: 123 Street, City, Country</p>
       </section>
 
@@ -16,7 +16,7 @@ const Footer: FC = function Footer() {
         <h3 className={styles.heading}>Follow Us</h3>
         <p className={styles.text}>
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/supriya.singh.96"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
@@ -34,7 +34,7 @@ const Footer: FC = function Footer() {
           </a>
           {" | "}
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/@ChaiTimeWithSupriya/shorts"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
