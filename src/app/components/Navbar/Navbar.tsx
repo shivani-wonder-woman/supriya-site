@@ -41,7 +41,7 @@ export default function Navbar() {
       </div>
 
       <button
-        className={styles.hamburger}
+        className={`${styles.hamburger} ${isContactPage ? styles.hidden : ""}`}
         onClick={toggleMenu}
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
@@ -62,7 +62,7 @@ export default function Navbar() {
       <span />
       <nav
         id="mobile-menu"
-        className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""}`}
+        className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""} ${isContactPage ? styles.hidden : ""}`}
       >
         <ul className={styles.mobileNavList}>
           <li className={styles.mobileNavItem}>
@@ -71,36 +71,37 @@ export default function Navbar() {
             </Link>
           </li>
           <li className={styles.mobileNavItem}>
-            <Link href="/Videos" onClick={closeMenu}>
+            <Link href="/#topSection" onClick={closeMenu}>
               Video
             </Link>
           </li>
           <li className={styles.mobileNavItem}>
-            <Link href="/Videos" onClick={closeMenu}>
+            <Link href="/#middleSection" onClick={closeMenu}>
               Short Video
             </Link>
           </li>
           <li className={styles.mobileNavItem}>
-            <Link href="/Articles" onClick={closeMenu}>
+            <Link href="/#bottomeSection" onClick={closeMenu}>
               Articles
             </Link>
           </li>
         </ul>
       </nav>
-
-      <div className={styles.navListWrapper}>
+      <div
+        className={`${styles.navListWrapper} ${isContactPage ? styles.hidden : ""}`}
+      >
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/Videos">Video</Link>
+            <Link href="/#topSection">Video</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/Videos">Short Video</Link>
+            <Link href="/#middleSection">Short Video</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/Articles">Articles</Link>
+            <Link href="/#bottomeSection">Articles</Link>
           </li>
         </ul>
       </div>

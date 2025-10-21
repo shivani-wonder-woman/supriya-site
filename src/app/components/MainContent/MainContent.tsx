@@ -159,7 +159,7 @@ const MainContent: FC = () => {
 
   return (
     <section className={styles.mainSection}>
-      <div className={styles.topSection}>
+      <div id="topSection" className={styles.topSection}>
         <div className={styles.heading}>
           <h2>Video Podcasts</h2>
         </div>
@@ -180,7 +180,7 @@ const MainContent: FC = () => {
         )}
       </div>
 
-      <div className={styles.middleSection}>
+      <div id="middleSection" className={styles.middleSection}>
         <div className={styles.heading}>
           <h2>Short Videos</h2>
         </div>
@@ -201,7 +201,7 @@ const MainContent: FC = () => {
         )}
       </div>
 
-      <div className={styles.bottomSection}>
+      <div id="bottomeSection" className={styles.bottomSection}>
         <div className={styles.heading}>
           <h2>Articles</h2>
         </div>

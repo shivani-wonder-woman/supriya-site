@@ -2,55 +2,56 @@
 
 import React, { FC, useState, useEffect } from "react";
 import styles from "./Header.module.css";
-import Image from "next/image";
-import HeaderCarousel from "./HeaderCarousel/HeaderCarousel";
-import { asText } from "@prismicio/helpers";
 import { client } from "../../../../prismicio";
-
-interface IntroPicItems {
-  id: string;
-  image: { url: string; alt?: string };
-  heading: string;
-}
+import Image from "next/image";
 
 const Header: FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [introPic, setIntroPic] = useState<IntroPicItems[]>([]);
+  const [clientImage, setClientImage] = useState<{ url: string; alt: string }>({
+    url: "",
+    alt: "",
+  });
 
   const toggleText = () => {
     setIsExpanded(!isExpanded);
   };
 
   useEffect(() => {
-    const fetchIntroPics = async () => {
+    const fetchClientImage = async () => {
       try {
-        const response = await client.getAllByType("introcards");
-        console.log("RawwwwwPrismic response for blogpost:", response);
+        const response = await client.getAllByType("myimage");
 
-        const mappedData = response.map(
-          (doc): IntroPicItems => ({
-            id: doc.id,
-            image: {
-              url: doc.data.image?.url || "",
-              alt: doc.data.image?.alt || "",
-            },
-            heading: asText(doc.data.heading) || "",
-          })
-        );
-
-        console.log("mappedDataaaaa....", mappedData);
-        setIntroPic(mappedData);
+        if (response.length > 0 && response[0].data.image?.url) {
+          setClientImage({
+            url: response[0].data.image.url,
+            alt: response[0].data.image.alt || "Client Image",
+          });
+        }
       } catch (error) {
-        console.error("Error fetching introPic from Prismic:", error);
+        console.error("Error fetching client image from Prismic:", error);
       }
     };
 
-    fetchIntroPics();
+    fetchClientImage();
   }, []);
 
   return (
-    <div className={styles.top}>
-      <div className={styles.textBlock}>
+    <main className={styles.container}>
+      <div className={styles.clientImage}>
+        {clientImage.url && (
+          <Image
+            src={clientImage.url}
+            alt={clientImage.alt}
+            width={500}
+            height={500}
+          />
+        )}
+      </div>
+      <div className={styles.intro}>
+        <div className={styles.podcast}>
+          <div className={styles.title}>The Podcast</div>
+          <div className={styles.subtitle}>CHAI TIME WITH SUPRIYA</div>
+        </div>
         <div
           className={`${styles.introduction} ${
             isExpanded ? styles.expanded : ""
@@ -77,32 +78,11 @@ const Header: FC = () => {
             autos, and airlines — tracking Japan’s evolving mobility landscape.
           </p>
           <button className={styles.readMoreBtn} onClick={toggleText}>
-            {isExpanded ? "Read Less" : "Read More"}
+            {isExpanded ? "Read Less" : "Read More About Supriya Singh"}
           </button>
         </div>
-
-        <div className={styles.headerCarousel}>
-          {introPic.length > 0 ? (
-            <HeaderCarousel data={introPic} />
-          ) : (
-            <p>Loading introPics...</p>
-          )}
-        </div>
       </div>
-      <div className={styles.right}>
-        <div className={styles.clientImageWrapper}>
-          <Image
-            src="/clientImage.png"
-            alt="Client Image"
-            fill
-            style={{ objectFit: "contain" }}
-            sizes="100vw"
-            className={styles.clientImage}
-            priority
-          />
-        </div>
-      </div>
-    </div>
+    </main>
   );
 };
 

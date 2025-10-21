@@ -1,29 +1,70 @@
 "use client";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import React, { FC, useState, useEffect } from "react";
 import styles from "./NewReleaseTeaser.module.css";
+import { client } from "../../../../prismicio";
 
-const NewReleaseTease = () => {
-  const router = useRouter();
-
+const NewReleaseTease: FC = () => {
   const handleWatchNow = () => {
-    router.push("/TeaserVideo");
+    if (clientImage.linkUrl) {
+      window.open(clientImage.linkUrl, "_blank", "noopener,noreferrer");
+    }
   };
+
+  const [clientImage, setClientImage] = useState<{
+    url: string;
+    alt: string;
+    linkUrl: string;
+  }>({
+    url: "",
+    alt: "",
+    linkUrl: "",
+  });
+
+  useEffect(() => {
+    const fetchClientImage = async () => {
+      try {
+        const response = await client.getAllByType("newreleaseteaser");
+
+        if (response.length > 0 && response[0].data.image?.url) {
+          setClientImage({
+            url: response[0].data.image.url,
+            alt: response[0].data.image.alt || "Client Image",
+            linkUrl: response[0].data.link?.url || "#",
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching client image from Prismic:", error);
+      }
+    };
+
+    fetchClientImage();
+  }, []);
 
   return (
     <div className={styles.teaseContainer}>
-      <Image
-        src="/teaser-poster.jpg"
-        alt="Teaser"
-        fill
-        className={styles.teaseImage}
-      />
-
-      <div className={styles.overlayContent}>
+      <div className={styles.contentContainer}>
         <h1 className={styles.title}>New Release Teaser</h1>
+        <div className={styles.description}>
+          12-year-old Shun Sasaki, who conducts free tours twice a month and
+          tells foreigners in English what happened 80 years ago. Shun speaks
+          about his great-grandmother, an atomic bomb survivo, and urges the
+          world to stop war.
+        </div>
         <button onClick={handleWatchNow} className={styles.watchButton}>
           Watch Now
         </button>
+      </div>
+      <div className={styles.imageContainer}>
+        {clientImage.url && (
+          <Image
+            src={clientImage.url}
+            alt="teaser image"
+            width={500}
+            height={300}
+            className={styles.clientImage}
+          />
+        )}
       </div>
     </div>
   );

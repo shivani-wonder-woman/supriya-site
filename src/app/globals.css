@@ -1,10 +1,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Maximum width for content */
   --max-width: 1200px;
-  /* Space on the sides of content */
   --page-padding: 1rem;
+  --primary-text: #fff;
+  --gradient-bg: linear-gradient(to top);
+  --gradient-bg: linear-gradient(
+    to bottom,
+    #e8e6e3 0%,
+    /* Soft warm grey */ #c0bebc 60%,
+    /* Warm mid-grey */ #a8a6a4 100% /* Warm dark grey */
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +34,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Space between lines of text */
   line-height: 1.5;
+  padding-top: 60px;
+  /* push content down for fixed navbar */
+  background-color: #d3d3d3;
 }
 
 * {
@@ -126,7 +135,7 @@ p {
   }
 
   /* Improve touch targets on mobile */
-  button, 
+  button,
   a {
     min-height: 44px;
     padding: 0.5rem;
@@ -154,4 +163,20 @@ p {
   .container {
     padding: 0.25rem;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#topSection {
+  scroll-margin-top: 80px;
+}
+
+#middleSection {
+  scroll-margin-top: 80px;
+}
+
+#bottomeSection {
+  scroll-margin-top: 80px;
 }

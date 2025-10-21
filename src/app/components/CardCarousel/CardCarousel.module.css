@@ -1,12 +1,15 @@
+.info {
+  text-align: left;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  background-color: whitesmoke;
+}
+
 .carouselWrapper {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 0.8rem;
 }
 
-.slider {
-  overflow: hidden;
-}
 .navButton {
   position: absolute;
   top: 50%;
@@ -21,26 +24,8 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); /* much darker shadow */
-
   cursor: pointer;
   z-index: 10;
-}
-
-.slide {
-  background-color: #f5f5f5;
-  border-radius: 12px;
-  text-align: center;
-  width: 240px;
-  height: 320px;
-  min-width: 240px;
-  max-width: 240px;
-  min-height: 320px;
-  max-height: 320px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
 }
 
 .videoPlaceholder {
@@ -54,7 +39,7 @@
   margin-bottom: 12px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 16 / 9; /* Same ratio as image */
+  aspect-ratio: 16 / 9;
 }
 .videoPlaceholder img {
   width: 100%;
@@ -63,43 +48,34 @@
   object-position: center top;
 }
 
-.playIcon {
-  font-size: 32px;
-  color: #555;
+.category {
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  padding-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666;
 }
-
-.comingSoon {
-  font-size: 14px;
-  color: #777;
-}
-
-.info {
-  text-align: left;
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-.label {
-  font-size: 12px;
-  color: #888;
-  text-transform: uppercase;
+.slide {
+  border-radius: 10px;
 }
 
 .title {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 6px 0;
-  color: #333;
-  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  white-space: normal;
-  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
   line-height: 1.4em;
-  max-height: 2.8em;
 }
 
 .meta {
-  font-size: 12px;
+  font-size: 15px;
   color: #666;
 }
 
@@ -123,17 +99,9 @@
   color: #0070f3;
   text-decoration: underline;
   cursor: pointer;
+  display: none;
 }
 
-.mediaWrapper {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 60%;
-  margin-bottom: 12px;
-}
 .cardLink {
   display: block;
   width: 100%;
@@ -143,31 +111,46 @@
 .media {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
-@media (max-width: 1440px) {
-  .media {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+
+.descriptionWrapper {
+  margin-top: 8px;
 }
-@media (max-width: 1024px) {
-  .media {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
+
 @media (max-width: 768px) {
+  .slide {
+    border-radius: 5px;
+  }
   .media {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
+  }
+  .carouselWrapper {
+    padding: 0rem;
+  }
+  .slide a {
+    padding: 0rem;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 540px) {
+  .title {
+    font-size: 16px;
+  }
+  .carouselWrapper {
+    padding: 0;
+  }
+  .media {
+    object-fit: contain;
+  }
+  .slide {
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 375px) {
   .carouselWrapper {
     position: relative;
     width: 100%;
@@ -176,77 +159,24 @@
   .media {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
   }
-  .slide {
-    background-color: #f5f5f5;
-    border-radius: 12px;
-    text-align: center;
-    width: 340px;
-    height: 350px;
-    min-width: 340px;
-    max-width: 340px;
-    min-height: 350px;
-    max-height: 350px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-  }
   .cardLink {
     display: block;
     width: 100%;
     height: 100%;
     padding: 0px;
   }
-  /* .navButton {
-     display: none !important; 
-  } */
-}
 
-@media (max-width: 480px) {
-  .carouselWrapper {
-    position: relative;
-    width: 100%;
-    padding: 0px;
-  }
-  /* .navButton {
-    display: none !important;
-  } */
   .media {
     width: 100%;
     height: 100%;
-    object-fit: fill;
-  }
-  .mediaWrapper {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 60%;
-    margin-bottom: 12px;
+    object-fit: contain;
   }
   .cardLink {
     display: block;
     width: 100%;
     height: 100%;
-  }
-  .slide {
-    background-color: #f5f5f5;
-    border-radius: 12px;
-    text-align: center;
-    width: 240px;
-    height: 350px;
-    min-width: 240px;
-    max-width: 240px;
-    min-height: 350px;
-    max-height: 350px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
   }
 }

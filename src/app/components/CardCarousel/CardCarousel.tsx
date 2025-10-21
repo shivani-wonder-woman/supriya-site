@@ -24,7 +24,7 @@ interface CarouselItem {
 
 interface CarouselProps {
   data: CarouselItem[];
-  viewAllLink: string;
+  viewAllLink?: string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
@@ -50,26 +50,45 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
       "(max-width: 1440px)": {
         slides: {
           perView: 3.2,
-          spacing: 10,
+          spacing: 14,
         },
       },
       "(max-width: 1024px)": {
         slides: {
           perView: 2.5,
+          spacing: 12,
+        },
+      },
+      "(max-width: 768px)": {
+        slides: {
+          perView: 2.3,
           spacing: 10,
         },
       },
 
+      "(max-width: 540px)": {
+        slides: {
+          perView: 1.4,
+          spacing: 9,
+        },
+      },
       "(max-width: 425px)": {
         slides: {
+          perView: 1.5,
+          spacing: 8,
+        },
+      },
+
+      "(max-width: 375px)": {
+        slides: {
           perView: 1.3,
-          spacing: 10,
+          spacing: 7,
         },
       },
       "(max-width: 320px)": {
         slides: {
           perView: 1.2,
-          spacing: 8,
+          spacing: 5,
         },
       },
     },
@@ -112,6 +131,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                       width={500}
                       height={300}
                       className={styles.media}
+                      priority
                     />
                   </div>
                 ) : (
