@@ -87,6 +87,25 @@
 @media (min-width: 1920px) {
   .teaseContainer {
     gap: 15rem;
+    height: 15vh;
+  }
+  .description {
+    font-size: 2rem;
+  }
+  .teaseContainer {
+    gap: 3rem;
+  }
+  .contentContainer {
+    max-width: 75%;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .watchButton {
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-weight: bold;
+    width: 15%;
   }
 }
 
@@ -105,7 +124,6 @@
 @media (max-width: 540px) {
   .teaseContainer {
     position: relative;
-    /* height: 150px; */
     width: 100%;
     margin-bottom: 1.8rem;
     overflow: hidden;
@@ -144,9 +162,6 @@
   .description {
     display: none;
   }
-  .watchButton {
-    padding: 0rem 1rem;
-  }
 
   .title {
     display: flex;
@@ -156,6 +171,11 @@
     font-size: 1.8rem;
     margin: 0;
     white-space: nowrap;
+  }
+  .watchButton {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0rem 1rem;
   }
 }
 @media (max-width: 480px) {

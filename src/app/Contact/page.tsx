@@ -197,7 +197,7 @@ export default function App() {
               )}
             </div>
             <button type="submit" className={styles.button} disabled={sending}>
-              {sending ? "Sending..." : "Submit"}
+              {sending ? "Sending..." : "SUBMIT"}
             </button>
           </form>
           {toast && (

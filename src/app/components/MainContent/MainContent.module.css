@@ -39,6 +39,15 @@
   margin-left: 1.5rem;
   margin-top: 1.5rem;
 }
+.heading h2 {
+  color: rgb(98, 97, 97);
+}
+@media (prefers-color-scheme: dark) {
+  .heading h2 {
+    color: rgb(98, 97, 97);
+  }
+}
+
 @media (max-width: 480px) {
   .mainSection {
     padding: 0rem;
@@ -57,5 +66,10 @@
   }
   .heading {
     padding: 0px;
+  }
+}
+@media (min-width: 1920px) {
+  .heading h2 {
+    font-size: 5rem;
   }
 }
