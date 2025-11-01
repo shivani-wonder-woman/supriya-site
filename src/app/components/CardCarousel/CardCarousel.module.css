@@ -117,6 +117,21 @@
 .descriptionWrapper {
   margin-top: 8px;
 }
+@media (prefers-color-scheme: dark) {
+  .info {
+    background-color: whitesmoke;
+  }
+  .title {
+    color: #333;
+  }
+  .category {
+    color: #666;
+  }
+  .meta {
+    color: #666;
+  }
+}
+
 @media (min-width: 1920px) {
   .title {
     font-size: 2rem;

@@ -43,6 +43,10 @@
   color: rgb(98, 97, 97);
 }
 @media (prefers-color-scheme: dark) {
+  .topSection {
+    background-color: #e0e0e0;
+  }
+
   .heading h2 {
     color: rgb(98, 97, 97);
   }

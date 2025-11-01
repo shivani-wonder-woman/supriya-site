@@ -82,8 +82,19 @@
 }
 
 .watchButton:hover {
+  .watchButton {
+    background-color: #ec407a;
+    color: white;
+  }
+
   background: linear-gradient(135deg, #ec407a, #ffc093);
 }
+@media (prefers-color-scheme: dark) {
+  .watchButton:hover {
+    background: linear-gradient(135deg, #ec407a, #ffc093);
+  }
+}
+
 @media (min-width: 1920px) {
   .teaseContainer {
     gap: 15rem;
