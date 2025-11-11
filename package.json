@@ -9,17 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@prismicio/client": "^7.18.1",
+    "@prismicio/helpers": "^2.3.9",
+    "@prismicio/next": "^2.0.1",
+    "bootstrap": "^5.3.7",
+    "keen-slider": "^6.8.6",
+    "next": "^15.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "react-hook-form": "^7.62.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "@eslint/eslintrc": "^3"
+    "prettier": "^3.6.2",
+    "typescript": "^5"
   }
 }

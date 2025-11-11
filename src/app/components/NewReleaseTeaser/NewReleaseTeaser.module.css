@@ -1,0 +1,204 @@
+.teaseContainer {
+  display: flex;
+  align-items: center;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  position: relative;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.contentContainer {
+  max-width: 58%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  z-index: 1;
+}
+
+.teaseContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+
+  z-index: 0;
+}
+
+.imageContainer {
+  display: flex;
+  max-width: 48%;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.clientImage {
+  object-fit: contain;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  z-index: 1;
+  filter: contrast(80%);
+}
+.clientImage:hover {
+  filter: contrast(100%);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: white;
+  font-size: 16px;
+  padding-right: 0rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watchButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.watchButton:hover {
+  .watchButton {
+    background-color: #ec407a;
+    color: white;
+  }
+
+  background: linear-gradient(135deg, #ec407a, #ffc093);
+}
+@media (prefers-color-scheme: dark) {
+  .watchButton:hover {
+    background: linear-gradient(135deg, #ec407a, #ffc093);
+  }
+}
+
+@media (min-width: 1920px) {
+  .teaseContainer {
+    gap: 15rem;
+    height: 15vh;
+  }
+  .description {
+    font-size: 2rem;
+  }
+  .teaseContainer {
+    gap: 3rem;
+  }
+  .contentContainer {
+    max-width: 75%;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .watchButton {
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-weight: bold;
+    width: 15%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .teaseContainer {
+    gap: 0;
+    height: 250px;
+    padding: 1rem;
+  }
+  .description {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .teaseContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.8rem;
+    overflow: hidden;
+    padding: 0rem;
+    background-color: rgb(44, 13, 13);
+  }
+
+  .contentContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .imageContainer {
+    position: absolute;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .clientImage {
+    filter: contrast(28%);
+    border-radius: 0px;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .watchButton {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0rem 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .teaseContainer {
+    height: 150px;
+  }
+  .description {
+    display: none;
+  }
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+  }
+}

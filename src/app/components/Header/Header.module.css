@@ -1,0 +1,212 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 25vh;
+  align-items: stretch;
+  color-scheme: light;
+}
+
+.intro {
+  width: 70%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.introduction {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding: 1rem 1rem;
+  text-align: left;
+  color: #000000;
+}
+.introduction p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-overflow: ellipsis;
+  margin-bottom: 0rem;
+  color: #000000;
+}
+
+.introduction.expanded p {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.readMoreBtn {
+  display: block;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  padding: 1rem 0rem 0rem 0rem;
+}
+
+.readMoreBtn:hover {
+  opacity: 0.8;
+}
+
+.clientImage {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.clientImage img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.title {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  color: #f5f5f5;
+  font-weight: bold;
+  background-color: #ec407a;
+}
+
+.subtitle {
+  color: #000000;
+  font-family:
+    "Dancing Script", "Pacifico", "Segoe Script", "Lucida Handwriting", cursive;
+  font-size: 2rem;
+  margin-top: 5px;
+  padding: 0rem;
+}
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: #e0e0e0;
+  }
+  .title {
+    background-color: #ec407a;
+    color: #f5f5f5;
+  }
+  .introduction {
+    color: #000000;
+    background: transparent;
+  }
+  .readMoreBtn {
+    color: #fff;
+  }
+}
+@media (min-width: 1920px) {
+  .clientImage {
+    width: 35%;
+  }
+
+  .podcast {
+    margin-bottom: 1rem;
+  }
+  .introduction {
+    line-height: 2;
+    padding-left: 2rem;
+  }
+  .introduction p {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 55px;
+    margin-bottom: 1rem;
+  }
+  .subtitle {
+    margin-top: 1rem;
+    font-size: 55px;
+  }
+  .readMoreBtn {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .clientImage {
+    width: 40%;
+  }
+}
+
+@media (max-width: 860px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .clientImage {
+    padding-left: 0rem;
+    width: 100vw;
+    height: 65vh;
+    margin-top: 2rem;
+  }
+
+  .intro {
+    width: 100%;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+  }
+  .introduction p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+  }
+}
+@media (max-width: 912px) {
+  .introduction p {
+    -webkit-line-clamp: 3;
+  }
+}
+@media (max-width: 768px) {
+  .clientImage {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 540px) {
+  .clientImage {
+    width: 100%;
+    /* height: 100%; */
+    /* margin-top: 0rem; */
+  }
+  .introduction {
+    padding: 1rem 0rem 1rem 0rem;
+  }
+  .readMoreBtn {
+    padding: 0rem;
+  }
+  .intro {
+    width: 100%;
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 1.6rem;
+  }
+  .clientImage img {
+    height: 100%;
+    /* margin-top: 1rem; */
+    object-fit: contain;
+  }
+}
+@media (max-width: 450px) {
+  .clientImage {
+    width: 100%;
+    height: 100%;
+    margin-top: 0rem;
+  }
+  .introduction {
+    padding-top: 0.5rem;
+  }
+  .readMoreBtn {
+    margin-top: -0.6rem;
+  }
+  .clientImage img {
+    margin-top: 0rem;
+  }
+}
