@@ -151,7 +151,7 @@ export default function App() {
 
             <div className={styles.formGroup}>
               <label htmlFor="socialMedia" className={styles.label}>
-                Social Media Handles
+                Social Media Profile Links
               </label>
               <input
                 id="socialMedia"

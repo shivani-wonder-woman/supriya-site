@@ -86,13 +86,13 @@
 }
 
 .button {
-  width: 35%;
+  width: 30%;
   padding: 0.8rem;
   background: #ec407a;
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 1.8rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -126,7 +126,7 @@
     font-size: 2.5rem;
     border-radius: 15px;
     width: 45%;
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 10rem;
     margin-top: 2rem;
   }
@@ -178,7 +178,7 @@
   }
   .button {
     font-size: 2rem;
-    padding: 1.5rem;
+    padding: 1rem;
   }
 }
 @media (max-width: 1024px) {
@@ -187,10 +187,10 @@
     margin-bottom: 0.9rem;
   }
   .formGroup {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
   .button {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .rightSection h2 {
     font-size: 3rem;

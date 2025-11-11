@@ -9,7 +9,7 @@ const Footer: FC = function Footer() {
         <h3 className={styles.heading}>Contacts</h3>
         <p className={styles.text}>Phone: +81 80-4003-1989</p>
         <p className={styles.text}>Email: supriya.shin9@gmail</p>
-        <p className={styles.text}>Address: 123 Street, City, Country</p>
+        <p className={styles.text}> Japan</p>
       </section>
 
       <section className={styles.section}>
@@ -25,7 +25,7 @@ const Footer: FC = function Footer() {
           </a>
           {" | "}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/chaitimewithsupriya/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
@@ -43,7 +43,7 @@ const Footer: FC = function Footer() {
           </a>
           {" | "}
           <a
-            href="https://twitter.com"
+            href="https://x.com/Supriya_Japan"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
