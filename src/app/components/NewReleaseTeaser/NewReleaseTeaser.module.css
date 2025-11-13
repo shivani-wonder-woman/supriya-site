@@ -124,7 +124,7 @@
 @media (max-width: 1440px) {
   .teaseContainer {
     gap: 0;
-    height: 250px;
+    height: 300px;
     padding: 1rem;
   }
   .description {
