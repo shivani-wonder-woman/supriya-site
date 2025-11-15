@@ -182,13 +182,13 @@
     min-height: 85px;
   }
   .navList {
-    gap: 15rem;
+    gap: 8rem;
   }
   .navItem {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .logoImage {
-    width: 109px;
+    width: 95px;
   }
   .joinPodcast {
     margin-left: 1rem;
@@ -199,7 +199,7 @@
     gap: 4rem;
   }
   .navItem {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 912px) {
@@ -228,7 +228,7 @@
     margin: 0 auto;
   }
   .navItem {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .navItem a {
@@ -258,14 +258,11 @@
     justify-content: center;
   }
   .navItem a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
-  /* .logoWrapper {
-    margin-left: -2rem;
-  } */
+
   .hamburger {
     display: flex;
-    /* margin-right: -1.4rem; */
     margin-left: auto;
   }
   .navList {
