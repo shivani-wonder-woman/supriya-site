@@ -54,9 +54,9 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .description {
@@ -99,7 +99,7 @@
 @media (min-width: 1920px) {
   .teaseContainer {
     gap: 15rem;
-    height: 15vh;
+    height: 24rem;
   }
   .description {
     font-size: 2rem;
@@ -124,12 +124,28 @@
 @media (max-width: 1440px) {
   .teaseContainer {
     gap: 0;
-    height: 300px;
+    height: 19rem;
     padding: 1rem;
   }
   .description {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .teaseContainer {
+    height: 15rem;
+  }
+}
+@media (max-width: 768px) {
+  .teaseContainer {
+    height: 12rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 0.8rem;
   }
 }
 
@@ -141,6 +157,7 @@
     overflow: hidden;
     padding: 0rem;
     background-color: rgb(44, 13, 13);
+    height: 12rem;
   }
 
   .contentContainer {
@@ -192,7 +209,7 @@
 }
 @media (max-width: 480px) {
   .teaseContainer {
-    height: 150px;
+    height: 9rem;
   }
   .description {
     display: none;
