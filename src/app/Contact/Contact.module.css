@@ -95,6 +95,10 @@
   font-size: 1rem;
   cursor: pointer;
 }
+.buttonSending {
+  background: grey;
+  cursor: not-allowed;
+}
 
 .button:hover {
   background: linear-gradient(135deg, #ec407a, #ffc093);
@@ -116,7 +120,7 @@
   }
   .label {
     font-size: 3.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
   .form {
     margin: 8rem 0rem 0rem 2.5rem;
@@ -138,6 +142,9 @@
   }
   .podcastWrapper {
     width: 100%;
+  }
+  .input {
+    font-size: 3.5rem;
   }
 }
 
@@ -179,6 +186,9 @@
   .button {
     font-size: 2rem;
     padding: 1rem;
+  }
+  .input {
+    font-size: 2rem;
   }
 }
 @media (max-width: 1024px) {
@@ -226,6 +236,9 @@
   .formGroup {
     margin-bottom: 2.5rem;
   }
+  .input {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 540px) {
@@ -257,6 +270,9 @@
     font-size: 0.9rem;
     width: 40%;
   }
+  .input {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 344px) {
   .container {
@@ -264,5 +280,8 @@
   }
   .leftSection {
     padding: 3rem 1rem 2rem 1.5rem;
+  }
+  .input {
+    font-size: 0.8rem;
   }
 }
