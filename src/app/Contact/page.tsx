@@ -49,6 +49,7 @@ export default function App() {
             message: "✅ Message sent successfully!",
           });
           reset();
+          setSending(false); // <-- Add this line
         },
         (error) => {
           setToast({
@@ -56,6 +57,7 @@ export default function App() {
             message: "❌ Failed to send message. Try again.",
           }); // error toast
           console.error("FAILED...", error.text);
+          setSending(false); // <-- reset button here also
         }
       );
   };
@@ -196,7 +198,14 @@ export default function App() {
                 <p className={styles.error}>{errors.tellYourStory.message}</p>
               )}
             </div>
-            <button type="submit" className={styles.button} disabled={sending}>
+            {/* <button type="submit" className={styles.button} disabled={sending}>
+              {sending ? "Sending..." : "SUBMIT"}
+            </button> */}
+            <button
+              type="submit"
+              className={`${styles.button} ${sending ? styles.buttonSending : ""}`}
+              disabled={sending}
+            >
               {sending ? "Sending..." : "SUBMIT"}
             </button>
           </form>
