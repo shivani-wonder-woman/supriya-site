@@ -11,13 +11,13 @@
 
 .topSection {
   background-color: #e0e0e0;
-
   padding: 15px;
   border-radius: 6px;
 }
 .topSection h2 {
   margin-left: 1.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .middleSection {
@@ -27,20 +27,22 @@
 .middleSection h2 {
   margin-left: 1.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .bottomSection {
   background-color: #d0d0d0;
-
   padding: 15px;
   border-radius: 6px;
 }
 .bottomSection h2 {
   margin-left: 1.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 .heading h2 {
   color: rgb(98, 97, 97);
+  font-size: 1.7rem;
 }
 @media (prefers-color-scheme: dark) {
   .topSection {
@@ -65,11 +67,24 @@
   .topSection {
     border-radius: 0px;
   }
+  .middleSection h2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
   .bottomSection {
     border-radius: 0px;
   }
+  .bottomSection h2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+  }
   .heading {
     padding: 0px;
+  }
+  .heading h2 {
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 1920px) {
