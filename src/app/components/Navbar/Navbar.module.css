@@ -37,7 +37,6 @@
   display: flex;
   gap: 3rem;
   gap: 6rem;
-
   margin: 0;
   padding: 0;
   justify-content: center;
@@ -128,7 +127,7 @@
 }
 
 .navItem {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
   color: white;
 }
@@ -139,6 +138,7 @@
   font-weight: bold;
   transition: color 0.3s ease;
   white-space: nowrap;
+  font-size: 0.9rem;
 }
 
 .navItem a:hover {
@@ -228,12 +228,12 @@
     margin: 0 auto;
   }
   .navItem {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .navItem a {
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .navbar {
     padding: 0rem;

@@ -54,7 +54,7 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -79,7 +79,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .watchButton:hover {
@@ -136,16 +136,22 @@
   .teaseContainer {
     height: 15rem;
   }
+  .title {
+    font-size: 1.5rem;
+  }
+  .description {
+    font-size: 0.8rem;
+  }
 }
 @media (max-width: 768px) {
   .teaseContainer {
     height: 12rem;
   }
   .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .description {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -202,7 +208,7 @@
     white-space: nowrap;
   }
   .watchButton {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     padding: 0rem 1rem;
   }
