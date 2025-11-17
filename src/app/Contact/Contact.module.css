@@ -10,6 +10,7 @@
   display: flex;
   height: 100%;
   width: 100%;
+  padding: 2rem 10rem;
 }
 
 .leftSection {
@@ -54,7 +55,7 @@
 
 .label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
   color: #ddd;
   font-size: 1rem;
 }
@@ -66,14 +67,11 @@
   border-bottom: 2px solid #666;
   background: transparent;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s ease;
 }
 
-.input {
-  font-size: 1rem;
-}
 .input:focus {
   border-image: linear-gradient(to right, #ec407a, #ffe0b2) 1;
   border-image-slice: 1;
@@ -94,10 +92,6 @@
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-}
-.buttonSending {
-  background: grey;
-  cursor: not-allowed;
 }
 
 .button:hover {
@@ -120,7 +114,7 @@
   }
   .label {
     font-size: 3.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
   }
   .form {
     margin: 8rem 0rem 0rem 2.5rem;
@@ -143,9 +137,6 @@
   .podcastWrapper {
     width: 100%;
   }
-  .input {
-    font-size: 3.5rem;
-  }
 }
 
 @media (max-width: 1440px) {
@@ -156,63 +147,50 @@
   }
 
   .container {
-    flex-direction: column-reverse;
     min-height: 75vh;
     width: 100%;
-    padding: 2rem 5rem;
+    padding: 2rem 15rem;
     height: auto;
   }
   .podcastWrapper {
-    width: 30%;
+    width: 55%;
   }
   .rightSection {
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 0px 12px 12px 0px;
+    padding: 1.5rem;
   }
   .rightSection h2 {
-    padding: 1rem 0rem 0rem 0rem;
-    font-size: 3rem;
-  }
-  .leftSection {
-    padding: 6.5rem 1rem 3rem 5.5rem;
-    border-radius: 0px 0px 12px 12px;
-  }
-  .label {
+    padding: 0.5rem 0rem 0rem 0rem;
     font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .formGroup {
-    margin-bottom: 3.5rem;
-  }
-  .button {
-    font-size: 2rem;
-    padding: 1rem;
-  }
-  .input {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 1024px) {
-  .label {
-    font-size: 1.6rem;
-    margin-bottom: 0.9rem;
-  }
-  .formGroup {
-    margin-bottom: 3rem;
-  }
-  .button {
-    font-size: 1.5rem;
-  }
-  .rightSection h2 {
-    font-size: 3rem;
   }
   .leftSection {
     padding: 4.5rem 1rem 3rem 3.5rem;
-    border-radius: 0px 0px 12px 12px;
+    border-radius: 12px 0px 0px 12px;
+  }
+  .label {
+    font-size: 1rem;
+  }
+  .formGroup {
+    margin-bottom: 1.6rem;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 1rem;
   }
 }
-@media (max-width: 853px) {
+@media (max-width: 1024px) {
+  .container {
+    padding: 2rem 10rem;
+  }
+  .label {
+    font-size: 1rem;
+  }
+  .leftSection {
+    padding: 4rem 1rem 3rem 3rem;
+  }
+
   .rightSection h2 {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -220,36 +198,23 @@
   .container {
     padding: 2rem 3rem;
   }
-  .label {
-    font-size: 1.4rem;
-  }
 
-  .button {
-    margin-top: 1rem;
-    width: 30%;
-    padding: 1rem;
-    font-size: 1.4rem;
-  }
   .rightSection h2 {
     font-size: 2rem;
-  }
-  .formGroup {
-    margin-bottom: 2.5rem;
-  }
-  .input {
-    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 540px) {
   .container {
     padding: 1rem 1.5rem;
+    flex-direction: column-reverse;
   }
   .podcastWrapper {
     width: 40%;
   }
   .rightSection {
     padding: 0.9rem;
+    border-radius: 12px 12px 0rem 0rem;
   }
   .rightSection h2 {
     padding: 0rem;
@@ -257,21 +222,22 @@
   }
   .leftSection {
     padding: 3rem 1rem 2rem 2rem;
+    border-radius: 0rem 0rem 12px 12px;
   }
   .label {
     margin-bottom: 0rem;
     font-size: 0.8rem;
   }
   .formGroup {
-    margin-bottom: 1.9rem;
+    margin-bottom: 1.4rem;
+  }
+  .input {
+    font-size: 0.8rem;
   }
   .button {
     padding: 0rem;
     font-size: 0.9rem;
     width: 40%;
-  }
-  .input {
-    font-size: 1rem;
   }
 }
 @media (max-width: 344px) {
@@ -280,8 +246,5 @@
   }
   .leftSection {
     padding: 3rem 1rem 2rem 1.5rem;
-  }
-  .input {
-    font-size: 0.8rem;
   }
 }
