@@ -43,7 +43,7 @@
 .podcastWrapper {
   position: relative;
   height: auto;
-  width: 55%;
+  width: 85%;
 }
 .podcastImage {
   border-radius: 50%;
@@ -152,9 +152,9 @@
     padding: 2rem 15rem;
     height: auto;
   }
-  .podcastWrapper {
+  /* .podcastWrapper {
     width: 55%;
-  }
+  } */
   .rightSection {
     border-radius: 0px 12px 12px 0px;
     padding: 1.5rem;
@@ -194,13 +194,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .container {
-    padding: 2rem 3rem;
+    padding: 1rem 5rem;
   }
 
   .rightSection h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 
