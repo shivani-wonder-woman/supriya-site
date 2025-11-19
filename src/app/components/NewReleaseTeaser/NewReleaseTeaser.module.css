@@ -59,7 +59,7 @@
   margin-bottom: 0.5rem;
 }
 
-.description {
+/* .description {
   color: white;
   font-size: 16px;
   padding-right: 0rem;
@@ -68,6 +68,19 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+} */
+.description {
+  color: white;
+  font-size: 16px;
+  padding-right: 0rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* limit to 2 lines */
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* required */
 }
 
 .watchButton {

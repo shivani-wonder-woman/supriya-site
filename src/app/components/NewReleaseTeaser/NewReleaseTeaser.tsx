@@ -15,22 +15,29 @@ const NewReleaseTease: FC = () => {
     url: string;
     alt: string;
     linkUrl: string;
+    description: string;
   }>({
     url: "",
     alt: "",
     linkUrl: "",
+    description: "",
   });
 
   useEffect(() => {
     const fetchClientImage = async () => {
       try {
         const response = await client.getAllByType("newreleaseteaser");
+        console.log("Prismic response:", response);
+        console.log("newrelease data:", response[0].data);
 
         if (response.length > 0 && response[0].data.image?.url) {
+          const data = response[0].data; // ✅ FIXED
+
           setClientImage({
             url: response[0].data.image.url,
             alt: response[0].data.image.alt || "Client Image",
             linkUrl: response[0].data.link?.url || "#",
+            description: data.description_of_teaser?.[0]?.text || "",
           });
         }
       } catch (error) {
@@ -45,12 +52,8 @@ const NewReleaseTease: FC = () => {
     <div className={styles.teaseContainer}>
       <div className={styles.contentContainer}>
         <h1 className={styles.title}>New Release Teaser</h1>
-        <div className={styles.description}>
-          12-year-old Shun Sasaki, who conducts free tours twice a month and
-          tells foreigners in English what happened 80 years ago. Shun speaks
-          about his great-grandmother, an atomic bomb survivo, and urges the
-          world to stop war.
-        </div>
+        <div className={styles.description}>{clientImage.description}</div>
+
         <button onClick={handleWatchNow} className={styles.watchButton}>
           Watch Now
         </button>
