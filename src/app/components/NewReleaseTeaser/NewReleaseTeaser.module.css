@@ -33,7 +33,9 @@
 }
 
 .imageContainer {
-  display: flex;
+  /* display: flex; */
+  position: relative; /* allows absolute elements inside */
+  display: inline-block;
   max-width: 48%;
   align-items: center;
   justify-content: center;
@@ -51,6 +53,7 @@
 }
 .clientImage:hover {
   filter: contrast(100%);
+  /* width: 58vw; */
 }
 
 .title {
@@ -58,17 +61,28 @@
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-
-/* .description {
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: grey;
   color: white;
-  font-size: 16px;
-  padding-right: 0rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
+  font-size: 30px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.playButton:hover {
+  /* background-color: #444; */
+  background-color: red;
+}
+
 .description {
   color: white;
   font-size: 16px;
@@ -92,7 +106,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .watchButton:hover {
@@ -166,6 +180,11 @@
   .description {
     font-size: 0.7rem;
   }
+  .playButton {
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+  }
 }
 
 @media (max-width: 540px) {
@@ -224,6 +243,9 @@
     font-size: 0.8rem;
     font-weight: bold;
     padding: 0rem 1rem;
+  }
+  .playButton {
+    display: none;
   }
 }
 @media (max-width: 480px) {

@@ -31,7 +31,7 @@ const NewReleaseTease: FC = () => {
         console.log("newrelease data:", response[0].data);
 
         if (response.length > 0 && response[0].data.image?.url) {
-          const data = response[0].data; // ✅ FIXED
+          const data = response[0].data;
 
           setClientImage({
             url: response[0].data.image.url,
@@ -68,6 +68,10 @@ const NewReleaseTease: FC = () => {
             className={styles.clientImage}
           />
         )}
+        <div className={styles.playButton} onClick={handleWatchNow}>
+          {" "}
+          ▶
+        </div>
       </div>
     </div>
   );

@@ -133,6 +133,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                       className={styles.media}
                       priority
                     />
+                    <div className={styles.playButton}> ▶</div>
                   </div>
                 ) : (
                   <div className={styles.videoPlaceholder}>
