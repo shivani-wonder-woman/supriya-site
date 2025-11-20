@@ -58,7 +58,7 @@ const Header: FC = () => {
             isExpanded ? styles.expanded : ""
           }`}
         >
-          <p>
+          <p className={styles.zoomParagraph}>
             Over a cup of steaming chai, some of the best stories come to life —
             and that’s what I’m chasing with my YouTube podcast, “Chai Time With
             Supriya.” After more than a decade as a journalist in Japan with

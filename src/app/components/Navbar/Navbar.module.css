@@ -143,10 +143,8 @@
 }
 .navItem:hover {
   transform: scale(1.12);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
 }
-/* .navItem a:hover {
-  color: #ffd700;
-} */
 
 .logoWrapper {
   position: relative;
