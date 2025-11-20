@@ -174,6 +174,7 @@ const MainContent: FC = () => {
               date: video.podcastReleaseDate,
             }))}
             viewAllLink="/Videos"
+            isArticle={false}
           />
         ) : (
           <p>Loading videos...</p>
@@ -195,6 +196,7 @@ const MainContent: FC = () => {
               date: video.shortVideoReleaseDate,
             }))}
             viewAllLink="/Videos"
+            isArticle={false}
           />
         ) : (
           <p>Loading Shortvideos...</p>
@@ -206,7 +208,7 @@ const MainContent: FC = () => {
           <h2>Articles</h2>
         </div>
         {articles.length > 0 ? (
-          <Carousel data={articles} viewAllLink="/Articles" />
+          <Carousel data={articles} viewAllLink="/Articles" isArticle={true} />
         ) : (
           <p>Loading articles...</p>
         )}
