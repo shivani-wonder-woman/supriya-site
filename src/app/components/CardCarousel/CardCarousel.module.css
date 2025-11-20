@@ -115,7 +115,11 @@
 }
 .mediaWrapper {
   position: relative;
-  /* display: inline-block; */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+.mediaWrapper:hover {
+  transform: scale(1.2);
 }
 
 .playButton {
