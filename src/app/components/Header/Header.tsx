@@ -44,6 +44,7 @@ const Header: FC = () => {
             alt={clientImage.alt}
             width={500}
             height={500}
+            className={styles.zoomImage}
           />
         )}
       </div>

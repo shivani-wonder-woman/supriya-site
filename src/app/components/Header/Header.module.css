@@ -64,6 +64,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+}
+.zoomImage {
+  transition: transform 0.3s ease-in-out;
+}
+.clientImage:hover .zoomImage {
+  transform: scale(1.11);
 }
 
 .clientImage img {

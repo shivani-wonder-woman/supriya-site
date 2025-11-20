@@ -130,6 +130,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: white;
+  transition: transform 0.3s ease-in-out;
 }
 
 .navItem a {
@@ -140,10 +141,12 @@
   white-space: nowrap;
   font-size: 0.9rem;
 }
-
-.navItem a:hover {
-  color: #ffd700;
+.navItem:hover {
+  transform: scale(1.12);
 }
+/* .navItem a:hover {
+  color: #ffd700;
+} */
 
 .logoWrapper {
   position: relative;
@@ -160,10 +163,15 @@
   width: 80px;
   object-fit: contain;
   height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.logoWrapper:hover .logoImage {
+  transform: scale(1.12);
 }
 
 .joinPodcast {
   margin: 0;
+  display: inline-block;
 }
 
 .joinPodcast a {
@@ -173,10 +181,15 @@
   transition: color 0.3s ease;
   white-space: nowrap;
 }
-
-.joinPodcast a:hover {
-  color: #ffd700;
+.joinPodcast:hover .navItem {
+  transform: scale(1.15);
 }
+
+/* .joinPodcast a:hover {
+  transform: scale(1.15);
+
+  color: #ffd700;
+} */
 @media (min-width: 1920px) {
   .navbar {
     min-height: 85px;
