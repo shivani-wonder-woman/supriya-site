@@ -25,9 +25,14 @@ interface CarouselItem {
 interface CarouselProps {
   data: CarouselItem[];
   viewAllLink?: string;
+  isArticle?: boolean; // Add this line
 }
 
-const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
+const Carousel: React.FC<CarouselProps> = ({
+  data,
+  viewAllLink,
+  isArticle,
+}) => {
   const [isReady, setIsReady] = useState(false);
   const [expandedDescriptions, setExpandedDescriptions] = useState<
     Record<string, boolean>
@@ -133,7 +138,8 @@ const Carousel: React.FC<CarouselProps> = ({ data, viewAllLink }) => {
                       className={styles.media}
                       priority
                     />
-                    <div className={styles.playButton}> ▶</div>
+
+                    {!isArticle && <div className={styles.playButton}> ▶</div>}
                   </div>
                 ) : (
                   <div className={styles.videoPlaceholder}>
