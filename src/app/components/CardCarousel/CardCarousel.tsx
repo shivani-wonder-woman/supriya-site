@@ -143,7 +143,10 @@ const Carousel: React.FC<CarouselProps> = ({
                   </div>
                 ) : (
                   <div className={styles.videoPlaceholder}>
-                    <span className={styles.playIcon}>▶</span>
+                    <div className={styles.playIcon}>
+                      <span>▶</span>
+                    </div>
+
                     <p className={styles.comingSoon}>
                       {item.video ? "Media Coming Soon" : "Image Not Available"}
                     </p>
