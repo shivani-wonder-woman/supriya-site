@@ -4,7 +4,7 @@
   align-items: stretch;
   justify-content: center;
   width: 100%;
-  height: 280px;
+  height: 22rem;
   position: relative;
   padding: 2rem;
   gap: 2rem;
@@ -163,7 +163,7 @@
 }
 @media (max-width: 1024px) {
   .teaseContainer {
-    height: 12rem;
+    height: 15rem;
   }
   .title {
     font-size: 1.5rem;
@@ -197,7 +197,7 @@
     overflow: hidden;
     padding: 0rem;
     background-color: rgb(44, 13, 13);
-    height: 12rem;
+    height: 17rem;
   }
 
   .contentContainer {
@@ -250,9 +250,10 @@
     display: none;
   }
 }
+
 @media (max-width: 480px) {
   .teaseContainer {
-    height: 9rem;
+    height: 13rem;
   }
   .description {
     display: none;
@@ -260,5 +261,10 @@
   .title {
     font-size: 1.5rem;
     margin-bottom: 0rem;
+  }
+}
+@media (max-width: 320px) {
+  .teaseContainer {
+    height: 10rem;
   }
 }
